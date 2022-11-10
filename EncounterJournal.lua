@@ -536,7 +536,7 @@ function EncounterJournal_ListInstances()
 	local scrollFrame = instanceSelect.scroll.child;
 	local index = 1;
 	local instanceID, name, description, _, buttonImage, _, _, _, link = EJ_GetInstanceByIndex(index, showRaid);
-	print(name);
+
 	--No instances in this tab
 	if not instanceID and not infiniteLoopPolice then
 		--disable this tab and select the other one.
@@ -706,7 +706,6 @@ function EncounterJournal_DisplayInstance(instanceID, noButton)
 	local scrollFrame = EncounterJournal.encounter.bossesFrame;
 	local bossIndex = 1;
 	local name, description, bossID, rootSectionID, link = unpack(EJ_GetEncounterInfoByIndex(bossIndex));
-	print("Boss Name: " .. name);
 
 	local hasBossAbilities = false;
 	
@@ -800,7 +799,7 @@ function EncounterJournal_DisplayEncounter(encounterID, noButton)
 	local self = EncounterJournal.encounter;
 
 	local ename, description, _, rootSectionID = unpack(EJ_GetEncounterInfo(encounterID));
-	print(ename);
+
 	if (EncounterJournal.encounterID == encounterID) then
 		--navbar is already set to the right button, don't add another
 		noButton = true;
@@ -2007,7 +2006,6 @@ function EJSuggestTab_GetPlayerTierIndex()
 end
 
 function EJ_ContentTab_OnClick(self)
-	print(self:GetName());
 	if self:GetName() == "EncounterJournalInstanceSelectRaidTab" then
 		EJ_SetShowRaid(true)
 		EJ_ContentTab_Select(2);
