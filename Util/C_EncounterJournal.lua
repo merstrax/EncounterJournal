@@ -134,6 +134,10 @@ end
 
 --C_EncounterJournal.GetSectionIconFlags(sectionID) : iconFlags - Returns the icon flags for a section, such as Magic Effect and Heroic Difficulty
 function C_EncounterJournal.GetSectionIconFlags(sectionID)
+    if EJ_EncounterSectionDB[sectionID] then
+        return EJ_EncounterSectionDB[sectionID].IconFlags;
+    end
+    return 0;
 end
 
 --C_EncounterJournal.GetSectionInfo(sectionID) : info - Returns information about an entry in the Abilities section of the Encounter Journal.

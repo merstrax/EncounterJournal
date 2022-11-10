@@ -978,13 +978,13 @@
 					</OnLeave>
 				</Scripts>
 			</Button>
-			<Frame parentKey="overviewDescription" inherits="EncounterDescriptionTemplate">
+			<Frame parentKey="overviewDescription" inherits="EncounterDescriptionTemplate" hidden="true">
 				<Size x="95" y="10"/>
 				<Anchors>
-					<Anchor point="TOP" relativePoint="BOTTOM" relativeTo="$parentHeaderButton" x="0" y="-9"/>
+					<Anchor point="TOP" relativePoint="BOTTOM" relativeTo="$parent.button" x="0" y="-9"/>
 				</Anchors>
 			</Frame>
-			<Frame inherits="EncounterOverviewBulletTemplate">
+			<Frame inherits="EncounterOverviewBulletTemplate" hidden="true">
 				<Anchors>
 					<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="$parentHeaderButton" x="13" y="-9"/>
 				</Anchors>
@@ -995,7 +995,7 @@
 				<FontString name="$parentDescription" inherits="GameFontBlack" justifyH="LEFT" parentKey="description">
 					<Size x="0" y="0"/>
 					<Anchors>
-						<Anchor point="TOP" relativePoint="BOTTOM" relativeTo="$parentHeaderButton" x="0" y="-9"/>
+						<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="$parentHeaderButton" x="0" y="-9"/>
 					</Anchors>
 					<Color r="0.25" g="0.1484375" b=".02" a="1"/>
 				</FontString>
