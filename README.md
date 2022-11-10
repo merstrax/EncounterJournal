@@ -8,6 +8,6 @@ You only need one of the 2 files resources.
 
 For the ZIP folder, unzip and move the contents to: <wow_directory>\Interface\
 
-For the Patch file, move to: <wow_directory>\Interface\
+For the Patch file, move to: <wow_directory>\Data\
 
 If you already have a patch as the same from the download rename it to a number or letter not taken as it only adds texture files.
