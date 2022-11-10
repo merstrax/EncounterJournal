@@ -483,7 +483,7 @@
 			<OnClick>
 				--if not ChatEdit_TryInsertChatLink(self.link) then
 					EncounterJournal_DisplayInstance(self.instanceID);
-					PlaySound(SOUNDKIT.IG_SPELLBOOK_OPEN);
+					--PlaySound(SOUNDKIT.IG_SPELLBOOK_OPEN);
 				--end
 			</OnClick>
 		</Scripts>
@@ -519,7 +519,7 @@
 			</OnEnable>
 			<OnClick>
 				EncounterJournal_DisplayCreature(self);
-				PlaySound(SOUNDKIT.IG_MAINMENU_OPTION);
+				--PlaySound(SOUNDKIT.IG_MAINMENU_OPTION);
 			</OnClick>
 			<OnEnter>
 
@@ -928,7 +928,7 @@
 									EncounterJournal_DisplayCreature(self);
 								end
 								self:Enable();
-								PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
+								--PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
 							</OnClick>
 						</Scripts>
 					</Button>
@@ -1735,7 +1735,7 @@
 									<OnMouseDown>
 										EJButtonMixin.OnMouseDown(self, button);
 										ToggleDropDownMenu(1, nil, self:GetParent().difficultyDD, self, 5, 0);
-										PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
+										--PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
 									</OnMouseDown>
 								</Scripts>
 							</Button>
@@ -1944,7 +1944,7 @@
 														self.texture:SetPoint("TOPLEFT", 0, 0);
 													</OnMouseUp>
 													<OnClick>
-														PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
+														--PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
 														EJ_ResetLootFilter();
 														EncounterJournal_LootUpdate();
 														self:GetParent():Hide();
@@ -1958,7 +1958,7 @@
 											<OnMouseDown>
 												EJButtonMixin.OnMouseDown(self, button);
 												ToggleDropDownMenu(1, nil, self:GetParent().lootFilter, self, 5, 0);
-												PlaySound(SOUNDKIT.IG_MAINMENU_OPTION);
+												--PlaySound(SOUNDKIT.IG_MAINMENU_OPTION);
 											</OnMouseDown>
 											<OnLoad inherit="prepend">
 												self:SetPoint("TOPLEFT", self:GetParent():GetParent(), "TOPRIGHT", -340, -13);
@@ -1973,7 +1973,7 @@
 											<OnMouseDown>
 												EJButtonMixin.OnMouseDown(self, button);
 												ToggleDropDownMenu(1, nil, self:GetParent().lootSlotFilter, self, 5, 0);
-												PlaySound(SOUNDKIT.IG_MAINMENU_OPTION);
+												--PlaySound(SOUNDKIT.IG_MAINMENU_OPTION);
 											</OnMouseDown>
 											<OnLoad inherit="prepend">
 												self:SetPoint("TOPLEFT", self:GetParent():GetParent(), "TOPRIGHT", -230, -13);

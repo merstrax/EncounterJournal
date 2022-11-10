@@ -188,7 +188,7 @@ local INSTANCE_LOOT_BUTTON_HEIGHT = 64;
 
 function EncounterJournal_OnLoad(self)
 	Mixin(self, "PortraitFrameMixin");
-	EncounterJournalTitleText:SetText("ADVENTURE_JOURNAL");
+	EncounterJournalTitleText:SetText("Dungeon Journal");
 	EncounterJournal:SetPortraitToAsset("Interface\\EncounterJournal\\UI-EJ-PortraitIcon");
 	--self:RegisterEvent("EJ_LOOT_DATA_RECIEVED");
 	--self:RegisterEvent("EJ_DIFFICULTY_UPDATE");
@@ -665,7 +665,7 @@ function EncounterJournal_DisplayInstance(instanceID, noButton)
 	EncounterJournal_ClearDetails();
 
 	local _, instanceName, description, bgImage, _, loreImage, buttonImage, dungeonAreaMapID = EJ_GetInstanceInfo();
-	self.instance.title:SetFont("Fonts\\FRIZQT__.TTF", 11, "OUTLINE, MONOCHROME");
+	self.instance.title:SetFont("GameFontNormal");
 	self.instance.title:SetText(instanceName);
 	self.instance.titleBG:SetWidth(self.instance.title:GetStringWidth() + 80);
 	self.instance.loreBG:SetTexture(loreImage);
@@ -681,7 +681,7 @@ function EncounterJournal_DisplayInstance(instanceID, noButton)
 		self.info.instanceTitle:SetPoint("TOPLEFT", 65, -20);
 	end
 
-	self.info.instanceTitle:SetFont("Fonts\\FRIZQT__.TTF", 11, "OUTLINE, MONOCHROME");
+	self.info.instanceTitle:SetFont("GameFontNormal");
 	self.info.instanceTitle:SetText(instanceName);
 	self.instance.mapButton:SetShown(dungeonAreaMapID and dungeonAreaMapID > 0);
 
