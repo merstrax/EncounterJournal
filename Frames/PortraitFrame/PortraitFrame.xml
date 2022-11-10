@@ -1,0 +1,108 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\..\FrameXML\UI.xsd">
+
+    <Script file="PortraitFrame.lua"/>
+    <!--
+    *******************************************************************************
+        EJPortraitFrameTemplate
+        This is an empty frame with space for a portrait/icon in the top left corner.
+    *******************************************************************************
+    -->
+	<Frame name="EJPortraitFrameBaseTemplate" inherits="PortraitFrameTemplate" virtual="true">
+		<KeyValues>
+			<KeyValue key="layoutType" value="EJPortraitFrameTemplate" type="string"/>
+		</KeyValues>
+		<Size x="338" y="424"/>
+		<Frames>
+			<Frame parentKey="NineSlice" inherits="NineSlicePanelTemplate"/>
+			<Frame parentKey="PortraitContainer">
+				<Size x="1" y="1"/>
+				<Anchors>
+					<Anchor point="TOPLEFT"/>
+				</Anchors>
+				<Layers>
+					<Layer level="OVERLAY">
+						<Texture name="$parentPortrait" parentKey="portrait">
+							<Size x="60" y="60"/>
+							<Anchors>
+								<Anchor point="TOPLEFT" x="-5" y="7" />
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+			</Frame>
+			<Frame parentKey="TitleContainer">
+				<Size x="0" y="20"/>
+				<Anchors>
+					<Anchor point="TOPLEFT" y="-1"/>
+					<Anchor point="TOPRIGHT" y="-1"/>
+				</Anchors>
+				<Layers>
+					<Layer level="OVERLAY">
+						<FontString name="$parentTitleText" inherits="GameFontNormal" text="" parentKey="TitleText" wordwrap="false">
+							<Anchors>
+								<Anchor point="TOP" x="0" y="-5"/>
+								<Anchor point="LEFT" x="37" y="0"/>
+								<Anchor point="RIGHT" x="-37" y="0"/>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+		</Frames>
+        <Scripts>
+        </Scripts>
+	</Frame>
+
+	<Frame name="EJPortraitFrameTexturedBaseTemplate" inherits="EJPortraitFrameBaseTemplate" virtual="true">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBg" file="Interface\FrameGeneral\UI-Background-Rock" horizTile="true" vertTile="true" parentKey="Bg">
+					<Anchors>
+						<Anchor point="TOPLEFT" x="2" y="-21"/>
+						<Anchor point="BOTTOMRIGHT" x="-2" y="2"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="BORDER">
+				<Texture parentKey="TopTileStreaks" inherits="_UI-Frame-TopTileStreaks">
+					<Anchors>
+						<Anchor point="TOPLEFT" x="6" y="-21"/>
+						<Anchor point="TOPRIGHT" x="-2" y="-21"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+	</Frame>
+
+	<Frame name="EJPortraitFrameFlatBaseTemplate" inherits="EJPortraitFrameBaseTemplate" virtual="true">
+		<Frames>
+			<Frame parentKey="Bg" inherits="FlatPanelBackgroundTemplate" frameLevel="0">
+				<Anchors>
+					<Anchor point="TOPLEFT" x="2" y="-20"/>
+					<Anchor point="BOTTOMRIGHT" x="-2" y="3"/>
+				</Anchors>
+			</Frame>
+		</Frames>
+	</Frame>
+
+	<Frame name="EJPortraitFrameTemplateNoCloseButton" inherits="EJPortraitFrameTexturedBaseTemplate" virtual="true"/>
+
+	<Frame name="EJPortraitFrameTemplate" inherits="EJPortraitFrameTemplateNoCloseButton" virtual="true">
+		<Frames>
+			<Button name="$parentCloseButton" parentKey="CloseButton" inherits="UIPanelCloseButtonDefaultAnchors"/>
+		</Frames>
+	</Frame>
+
+	<Frame name="EJPortraitFrameTemplateMinimizable" inherits="EJPortraitFrameTemplate" virtual="true">
+		<KeyValues>
+			<KeyValue key="layoutType" value="PortraitFrameTemplateMinimizable" type="string"/>
+		</KeyValues>
+	</Frame>
+
+	<Frame name="EJPortraitFrameFlatTemplate" inherits="EJPortraitFrameFlatBaseTemplate" virtual="true">
+		<Frames>
+			<Button parentKey="CloseButton" inherits="UIPanelCloseButtonDefaultAnchors"/>
+		</Frames>
+	</Frame>
+    </Ui>
