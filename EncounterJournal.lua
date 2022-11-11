@@ -665,7 +665,7 @@ function EncounterJournal_DisplayInstance(instanceID, noButton)
 	EncounterJournal_ClearDetails();
 
 	local _, instanceName, description, bgImage, _, loreImage, buttonImage, dungeonAreaMapID = EJ_GetInstanceInfo();
-	self.instance.title:SetFont("GameFontNormal");
+	self.instance.title:SetFontObject("GameFontNormal");
 	self.instance.title:SetText(instanceName);
 	self.instance.titleBG:SetWidth(self.instance.title:GetStringWidth() + 80);
 	self.instance.loreBG:SetTexture(loreImage);
@@ -681,7 +681,7 @@ function EncounterJournal_DisplayInstance(instanceID, noButton)
 		self.info.instanceTitle:SetPoint("TOPLEFT", 65, -20);
 	end
 
-	self.info.instanceTitle:SetFont("GameFontNormal");
+	self.info.instanceTitle:SetFontObject("GameFontNormal");
 	self.info.instanceTitle:SetText(instanceName);
 	self.instance.mapButton:SetShown(dungeonAreaMapID and dungeonAreaMapID > 0);
 
