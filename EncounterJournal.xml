@@ -1741,6 +1741,7 @@
 							</Button>
 							<Frame name="$parentDifficultyDD" parentKey="difficultyDD" inherits="UIDropDownMenuTemplate" clampedToScreen="true" hidden="true">
 								<Scripts>
+									<OnShow> UIDropDownMenu_Initialize(self, EncounterJournal_DifficultyInit, "MENU"); </OnShow>
 									<OnLoad>
 										UIDropDownMenu_Initialize(self, EncounterJournal_DifficultyInit, "MENU");
 									</OnLoad>

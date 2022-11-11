@@ -1,18 +1,17 @@
 DifficultyUtil = {};
 
 DifficultyUtil.ID = {
-	None = 0;
-	DungeonNormal = 1,
-	DungeonHeroic = 2,
-	DungeonMythic = 3,
-	RaidNormal = 4,
-	RaidHeroic = 5,
-	RaidMythic = 6,
-	RaidAscended = 7,
-	DungeonChallenge = 8,
-	DungeonTimewalker = 9,
-	RaidTimewalker = 10,
-
+	None = 1;
+	DungeonNormal = 2,
+	DungeonHeroic = 3,
+	DungeonMythic = 4,
+	RaidNormal = 5,
+	RaidHeroic = 6,
+	RaidMythic = 7,
+	RaidAscended = 8,
+	DungeonPlus = 9,
+	DungeonTimewalker = 10,
+	RaidTimewalker = 11,
 };
 
 local DIFFICULTY_NAMES =
@@ -25,12 +24,12 @@ local DIFFICULTY_NAMES =
 	[DifficultyUtil.ID.RaidHeroic] = "Heroic Raid",
 	[DifficultyUtil.ID.RaidMythic] = "Mythic Raid",
 	[DifficultyUtil.ID.RaidAscended] = "Ascended Raid",
-	[DifficultyUtil.ID.DungeonChallenge] = "CHALLENGE_MODE",
+	[DifficultyUtil.ID.DungeonPlus] = "Mythic+ Dungeon",
 	[DifficultyUtil.ID.DungeonTimewalker] = "Timewalking Dungeon",
 	[DifficultyUtil.ID.RaidTimewalker] = "Timewalking Raid",
 }
 
-local PRIMARY_RAIDS = { DifficultyUtil.ID.RaidAscended, DifficultyUtil.ID.RaidNormal, DifficultyUtil.ID.RaidHeroic, DifficultyUtil.ID.RaidMythic };
+local PRIMARY_RAIDS = { DifficultyUtil.ID.RaidNormal, DifficultyUtil.ID.RaidHeroic, DifficultyUtil.ID.RaidMythic, DifficultyUtil.ID.RaidAscended };
 
 function DifficultyUtil.GetDifficultyName(difficultyID)
 	return DIFFICULTY_NAMES[difficultyID];

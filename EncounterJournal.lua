@@ -81,10 +81,7 @@ local function IsEJDifficulty(difficultyID)
 end
 
 local function GetEJDifficultySize(difficultyID)
-	if difficultyID ~= DifficultyUtil.ID.RaidTimewalker and not DifficultyUtil.IsPrimaryRaid(difficultyID) then
-		return DifficultyUtil.GetMaxPlayers(difficultyID);
-	end
-	return nil;
+	return DifficultyUtil.GetMaxPlayers(difficultyID);
 end
 
 local function GetEJDifficultyString(difficultyID)
@@ -191,9 +188,9 @@ function EncounterJournal_OnLoad(self)
 	EncounterJournalTitleText:SetText("Dungeon Journal");
 	EncounterJournal:SetPortraitToAsset("Interface\\EncounterJournal\\UI-EJ-PortraitIcon");
 	--self:RegisterEvent("EJ_LOOT_DATA_RECIEVED");
-	--self:RegisterEvent("EJ_DIFFICULTY_UPDATE");
-	--self:RegisterEvent("UNIT_PORTRAIT_UPDATE");
-	--self:RegisterEvent("PORTRAITS_UPDATED");
+	self:RegisterEvent("EJ_DIFFICULTY_UPDATE");
+	self:RegisterEvent("UNIT_PORTRAIT_UPDATE");
+	self:RegisterEvent("PORTRAITS_UPDATED");
 	--self:RegisterEvent("SEARCH_DB_LOADED");
 	--self:RegisterEvent("UI_MODEL_SCENE_INFO_UPDATED");
 
@@ -313,14 +310,7 @@ function EncounterJournal_OnShow(self)
 		EncounterJournal_ResetDisplay(instanceID, instanceType, difficultyID);
 		EncounterJournal.queuedPortraitUpdate = nil;
 	elseif ( self.encounter.overviewFrame:IsShown() and EncounterJournal.overviewDefaultRole and not EncounterJournal.encounter.overviewFrame.linkSection ) then
-		local spec, role;
-
-		spec = GetSpecialization();
-		if (spec) then
-			role = GetSpecializationRole(spec);
-		else
-			role = "DAMAGER";
-		end
+		local role = "DAMAGER";
 
 		if ( EncounterJournal.overviewDefaultRole ~= role ) then
 			EncounterJournal_ToggleHeaders(EncounterJournal.encounter.overviewFrame);
@@ -632,18 +622,19 @@ local function UpdateDifficultyAnchoring(difficultyFrame)
 end
 
 local function UpdateDifficultyVisibility()
-	local shouldDisplayDifficulty = select(9, EJ_GetInstanceInfo());
+	local shouldDisplayDifficulty = select(10, EJ_GetInstanceInfo()) ~= 2;
 
 	-- As long as the current tab isn't the model tab, which always suppresses the difficulty, then update the shown state.
 	local info = EncounterJournal.encounter.info;
+	info.difficulty:Hide();
 	info.difficulty:SetShown(shouldDisplayDifficulty and (info.tab ~= 4));
 
 	UpdateDifficultyAnchoring(info.difficulty);
 end
 
 local IconIndexByDifficulty = {
-	[2] = 3, -- Heroic
-	[3] = 12, -- Mythic
+	[3] = 3, -- Heroic
+	[4] = 12, -- Mythic
 };
 
 local function GetIconIndexForDifficultyID(difficultyID)
@@ -1970,10 +1961,12 @@ end
 
 function EncounterJournal_SelectDifficulty(self, value)
 	EJ_SetDifficulty(value);
+	--UIDropDownMenu_SetText(self, GetEJDifficultyString(value));
 end
 
 function EncounterJournal_DifficultyInit(self, level)
 	local currDifficulty = EJ_GetDifficulty();
+	UIDropDownMenu_SetText(self, GetEJDifficultyString(currDifficulty));
 	local info = UIDropDownMenu_CreateInfo();
 	for i, difficultyID in ipairs(EJ_DIFFICULTIES) do
 		if EJ_IsValidInstanceDifficulty(difficultyID) then

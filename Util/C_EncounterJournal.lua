@@ -333,8 +333,8 @@ function EJ_GetInstanceInfo(journalInstanceID)
     
     for _, v in ipairs(EJ_InstanceDB) do
         if(v[InstanceID] == journalInstanceID) then
-            C_EncounterJournal.instanceInfoCache[journalInstanceID] = {v[InstanceName], v[InstanceDesc], EJ_FileData[v[InstanceBGID]], EJ_FileData[v[InstanceBtnID]], EJ_FileData[v[InstanceLoreID]], EJ_FileData[v[InstanceSmBtnID]], 0, EJ_BuildJournalLink(EJ_TYPES.Instance, v[InstanceID], 0, v[InstanceName]), false, v[InstanceMapID]}
-            return v[InstanceID], v[InstanceName], v[InstanceDesc], EJ_FileData[v[InstanceBGID]], EJ_FileData[v[InstanceBtnID]], EJ_FileData[v[InstanceLoreID]], EJ_FileData[v[InstanceSmBtnID]], 0, EJ_BuildJournalLink(EJ_TYPES.Instance, v[InstanceID], 0, v[InstanceName]), false, v[InstanceMapID];
+            C_EncounterJournal.instanceInfoCache[journalInstanceID] = {v[InstanceName], v[InstanceDesc], EJ_FileData[v[InstanceBGID]], EJ_FileData[v[InstanceBtnID]], EJ_FileData[v[InstanceLoreID]], EJ_FileData[v[InstanceSmBtnID]], 0, EJ_BuildJournalLink(EJ_TYPES.Instance, v[InstanceID], 0, v[InstanceName]), v[InstanceFlags], v[InstanceMapID]}
+            return v[InstanceID], v[InstanceName], v[InstanceDesc], EJ_FileData[v[InstanceBGID]], EJ_FileData[v[InstanceBtnID]], EJ_FileData[v[InstanceLoreID]], EJ_FileData[v[InstanceSmBtnID]], 0, EJ_BuildJournalLink(EJ_TYPES.Instance, v[InstanceID], 0, v[InstanceName]), v[InstanceFlags], v[InstanceMapID];
         end
     end
 
@@ -422,14 +422,20 @@ end
 
 --EJ_IsValidInstanceDifficulty(difficultyID) - Returns whether the difficultyID is valid for use in the journal.
 function EJ_IsValidInstanceDifficulty(difficultyID)
-    if ((difficultyID == DifficultyUtil.ID.DungeonNormal) or (difficultyID == DifficultyUtil.ID.DungeonHeroic) or (difficultyID == DifficultyUtil.ID.DungeonMythic) 
-        or (difficultyID == DifficultyUtil.ID.RaidNormal) or (difficultyID == DifficultyUtil.ID.RaidHeroic) or (difficultyID == DifficultyUtil.ID.RaidMythic) 
-        or (difficultyID == DifficultyUtil.ID.RaidAscended)) 
-    then 
+    local info = select(10, EJ_GetInstanceInfo());
+    if info == DifficultyUtil.ID.DungeonNormal and difficultyID == DifficultyUtil.ID.DungeonNormal then return true end;
+    
+    if(info == DifficultyUtil.ID.DungeonMythic and (difficultyID == DifficultyUtil.ID.DungeonNormal or difficultyID == DifficultyUtil.ID.DungeonHeroic or difficultyID == DifficultyUtil.ID.DungeonMythic)) then
         return true;
-    else
-        return false;
     end
+
+    if(info == DifficultyUtil.ID.RaidAscended and 
+    (difficultyID == DifficultyUtil.ID.RaidNormal or difficultyID == DifficultyUtil.ID.RaidHeroic 
+    or difficultyID == DifficultyUtil.ID.RaidMythic or difficultyID == DifficultyUtil.ID.RaidAscended)) then
+        return true;
+    end
+
+    return false;
 end
 
 --EJ_SelectEncounter(encounterID) - Selects an encounter for the Encounter Journal API state.
