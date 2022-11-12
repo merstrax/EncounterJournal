@@ -91,9 +91,21 @@ local function EJ_CacheEncounterInfo(encounterInfo)
     return encounterInfo.ID;
 end
 
+local function EJ_BuildInstanceEncounterCache(journalInstanceID)
+    C_EncounterJournal.instanceEncounterCache[journalInstanceID] = {};
+    for _, v in ipairs(EJ_EncounterDB) do
+        if v.JournalInstanceID == journalInstanceID then
+            tinsert(C_EncounterJournal.instanceEncounterCache[journalInstanceID], {OrderIndex = v.OrderIndex, InfoCacheID = EJ_CacheEncounterInfo(v)});
+        end
+    end
+
+    table.sort(C_EncounterJournal.instanceEncounterCache[journalInstanceID], function(k1, k2) return k1.OrderIndex < k2.OrderIndex end)
+end
+
 local function EJ_BuildInstanceLootCache(journalInstanceID)
     C_EncounterJournal.instanceLootCache[journalInstanceID] = {};
     
+    if not C_EncounterJournal.instanceEncounterCache[journalInstanceID] then EJ_BuildInstanceEncounterCache(journalInstanceID) end;
     for _, v in ipairs(C_EncounterJournal.instanceEncounterCache[journalInstanceID]) do
         for _, i in ipairs(EJ_ItemsDB) do
             if i[2] == v.InfoCacheID then
@@ -110,18 +122,6 @@ local function EJ_BuildEncounterLootCache(encounterID)
             tinsert(C_EncounterJournal.encounterLootCache[encounterID], i[3]);
         end
     end
-end
-
-local function EJ_BuildInstanceEncounterCache(journalInstanceID)
-    C_EncounterJournal.instanceEncounterCache[journalInstanceID] = {};
-    for _, v in ipairs(EJ_EncounterDB) do
-        if v.JournalInstanceID == journalInstanceID then
-            tinsert(C_EncounterJournal.instanceEncounterCache[journalInstanceID], {OrderIndex = v.OrderIndex, InfoCacheID = EJ_CacheEncounterInfo(v)});
-        end
-    end
-
-    table.sort(C_EncounterJournal.instanceEncounterCache[journalInstanceID], function(k1, k2) return k1.OrderIndex < k2.OrderIndex end)
-    EJ_BuildInstanceLootCache(journalInstanceID);
 end
 
 function EJ_SetShowRaid(showRaid)
@@ -490,13 +490,16 @@ end
 
 --EJ_SelectEncounter(encounterID) - Selects an encounter for the Encounter Journal API state.
 function EJ_SelectEncounter(encounterID)
-    C_EncounterJournal.SELECTED_ENCOUNTER = encounterID; 
+    C_EncounterJournal.SELECTED_ENCOUNTER = encounterID;
+    if not C_EncounterJournal.encounterLootCache[C_EncounterJournal.SELECTED_ENCOUNTER] then EJ_BuildEncounterLootCache(C_EncounterJournal.SELECTED_ENCOUNTER) end 
 end
 
 --EJ_SelectInstance(journalInstanceID) - Selects an instance for the Encounter Journal API state.
 function EJ_SelectInstance(journalInstanceID)
     C_EncounterJournal.SELECTED_ENCOUNTER = nil;
-    C_EncounterJournal.SELECTED_INSTANCE = journalInstanceID; 
+    C_EncounterJournal.SELECTED_INSTANCE = journalInstanceID;
+    if not C_EncounterJournal.instanceEncounterCache[C_EncounterJournal.SELECTED_INSTANCE] then EJ_BuildInstanceEncounterCache(C_EncounterJournal.SELECTED_INSTANCE) end
+    if not C_EncounterJournal.instanceLootCache[C_EncounterJournal.SELECTED_INSTANCE] then EJ_BuildInstanceLootCache(C_EncounterJournal.SELECTED_INSTANCE) end 
 end
 
 --EJ_SelectTier(index) - Selects a tier for the Encounter Journal API state.
@@ -539,7 +542,13 @@ end
 
 --EJ_GetNumLoot() - Returns the amount of loot for the currently selected instance or encounter.
 function EJ_GetNumLoot()
-    return 0;
+    if C_EncounterJournal.SELECTED_ENCOUNTER then
+        if not C_EncounterJournal.encounterLootCache[C_EncounterJournal.SELECTED_ENCOUNTER] then EJ_BuildEncounterLootCache(C_EncounterJournal.SELECTED_ENCOUNTER) end
+        return #C_EncounterJournal.encounterLootCache[C_EncounterJournal.SELECTED_ENCOUNTER];
+    end
+
+    if not C_EncounterJournal.instanceLootCache[C_EncounterJournal.SELECTED_INSTANCE] then EJ_BuildInstanceLootCache(C_EncounterJournal.SELECTED_INSTANCE) end
+    return #C_EncounterJournal.instanceLootCache[C_EncounterJournal.SELECTED_INSTANCE];
 end
 
 --EJ_IsLootListOutOfDate() - Returns whether the loot list is out of date in relation to any filters when getting new loot data.

@@ -1749,34 +1749,26 @@ end
 function EncounterJournal_SetLootButton(item)
 	local itemInfo = C_EncounterJournal.GetLootInfoByIndex(item.index);
 	if ( itemInfo and itemInfo.name ) then
-		item.name:SetText(WrapTextInColorCode(itemInfo.name, itemInfo.itemQuality));
+		item.name:SetText(itemInfo.name);
 		item.icon:SetTexture(itemInfo.icon);
-		if itemInfo.handError then
-			item.slot:SetText(INVALID_EQUIPMENT_COLOR:WrapTextInColorCode(itemInfo.slot));
-		else
-			item.slot:SetText(itemInfo.slot);
-		end
-		if itemInfo.weaponTypeError then
-			item.armorType:SetText(INVALID_EQUIPMENT_COLOR:WrapTextInColorCode(itemInfo.armorType));
-		else
-			item.armorType:SetText(itemInfo.slot);
-		end
+		item.slot:SetText(itemInfo.slot);
+		item.armorType:SetText(itemInfo.slot);
 
-		local numEncounters = EJ_GetNumEncountersForLootByIndex(item.index);
+		local numEncounters = 1 --EJ_GetNumEncountersForLootByIndex(item.index);
 		if ( numEncounters == 1 ) then
-			item.boss:SetFormattedText(BOSS_INFO_STRING, EJ_GetEncounterInfo(itemInfo.encounterID));
+			--item.boss:SetFormattedText("BOSS_INFO_STRING", EJ_GetEncounterInfo(itemInfo.encounterID));
 		elseif ( numEncounters == 2) then
 			local itemInfoSecond = C_EncounterJournal.GetLootInfoByIndex(item.index, 2);
 			local secondEncounterID = itemInfoSecond and itemInfoSecond.encounterID;
 			if ( itemInfo.encounterID and secondEncounterID ) then
-				item.boss:SetFormattedText(BOSS_INFO_STRING_TWO, EJ_GetEncounterInfo(itemInfo.encounterID), EJ_GetEncounterInfo(secondEncounterID));
+				item.boss:SetFormattedText("BOSS_INFO_STRING_TWO", EJ_GetEncounterInfo(itemInfo.encounterID), EJ_GetEncounterInfo(secondEncounterID));
 			end
 		elseif ( numEncounters > 2 ) then
-			item.boss:SetFormattedText(BOSS_INFO_STRING_MANY, EJ_GetEncounterInfo(itemInfo.encounterID));
+			item.boss:SetFormattedText("BOSS_INFO_STRING_MANY", EJ_GetEncounterInfo(itemInfo.encounterID));
 		end
 
 		local itemName, _, quality = GetItemInfo(itemInfo.link);
-		SetItemButtonQuality(item, quality, itemInfo.link);
+		--SetItemButtonQuality(item, quality, itemInfo.link);
 	else
 		item.name:SetText("RETRIEVING_ITEM_INFO");
 		item.icon:SetTexture("Interface\\Icons\\INV_Misc_QuestionMark");
