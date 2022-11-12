@@ -2,7 +2,7 @@ C_EncounterJournal = {
     TOTAL_TIERS = 3,
     SELECTED_TIER = 1,
     SELECTED_DIFFICULTY = 2,
-    SELECTED_ENCOUNTER = 0,
+    SELECTED_ENCOUNTER = nil,
     SELECTED_INSTANCE = 0,
     SELECTED_ENCOUNTER_TAB = 1,
     LOOT_FILTER = 0,
@@ -103,6 +103,15 @@ local function EJ_BuildInstanceLootCache(journalInstanceID)
     end
 end
 
+local function EJ_BuildEncounterLootCache(encounterID)
+    C_EncounterJournal.encounterLootCache[encounterID] = {};
+    for _, i in ipairs(EJ_ItemsDB) do
+        if i[2] == encounterID then
+            tinsert(C_EncounterJournal.encounterLootCache[encounterID], i[3]);
+        end
+    end
+end
+
 local function EJ_BuildInstanceEncounterCache(journalInstanceID)
     C_EncounterJournal.instanceEncounterCache[journalInstanceID] = {};
     for _, v in ipairs(EJ_EncounterDB) do
@@ -197,6 +206,47 @@ end
 
 --
 function C_EncounterJournal.GetLootInfoByIndex(index, encounterIndex)
+    encounterIndex = encounterIndex or C_EncounterJournal.SELECTED_ENCOUNTER;
+    local info = {};
+
+    info = {
+        itemID = 0;
+        encounterId = C_EncounterJournal.SELECTED_ENCOUNTER;
+        name = "";
+        itemQuality = "";
+        filterType = "";
+        icon = "";
+        slot = "";
+        armorType = "";
+        link = "";
+    }
+
+    if encounterIndex then
+        if not C_EncounterJournal.encounterLootCache[encounterIndex] then EJ_BuildEncounterLootCache(encounterIndex) end;
+        if index <= #C_EncounterJournal.encounterLootCache[encounterIndex] then
+            info.itemID = C_EncounterJournal.encounterLootCache[encounterIndex][index];
+            local itemName, itemLink, itemQuality, _, _, _, itemSubType, _, itemEquipLoc, itemIcon = GetItemInfo(info.itemID);
+            info.name = itemName;
+            info.itemQuality = itemQuality;
+            info.icon = itemIcon;
+            info.slot = itemEquipLoc;
+            info.armorType = itemSubType
+            info.link = itemLink;
+        end
+    else
+        if index <= #C_EncounterJournal.instanceLootCache[C_EncounterJournal.SELECTED_INSTANCE] then
+            info.itemID = C_EncounterJournal.instanceLootCache[C_EncounterJournal.SELECTED_INSTANCE][index][3];
+            local itemName, itemLink, itemQuality, _, _, _, itemSubType, _, itemEquipLoc, itemIcon = GetItemInfo(info.itemID);
+            info.name = itemName;
+            info.itemQuality = itemQuality;
+            info.icon = itemIcon;
+            info.slot = itemEquipLoc;
+            info.armorType = itemSubType
+            info.link = itemLink;
+        end
+    end
+
+    return info;
 end
 
 --
@@ -445,6 +495,7 @@ end
 
 --EJ_SelectInstance(journalInstanceID) - Selects an instance for the Encounter Journal API state.
 function EJ_SelectInstance(journalInstanceID)
+    C_EncounterJournal.SELECTED_ENCOUNTER = nil;
     C_EncounterJournal.SELECTED_INSTANCE = journalInstanceID; 
 end
 
