@@ -17,16 +17,16 @@ DifficultyUtil.ID = {
 local DIFFICULTY_NAMES =
 {
 	[DifficultyUtil.ID.None] = "None";
-	[DifficultyUtil.ID.DungeonNormal] = "Normal Dungeon",
-	[DifficultyUtil.ID.DungeonHeroic] = "Heroic Dungeon",
-	[DifficultyUtil.ID.DungeonMythic] = "Mythic Dungeon",
-	[DifficultyUtil.ID.RaidNormal] = "Normal Raid",
-	[DifficultyUtil.ID.RaidHeroic] = "Heroic Raid",
-	[DifficultyUtil.ID.RaidMythic] = "Mythic Raid",
-	[DifficultyUtil.ID.RaidAscended] = "Ascended Raid",
-	[DifficultyUtil.ID.DungeonPlus] = "Mythic+ Dungeon",
-	[DifficultyUtil.ID.DungeonTimewalker] = "Timewalking Dungeon",
-	[DifficultyUtil.ID.RaidTimewalker] = "Timewalking Raid",
+	[DifficultyUtil.ID.DungeonNormal] = "Normal",
+	[DifficultyUtil.ID.DungeonHeroic] = "Heroic",
+	[DifficultyUtil.ID.DungeonMythic] = "Mythic",
+	[DifficultyUtil.ID.RaidNormal] = "Normal",
+	[DifficultyUtil.ID.RaidHeroic] = "Heroic",
+	[DifficultyUtil.ID.RaidMythic] = "Mythic",
+	[DifficultyUtil.ID.RaidAscended] = "Ascended",
+	[DifficultyUtil.ID.DungeonPlus] = "Mythic+",
+	[DifficultyUtil.ID.DungeonTimewalker] = "Timewalking",
+	[DifficultyUtil.ID.RaidTimewalker] = "Timewalking",
 }
 
 local PRIMARY_RAIDS = { DifficultyUtil.ID.RaidNormal, DifficultyUtil.ID.RaidHeroic, DifficultyUtil.ID.RaidMythic, DifficultyUtil.ID.RaidAscended };
@@ -48,16 +48,11 @@ function DifficultyUtil.GetNextPrimaryRaidDifficultyID(difficultyID)
 	return nil;
 end
 
-local difficultyToMaxPlayersMap = { };
-function DifficultyUtil.GetMaxPlayers(difficultyID)
-	local maxPlayers = difficultyToMaxPlayersMap[difficultyID];
-	if not maxPlayers then
-		if (difficultyID == DifficultyUtil.ID.DungeonNormal) or (difficultyID == DifficultyUtil.ID.DungeonHeroic) or (difficultyID == DifficultyUtil.ID.DungeonMythic) then
-			maxPlayers = 5;
-		else
-			maxPlayers = 25;
-		end
-		difficultyToMaxPlayersMap[difficultyID] = maxPlayers;
+DifficultyUtil.difficultyToMaxPlayersMap = { };
+function DifficultyUtil:GetMaxPlayers(difficultyID)
+	if (difficultyID == self.ID.DungeonNormal) or (difficultyID == self.ID.DungeonHeroic) or (difficultyID == self.ID.DungeonMythic) then
+		return 5;
+	else
+		return 25;
 	end
-	return maxPlayers;
 end

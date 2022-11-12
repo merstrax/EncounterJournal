@@ -81,7 +81,7 @@ local function IsEJDifficulty(difficultyID)
 end
 
 local function GetEJDifficultySize(difficultyID)
-	return DifficultyUtil.GetMaxPlayers(difficultyID);
+	return DifficultyUtil:GetMaxPlayers(difficultyID);
 end
 
 local function GetEJDifficultyString(difficultyID)
@@ -1961,12 +1961,11 @@ end
 
 function EncounterJournal_SelectDifficulty(self, value)
 	EJ_SetDifficulty(value);
-	--UIDropDownMenu_SetText(self, GetEJDifficultyString(value));
+	EncounterJournal.encounter.info.difficulty:SetText(GetEJDifficultyString(value));
 end
 
 function EncounterJournal_DifficultyInit(self, level)
 	local currDifficulty = EJ_GetDifficulty();
-	UIDropDownMenu_SetText(self, GetEJDifficultyString(currDifficulty));
 	local info = UIDropDownMenu_CreateInfo();
 	for i, difficultyID in ipairs(EJ_DIFFICULTIES) do
 		if EJ_IsValidInstanceDifficulty(difficultyID) then
@@ -1977,6 +1976,7 @@ function EncounterJournal_DifficultyInit(self, level)
 			UIDropDownMenu_AddButton(info);
 		end
 	end
+	EncounterJournal.encounter.info.difficulty:SetText(GetEJDifficultyString(currDifficulty));
 end
 
 function EJ_HideInstances(index)

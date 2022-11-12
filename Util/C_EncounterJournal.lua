@@ -1,10 +1,10 @@
 C_EncounterJournal = {
     TOTAL_TIERS = 3,
     SELECTED_TIER = 1,
-    SELECTED_DIFFICULTY = 0,
+    SELECTED_DIFFICULTY = 2,
     SELECTED_ENCOUNTER = 0,
     SELECTED_INSTANCE = 0,
-    SELECTED_ENCOUNTER_TAB = 0,
+    SELECTED_ENCOUNTER_TAB = 1,
     LOOT_FILTER = 0,
     SEARCH_TEXT = "",
     SHOW_RAID = false,
@@ -266,7 +266,7 @@ end
 
 --EJ_GetDifficulty() - Returns the currently viewed difficulty in the journal.
 function EJ_GetDifficulty()
-    return DifficultyUtil.ID.DungeonNormal;
+    return C_EncounterJournal.SELECTED_DIFFICULTY;
 end
 
 --EJ_GetEncounterInfo(encounterID) - Returns encounter info from the journal.

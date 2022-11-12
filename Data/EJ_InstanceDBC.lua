@@ -15,6 +15,7 @@ local instPlus = 4;
 local instRaid = 8;
 
 EJ_InstanceDB = {
+    {0, "", "", 0, 0, 0, 0, 0, 0, 0}, 
     {63, "Deadmines", "It is said the Deadmines' gold deposits once accounted for a third of Stormwind's treasure reserves. Amid the chaos of the First War, the mines were abandoned and later thought to be haunted, leaving them relatively untouched until the Defias Brotherhood--a group of former laborers turned brigands--claimed the labyrinth as a base of operations for its subversive activities against Stormwind.", 36, 522336, 522352, 136332, 526404, instNormal, 1581}, 
     {64, "Shadowfang Keep", "Looming over Pyrewood Village from the southern bluffs of Silverpine Forest, Shadowfang Keep casts a shadow as dark as its legacy. Sinister forces occupy these ruins, formerly the dwelling of the mad archmage Arugal's worgen. The restless shade of Baron Silverlaine lingers, while Lord Godfrey and his cabal of erstwhile Gilnean noblemen plot against their enemies both living and undead.", 33, 522342, 522358, 136357, 526410, instNormal, 0}, 
     {76, "Zul'Gurub", "Zul'Gurub was the capital of the Gurubashi jungle trolls, a tribe that once controlled the vast jungles of the south. It was here that Jin'do the Hexxer summoned the savage loa Hakkar the Soulflayer into Azeroth. Of late, these efforts have begun anew amid an alliance between the Gurubashi and Zandalar trolls that seeks to establish a unified troll empire.", 859, 522348, 522364, 136369, 526416, instRaid, 0}, 
