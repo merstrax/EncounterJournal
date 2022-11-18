@@ -1686,9 +1686,9 @@
 								</Scripts>
 							</Button>
 							<ScrollFrame name="$parentBossesScrollFrame" useParentLevel="true" parentKey="bossesScroll" inherits="UIPanelScrollFrameTemplate">
-								<Size x="363" y="382"/>
+								<Size x="340" y="382"/>
 								<Anchors>
-									<Anchor point="BOTTOMLEFT" x="25" y="1"/>
+									<Anchor point="BOTTOMLEFT" x="20" y="1"/>
 								</Anchors>
 								<Slider name="$parentScrollBar" inherits="MinimalHybridScrollBarTemplate" parentKey="scrollBar">
 									<Anchors>
@@ -1703,7 +1703,7 @@
 									<Frame name="$parentScrollChild" parentKey="child">
 										<Size x="320" y="372"/>
 										<Anchors>
-											<Anchor point="TOPLEFT" x="0" y="0"/>
+											<Anchor point="TOPLEFT" x="75" y="0"/>
 										</Anchors>
 										<Layers>
 											<Layer level="ARTWORK">
@@ -1719,7 +1719,7 @@
 										<Frames>
 											<Button name="$parentBossButton1" inherits="EncounterBossButtonTemplate">
 												<Anchors>
-													<Anchor point="TOPLEFT" x="0" y="-10"/>
+													<Anchor point="TOPLEFT" x="25" y="-10"/>
 												</Anchors>
 											</Button>
 										</Frames>
@@ -1782,9 +1782,9 @@
 								</Scripts>
 							</Button>
 							<ScrollFrame name="$parentDetailsScrollFrame" parentKey="detailsScroll" inherits="UIPanelScrollFrameTemplate">
-								<Size x="342" y="383"/>
+								<Size x="320" y="383"/>
 								<Anchors>
-									<Anchor point="BOTTOMRIGHT" x="-13" y="1"/>
+									<Anchor point="BOTTOMRIGHT" x="-30" y="1"/>
 								</Anchors>
 								<Frames>
 									<Slider name="$parentScrollBar" inherits="EncounterJournalScrollBarTemplateOld"/>
@@ -1824,9 +1824,9 @@
 								</Scripts>
 							</ScrollFrame>
 							<ScrollFrame name="$parentOverviewScrollFrame" parentKey="overviewScroll" inherits="UIPanelScrollFrameTemplate">
-								<Size x="342" y="383"/>
+								<Size x="320" y="383"/>
 								<Anchors>
-									<Anchor point="BOTTOMRIGHT" x="-13" y="1"/>
+									<Anchor point="BOTTOMRIGHT" x="-20" y="1"/>
 								</Anchors>
 								<Frames>
 									<Slider name="$parentScrollBar" inherits="EncounterJournalScrollBarTemplateOld"/>
@@ -1885,10 +1885,10 @@
 									</OnHide>
 								</Scripts>
 							</ScrollFrame>
-							<ScrollFrame name="$parentLootScrollFrame" parentKey="lootScroll" inherits="MinimalScrollListTemplate">
-								<Size x="345" y="382"/>
+							<ScrollFrame name="$parentLootScrollFrame" parentKey="lootScroll" useParentLevel="true" inherits="UIPanelScrollFrameTemplate">
+								<Size x="320" y="382"/>
 								<Anchors>
-									<Anchor point="BOTTOMRIGHT" x="-5" y="1"/>
+									<Anchor point="BOTTOMRIGHT" x="-30" y="1"/>
 								</Anchors>
 								<Frames>
 									<Frame name="$parentClassFilterClearFrame" parentKey="classClearFilter" hidden="true" enableMouse="true">
@@ -1954,7 +1954,7 @@
 											</Button>
 										</Frames>
 									</Frame>
-									<DropDownToggleButton name="$parentFilterToggle" parentKey="filter" text="GEAR_FILTER" inherits="EJButtonTemplate">
+									<DropDownToggleButton name="$parentFilterToggle" parentKey="filter" text="GEAR_FILTER" inherits="EJButtonTemplate" hidden="true">
 										<Scripts>
 											<OnMouseDown>
 												EJButtonMixin.OnMouseDown(self, button);
@@ -1966,7 +1966,7 @@
 											</OnLoad>
 										</Scripts>
 									</DropDownToggleButton>
-									<DropDownToggleButton name="$parentSlotFilterToggle" parentKey="slotFilter" text="ALL_INVENTORY_SLOTS" inherits="EJButtonTemplate">
+									<DropDownToggleButton name="$parentSlotFilterToggle" parentKey="slotFilter" text="ALL_INVENTORY_SLOTS" inherits="EJButtonTemplate" hidden="true">
 										<Anchors>
 											<Anchor point="LEFT" relativeKey="$parent.filter" relativePoint="RIGHT" x="10" y="0"/>
 										</Anchors>
@@ -1983,7 +1983,7 @@
 									</DropDownToggleButton>
 									<Frame name="$parentLootFilter" inherits="UIDropDownMenuTemplate" parentKey="lootFilter" hidden="true"/>
 									<Frame name="$parentLootSlotFilter" inherits="UIDropDownMenuTemplate" parentKey="lootSlotFilter" hidden="true"/>
-									<Slider name="$parentScrollBar" inherits="MinimalHybridScrollBarTemplate" parentKey="scrollBar">
+									<Slider name="$parentScrollBar" inherits="MinimalScrollBarTemplate" parentKey="ScrollBar">
 										<Anchors>
 											<Anchor point="TOPRIGHT" x="0" y="0"/>
 											<Anchor point="BOTTOMRIGHT" x="0" y="0"/>
@@ -1997,10 +1997,10 @@
 									<Frame name="$parentScrollChild" parentKey="scrollChild">
 										<Size x="320" y="372"/>
 										<Anchors>
-											<Anchor point="TOPLEFT" x="0" y="0"/>
+											<Anchor point="TOPLEFT" x="25" y="0"/>
 										</Anchors>
-										</Frame> 
-									</ScrollChild>
+									</Frame> 
+								</ScrollChild>
 								<Scripts>
 									<OnShow>
 										EncounterJournal_HideCreatures();

@@ -4,11 +4,9 @@
 ## Author: Merstrax (Downport)
 ## Version: 1.0
 
-Data\EJ_DBC.xml
-
-Frames\include.xml
-
 Util\DifficultyUtil.lua
+Data\EJ_DBC.xml
+Frames\include.xml
 Util\C_EncounterJournal.lua
 
 EncounterJournal.xml

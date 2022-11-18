@@ -161,6 +161,7 @@ function GetEJTierDataTableID(expansion)
 	return ExpansionEnumToEJTierDataTableId[LE_EXPANSION_CLASSIC];
 end
 
+--[[
 local SlotFilterToSlotName = {
 	[Enum.ItemSlotFilterType.Head] = INVTYPE_HEAD,
 	[Enum.ItemSlotFilterType.Neck] = INVTYPE_NECK,
@@ -178,6 +179,7 @@ local SlotFilterToSlotName = {
 	[Enum.ItemSlotFilterType.Trinket] = INVTYPE_TRINKET,
 	[Enum.ItemSlotFilterType.Other] = EJ_LOOT_SLOT_FILTER_OTHER,
 }
+]]
 
 local BOSS_LOOT_BUTTON_HEIGHT = 45;
 local INSTANCE_LOOT_BUTTON_HEIGHT = 64;
@@ -214,10 +216,12 @@ function EncounterJournal_OnLoad(self)
 
 	EncounterJournal.encounter.info.overviewTab:Click();
 
-	EncounterJournal.encounter.info.lootScroll.update = EncounterJournal_LootUpdate;
-	--EncounterJournal.encounter.info.lootScroll.ScrollBar.doNotHide = true;
-	EncounterJournal.encounter.info.lootScroll.dynamic = EncounterJournal_LootCalcScroll;
-	HybridScrollFrame_CreateButtons(self.encounter.info.lootScroll, "EncounterItemTemplate", 0, 0);
+	EncounterJournal.encounter.lootFrame = EncounterJournal.encounter.info.lootScroll.child;
+	EncounterJournal.encounter.info.lootScroll.buttons = {};
+	--EncounterJournal.encounter.info.lootScroll.update = EncounterJournal_LootUpdate;
+	EncounterJournal.encounter.info.lootScroll.ScrollBar.stepSize = 30;
+	--EncounterJournal.encounter.info.lootScroll.dynamic = EncounterJournal_LootCalcScroll;
+	--HybridScrollFrame_CreateButtons(self.encounter.info.lootScroll, "EncounterItemTemplate", 0, 0);
 
 	local homeData = {
 		name = HOME,
@@ -226,12 +230,13 @@ function EncounterJournal_OnLoad(self)
 		end,
 	}
 	NavBar_Initialize(self.navBar, "NavButtonTemplate", homeData, self.navBar.home, self.navBar.overflow);
-	UIDropDownMenu_Initialize(self.encounter.info.lootScroll.lootFilter, EncounterJournal_InitLootFilter, "MENU");
-	UIDropDownMenu_Initialize(self.encounter.info.lootScroll.lootSlotFilter, EncounterJournal_InitLootSlotFilter, "MENU");
+	--UIDropDownMenu_Initialize(self.encounter.info.lootScroll.lootFilter, EncounterJournal_InitLootFilter, "MENU");
+	--UIDropDownMenu_Initialize(self.encounter.info.lootScroll.lootSlotFilter, EncounterJournal_InitLootSlotFilter, "MENU");
 
 	-- initialize tabs
 	local instanceSelect = EncounterJournal.instanceSelect;
 	EncounterJournal.instanceSelect.scroll.ScrollBar.stepSize = 30;
+
 	local tierName = EJ_GetTierInfo(EJ_GetCurrentTier());
 	UIDropDownMenu_SetText(instanceSelect.tierDropDown, tierName);
 
@@ -428,11 +433,11 @@ function EncounterJournal_OnEvent(self, event, ...)
 		if itemID and not EJ_IsLootListOutOfDate() then
 			EncounterJournal_LootCallback(itemID);
 
-			if EncounterJournal.searchResults:IsShown() then
-				EncounterJournal_SearchUpdate();
-			elseif EncounterJouranl_IsSearchPreviewShown() then
-				EncounterJournal_UpdateSearchPreview();
-			end
+			--if EncounterJournal.searchResults:IsShown() then
+				--EncounterJournal_SearchUpdate();
+			--elseif EncounterJouranl_IsSearchPreviewShown() then
+				--EncounterJournal_UpdateSearchPreview();
+			--end
 		else
 			EncounterJournal_LootUpdate();
 		end
@@ -1752,23 +1757,9 @@ function EncounterJournal_SetLootButton(item)
 		item.name:SetText(itemInfo.name);
 		item.icon:SetTexture(itemInfo.icon);
 		item.slot:SetText(itemInfo.slot);
-		item.armorType:SetText(itemInfo.slot);
-
-		local numEncounters = 1 --EJ_GetNumEncountersForLootByIndex(item.index);
-		if ( numEncounters == 1 ) then
-			--item.boss:SetFormattedText("BOSS_INFO_STRING", EJ_GetEncounterInfo(itemInfo.encounterID));
-		elseif ( numEncounters == 2) then
-			local itemInfoSecond = C_EncounterJournal.GetLootInfoByIndex(item.index, 2);
-			local secondEncounterID = itemInfoSecond and itemInfoSecond.encounterID;
-			if ( itemInfo.encounterID and secondEncounterID ) then
-				item.boss:SetFormattedText("BOSS_INFO_STRING_TWO", EJ_GetEncounterInfo(itemInfo.encounterID), EJ_GetEncounterInfo(secondEncounterID));
-			end
-		elseif ( numEncounters > 2 ) then
-			item.boss:SetFormattedText("BOSS_INFO_STRING_MANY", EJ_GetEncounterInfo(itemInfo.encounterID));
-		end
-
+		item.armorType:SetText(itemInfo.armorType);
+		item.boss:SetText(EJ_GetEncounterInfo(itemInfo.encounterID));
 		local itemName, _, quality = GetItemInfo(itemInfo.link);
-		--SetItemButtonQuality(item, quality, itemInfo.link);
 	else
 		item.name:SetText("RETRIEVING_ITEM_INFO");
 		item.icon:SetTexture("Interface\\Icons\\INV_Misc_QuestionMark");
@@ -1786,50 +1777,58 @@ function EncounterJournal_SetLootButton(item)
 end
 
 function EncounterJournal_LootCallback(itemID)
-	local scrollFrame = EncounterJournal.encounter.info.lootScroll;
-
-	for i, item in ipairs(scrollFrame.buttons) do
-		if item.itemID == itemID and item:IsShown() then
+	local itemIndex = 1
+	local itemButton = _G["EncounterJournalEncounterFrameInfoLootItemButton"..itemIndex];
+	while itemButton do
+		if itemButton.itemID == itemID and itemButton:IsShown() then
 			EncounterJournal_SetLootButton(item, item.index);
+			break;
 		end
+		itemIndex = itemIndex + 1;
+		itemButton = _G["EncounterJournalEncounterFrameInfoLootItemButton"..itemIndex];
 	end
 end
 
 function EncounterJournal_LootUpdate()
-	EncounterJournal_UpdateFilterString();
 	local scrollFrame = EncounterJournal.encounter.info.lootScroll;
-	local offset = HybridScrollFrame_GetOffset(scrollFrame);
-	local items = scrollFrame.buttons;
-	local item, index;
-
 	local numLoot = EJ_GetNumLoot();
 	local buttonSize = BOSS_LOOT_BUTTON_HEIGHT;
 
-	for i = 1,#items do
-		item = items[i];
-		index = offset + i;
-		if index <= numLoot then
-			if (EncounterJournal.encounterID) then
-				item:SetHeight(BOSS_LOOT_BUTTON_HEIGHT);
-				item.boss:Hide();
-				item.bossTexture:Hide();
-				item.bosslessTexture:Show();
-			else
-				buttonSize = INSTANCE_LOOT_BUTTON_HEIGHT;
-				item:SetHeight(INSTANCE_LOOT_BUTTON_HEIGHT);
-				item.boss:Show();
-				item.bossTexture:Show();
-				item.bosslessTexture:Hide();
-			end
-			item.index = index;
-			EncounterJournal_SetLootButton(item);
-		else
-			item:Hide();
-		end
+	local itemIndex = 1
+	local itemButton = _G["EncounterJournalEncounterFrameInfoItemButton"..itemIndex];
+	while itemButton do
+		itemButton:Hide();
+		itemIndex = itemIndex + 1;
+		itemButton = _G["EncounterJournalEncounterFrameInfoItemButton"..itemIndex];
 	end
 
-	local totalHeight = numLoot * buttonSize;
-	HybridScrollFrame_Update(scrollFrame, totalHeight, scrollFrame:GetHeight());
+	for itemIndex = 1, numLoot do
+		local item = scrollFrame["ItemButton"..itemIndex];
+		if not item then
+			item = CreateFrame("BUTTON", scrollFrame:GetParent():GetName().."ItemButton"..itemIndex, EncounterJournal.encounter.info.lootScroll.scrollChild, "EncounterItemTemplate");
+			scrollFrame["ItemButton"..itemIndex] = item;
+			if itemIndex > 1 then
+				item:SetPoint("TOPLEFT", scrollFrame:GetParent():GetName().."ItemButton"..(itemIndex - 1), "BOTTOMLEFT", 0, -15);
+			else
+				item:SetPoint("TOPLEFT", EncounterJournal.encounter.info.lootScroll.scrollChild, "TOPLEFT", 0, -10);
+			end
+		end
+		
+		if (EncounterJournal.encounterID) then
+			item:SetHeight(BOSS_LOOT_BUTTON_HEIGHT);
+			item.boss:Hide();
+			item.bossTexture:Hide();
+			item.bosslessTexture:Show();
+		else
+			buttonSize = INSTANCE_LOOT_BUTTON_HEIGHT;
+			item:SetHeight(INSTANCE_LOOT_BUTTON_HEIGHT);
+			item.boss:Show();
+			item.bossTexture:Show();
+			item.bosslessTexture:Hide();
+		end
+		item.index = itemIndex;
+		EncounterJournal_SetLootButton(item);
+	end
 end
 
 function EncounterJournal_LootCalcScroll(offset)
@@ -1866,16 +1865,16 @@ function EncounterJournal_SetTooltip(link)
 		return;
 	end
 
-	local classID, specID = EJ_GetLootFilter();
+	--local classID, specID = EJ_GetLootFilter();
 
-	if (specID == 0) then
-		local spec = GetSpecialization();
-		if (spec and classID == select(3, UnitClass("player"))) then
-			specID = GetSpecializationInfo(spec, nil, nil, nil, UnitSex("player"));
-		else
-			specID = -1;
-		end
-	end
+	--if (specID == 0) then
+		--local spec = GetSpecialization();
+		--if (spec and classID == select(3, UnitClass("player"))) then
+			--specID = GetSpecializationInfo(spec, nil, nil, nil, UnitSex("player"));
+		--else
+			--specID = -1;
+		--end
+	--end
 
 	GameTooltip:SetAnchorType("ANCHOR_RIGHT");
 	GameTooltip:SetHyperlink(link, classID, specID);

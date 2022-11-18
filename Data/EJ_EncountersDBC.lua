@@ -27,7 +27,7 @@ EJ_EncounterDB = {
       UiMapID = 291,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 90,
@@ -42,7 +42,7 @@ EJ_EncounterDB = {
       UiMapID = 291,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 91,
@@ -57,7 +57,7 @@ EJ_EncounterDB = {
       UiMapID = 292,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 92,
@@ -72,7 +72,7 @@ EJ_EncounterDB = {
       UiMapID = 292,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 93,
@@ -87,7 +87,7 @@ EJ_EncounterDB = {
       UiMapID = 292,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 95,
@@ -102,7 +102,7 @@ EJ_EncounterDB = {
       UiMapID = 292,
       MapDisplayConditionID = 0,
       Flags = 2,
-      DifficultyMask = 14
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 96,
@@ -117,7 +117,7 @@ EJ_EncounterDB = {
       UiMapID = 310,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 97,
@@ -132,7 +132,7 @@ EJ_EncounterDB = {
       UiMapID = 311,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 98,
@@ -147,7 +147,7 @@ EJ_EncounterDB = {
       UiMapID = 310,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 99,
@@ -162,7 +162,7 @@ EJ_EncounterDB = {
       UiMapID = 313,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 100,
@@ -177,7 +177,7 @@ EJ_EncounterDB = {
       UiMapID = 315,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 175,
@@ -192,7 +192,7 @@ EJ_EncounterDB = {
       UiMapID = 337,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 176,
@@ -207,7 +207,7 @@ EJ_EncounterDB = {
       UiMapID = 337,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 177,
@@ -222,7 +222,7 @@ EJ_EncounterDB = {
       UiMapID = 337,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 178,
@@ -237,7 +237,7 @@ EJ_EncounterDB = {
       UiMapID = 337,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 179,
@@ -252,7 +252,7 @@ EJ_EncounterDB = {
       UiMapID = 337,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 180,
@@ -267,7 +267,7 @@ EJ_EncounterDB = {
       UiMapID = 337,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 181,
@@ -282,7 +282,7 @@ EJ_EncounterDB = {
       UiMapID = 337,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 184,
@@ -297,7 +297,7 @@ EJ_EncounterDB = {
       UiMapID = 337,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 185,
@@ -312,7 +312,7 @@ EJ_EncounterDB = {
       UiMapID = 337,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 186,
@@ -327,7 +327,7 @@ EJ_EncounterDB = {
       UiMapID = 333,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 187,
@@ -342,7 +342,7 @@ EJ_EncounterDB = {
       UiMapID = 333,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 188,
@@ -357,7 +357,7 @@ EJ_EncounterDB = {
       UiMapID = 333,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 189,
@@ -372,7 +372,7 @@ EJ_EncounterDB = {
       UiMapID = 333,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 190,
@@ -387,7 +387,7 @@ EJ_EncounterDB = {
       UiMapID = 333,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 191,
@@ -402,7 +402,7 @@ EJ_EncounterDB = {
       UiMapID = 333,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 368,
@@ -417,7 +417,7 @@ EJ_EncounterDB = {
       UiMapID = 221,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 369,
@@ -432,7 +432,7 @@ EJ_EncounterDB = {
       UiMapID = 242,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 370,
@@ -447,7 +447,7 @@ EJ_EncounterDB = {
       UiMapID = 242,
       MapDisplayConditionID = 0,
       Flags = 2,
-      DifficultyMask = 3
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 371,
@@ -462,7 +462,7 @@ EJ_EncounterDB = {
       UiMapID = 242,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 372,
@@ -477,7 +477,7 @@ EJ_EncounterDB = {
       UiMapID = 242,
       MapDisplayConditionID = 0,
       Flags = 2,
-      DifficultyMask = 3
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 373,
@@ -492,7 +492,7 @@ EJ_EncounterDB = {
       UiMapID = 243,
       MapDisplayConditionID = 0,
       Flags = 2,
-      DifficultyMask = 3
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 374,
@@ -507,7 +507,7 @@ EJ_EncounterDB = {
       UiMapID = 242,
       MapDisplayConditionID = 0,
       Flags = 2,
-      DifficultyMask = 3
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 375,
@@ -522,7 +522,7 @@ EJ_EncounterDB = {
       UiMapID = 243,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 376,
@@ -537,7 +537,7 @@ EJ_EncounterDB = {
       UiMapID = 242,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 377,
@@ -552,7 +552,7 @@ EJ_EncounterDB = {
       UiMapID = 242,
       MapDisplayConditionID = 0,
       Flags = 2,
-      DifficultyMask = 3
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 378,
@@ -567,7 +567,7 @@ EJ_EncounterDB = {
       UiMapID = 243,
       MapDisplayConditionID = 0,
       Flags = 2,
-      DifficultyMask = 3
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 379,
@@ -582,7 +582,7 @@ EJ_EncounterDB = {
       UiMapID = 243,
       MapDisplayConditionID = 0,
       Flags = 2,
-      DifficultyMask = 3
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 380,
@@ -597,7 +597,7 @@ EJ_EncounterDB = {
       UiMapID = 243,
       MapDisplayConditionID = 0,
       Flags = 2,
-      DifficultyMask = 3
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 381,
@@ -612,7 +612,7 @@ EJ_EncounterDB = {
       UiMapID = 243,
       MapDisplayConditionID = 0,
       Flags = 2,
-      DifficultyMask = 3
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 383,
@@ -627,7 +627,7 @@ EJ_EncounterDB = {
       UiMapID = 243,
       MapDisplayConditionID = 0,
       Flags = 2,
-      DifficultyMask = 3
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 384,
@@ -642,7 +642,7 @@ EJ_EncounterDB = {
       UiMapID = 243,
       MapDisplayConditionID = 0,
       Flags = 2,
-      DifficultyMask = 3
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 385,
@@ -657,7 +657,7 @@ EJ_EncounterDB = {
       UiMapID = 243,
       MapDisplayConditionID = 0,
       Flags = 2,
-      DifficultyMask = 3
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 386,
@@ -672,7 +672,7 @@ EJ_EncounterDB = {
       UiMapID = 243,
       MapDisplayConditionID = 0,
       Flags = 2,
-      DifficultyMask = 3
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 387,
@@ -687,7 +687,7 @@ EJ_EncounterDB = {
       UiMapID = 243,
       MapDisplayConditionID = 0,
       Flags = 2,
-      DifficultyMask = 3
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 388,
@@ -702,7 +702,7 @@ EJ_EncounterDB = {
       UiMapID = 252,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 389,
@@ -717,7 +717,7 @@ EJ_EncounterDB = {
       UiMapID = 251,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 390,
@@ -732,7 +732,7 @@ EJ_EncounterDB = {
       UiMapID = 250,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 391,
@@ -747,7 +747,7 @@ EJ_EncounterDB = {
       UiMapID = 251,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 392,
@@ -762,7 +762,7 @@ EJ_EncounterDB = {
       UiMapID = 253,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 393,
@@ -777,7 +777,7 @@ EJ_EncounterDB = {
       UiMapID = 254,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 394,
@@ -792,7 +792,7 @@ EJ_EncounterDB = {
       UiMapID = 254,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 395,
@@ -807,7 +807,7 @@ EJ_EncounterDB = {
       UiMapID = 254,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 396,
@@ -822,7 +822,7 @@ EJ_EncounterDB = {
       UiMapID = 255,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 402,
@@ -837,7 +837,7 @@ EJ_EncounterDB = {
       UiMapID = 240,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 403,
@@ -852,7 +852,7 @@ EJ_EncounterDB = {
       UiMapID = 240,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 404,
@@ -867,7 +867,7 @@ EJ_EncounterDB = {
       UiMapID = 239,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 405,
@@ -882,7 +882,7 @@ EJ_EncounterDB = {
       UiMapID = 240,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 406,
@@ -897,7 +897,7 @@ EJ_EncounterDB = {
       UiMapID = 236,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 407,
@@ -912,7 +912,7 @@ EJ_EncounterDB = {
       UiMapID = 236,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 408,
@@ -927,7 +927,7 @@ EJ_EncounterDB = {
       UiMapID = 237,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 409,
@@ -942,7 +942,7 @@ EJ_EncounterDB = {
       UiMapID = 238,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 410,
@@ -957,7 +957,7 @@ EJ_EncounterDB = {
       UiMapID = 238,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 411,
@@ -972,7 +972,7 @@ EJ_EncounterDB = {
       UiMapID = 235,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 412,
@@ -987,7 +987,7 @@ EJ_EncounterDB = {
       UiMapID = 235,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 413,
@@ -1002,7 +1002,7 @@ EJ_EncounterDB = {
       UiMapID = 235,
       MapDisplayConditionID = 0,
       Flags = 2,
-      DifficultyMask = 3
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 414,
@@ -1017,7 +1017,7 @@ EJ_EncounterDB = {
       UiMapID = 235,
       MapDisplayConditionID = 0,
       Flags = 2,
-      DifficultyMask = 3
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 415,
@@ -1032,7 +1032,7 @@ EJ_EncounterDB = {
       UiMapID = 235,
       MapDisplayConditionID = 0,
       Flags = 2,
-      DifficultyMask = 3
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 416,
@@ -1047,7 +1047,7 @@ EJ_EncounterDB = {
       UiMapID = 235,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 417,
@@ -1062,7 +1062,7 @@ EJ_EncounterDB = {
       UiMapID = 235,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 418,
@@ -1077,7 +1077,7 @@ EJ_EncounterDB = {
       UiMapID = 228,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 419,
@@ -1092,7 +1092,7 @@ EJ_EncounterDB = {
       UiMapID = 226,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 420,
@@ -1107,7 +1107,7 @@ EJ_EncounterDB = {
       UiMapID = 227,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 421,
@@ -1122,7 +1122,7 @@ EJ_EncounterDB = {
       UiMapID = 227,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 422,
@@ -1137,7 +1137,7 @@ EJ_EncounterDB = {
       UiMapID = 229,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 423,
@@ -1152,7 +1152,7 @@ EJ_EncounterDB = {
       UiMapID = 280,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 424,
@@ -1167,7 +1167,7 @@ EJ_EncounterDB = {
       UiMapID = 280,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 425,
@@ -1182,7 +1182,7 @@ EJ_EncounterDB = {
       UiMapID = 280,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 426,
@@ -1197,7 +1197,7 @@ EJ_EncounterDB = {
       UiMapID = 221,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 427,
@@ -1212,7 +1212,7 @@ EJ_EncounterDB = {
       UiMapID = 280,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 428,
@@ -1227,7 +1227,7 @@ EJ_EncounterDB = {
       UiMapID = 281,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 429,
@@ -1242,7 +1242,7 @@ EJ_EncounterDB = {
       UiMapID = 281,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 430,
@@ -1257,7 +1257,7 @@ EJ_EncounterDB = {
       UiMapID = 281,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 431,
@@ -1272,7 +1272,7 @@ EJ_EncounterDB = {
       UiMapID = 281,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 433,
@@ -1287,7 +1287,7 @@ EJ_EncounterDB = {
       UiMapID = 300,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 436,
@@ -1302,7 +1302,7 @@ EJ_EncounterDB = {
       UiMapID = 221,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 437,
@@ -1317,7 +1317,7 @@ EJ_EncounterDB = {
       UiMapID = 222,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 443,
@@ -1332,7 +1332,7 @@ EJ_EncounterDB = {
       UiMapID = 317,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 444,
@@ -1347,7 +1347,7 @@ EJ_EncounterDB = {
       UiMapID = 222,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 445,
@@ -1362,7 +1362,7 @@ EJ_EncounterDB = {
       UiMapID = 317,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 446,
@@ -1377,7 +1377,7 @@ EJ_EncounterDB = {
       UiMapID = 317,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 447,
@@ -1392,7 +1392,7 @@ EJ_EncounterDB = {
       UiMapID = 223,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 448,
@@ -1407,7 +1407,7 @@ EJ_EncounterDB = {
       UiMapID = 317,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 449,
@@ -1422,7 +1422,7 @@ EJ_EncounterDB = {
       UiMapID = 317,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 450,
@@ -1437,7 +1437,7 @@ EJ_EncounterDB = {
       UiMapID = 317,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 451,
@@ -1452,7 +1452,7 @@ EJ_EncounterDB = {
       UiMapID = 318,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 452,
@@ -1467,7 +1467,7 @@ EJ_EncounterDB = {
       UiMapID = 318,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 453,
@@ -1482,7 +1482,7 @@ EJ_EncounterDB = {
       UiMapID = 318,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 454,
@@ -1497,7 +1497,7 @@ EJ_EncounterDB = {
       UiMapID = 318,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 455,
@@ -1512,7 +1512,7 @@ EJ_EncounterDB = {
       UiMapID = 318,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 456,
@@ -1527,7 +1527,7 @@ EJ_EncounterDB = {
       UiMapID = 318,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 457,
@@ -1542,7 +1542,7 @@ EJ_EncounterDB = {
       UiMapID = 220,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 458,
@@ -1557,7 +1557,7 @@ EJ_EncounterDB = {
       UiMapID = 220,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 459,
@@ -1572,7 +1572,7 @@ EJ_EncounterDB = {
       UiMapID = 220,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 463,
@@ -1587,7 +1587,7 @@ EJ_EncounterDB = {
       UiMapID = 220,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 464,
@@ -1602,7 +1602,7 @@ EJ_EncounterDB = {
       UiMapID = 225,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 465,
@@ -1617,7 +1617,7 @@ EJ_EncounterDB = {
       UiMapID = 225,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 466,
@@ -1632,7 +1632,7 @@ EJ_EncounterDB = {
       UiMapID = 225,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 467,
@@ -1647,7 +1647,7 @@ EJ_EncounterDB = {
       UiMapID = 230,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 468,
@@ -1662,7 +1662,7 @@ EJ_EncounterDB = {
       UiMapID = 230,
       MapDisplayConditionID = 0,
       Flags = 8,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 469,
@@ -1677,7 +1677,7 @@ EJ_EncounterDB = {
       UiMapID = 230,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 470,
@@ -1692,7 +1692,7 @@ EJ_EncounterDB = {
       UiMapID = 230,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 471,
@@ -1707,7 +1707,7 @@ EJ_EncounterDB = {
       UiMapID = 230,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 472,
@@ -1722,7 +1722,7 @@ EJ_EncounterDB = {
       UiMapID = 230,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 473,
@@ -1737,7 +1737,7 @@ EJ_EncounterDB = {
       UiMapID = 231,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 474,
@@ -1752,7 +1752,7 @@ EJ_EncounterDB = {
       UiMapID = 279,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 475,
@@ -1767,7 +1767,7 @@ EJ_EncounterDB = {
       UiMapID = 279,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 476,
@@ -1782,7 +1782,7 @@ EJ_EncounterDB = {
       UiMapID = 279,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 477,
@@ -1797,7 +1797,7 @@ EJ_EncounterDB = {
       UiMapID = 279,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 478,
@@ -1812,7 +1812,7 @@ EJ_EncounterDB = {
       UiMapID = 279,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 479,
@@ -1827,7 +1827,7 @@ EJ_EncounterDB = {
       UiMapID = 279,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 480,
@@ -1842,7 +1842,7 @@ EJ_EncounterDB = {
       UiMapID = 279,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 481,
@@ -1857,7 +1857,7 @@ EJ_EncounterDB = {
       UiMapID = 279,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 483,
@@ -1872,7 +1872,7 @@ EJ_EncounterDB = {
       UiMapID = 219,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 484,
@@ -1887,7 +1887,7 @@ EJ_EncounterDB = {
       UiMapID = 219,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 485,
@@ -1902,7 +1902,7 @@ EJ_EncounterDB = {
       UiMapID = 219,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 486,
@@ -1917,7 +1917,7 @@ EJ_EncounterDB = {
       UiMapID = 219,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 487,
@@ -1932,7 +1932,7 @@ EJ_EncounterDB = {
       UiMapID = 219,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 489,
@@ -1947,7 +1947,7 @@ EJ_EncounterDB = {
       UiMapID = 219,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonNormal
     },
     {
       ID = 523,
@@ -1962,7 +1962,7 @@ EJ_EncounterDB = {
       UiMapID = 257,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 524,
@@ -1977,7 +1977,7 @@ EJ_EncounterDB = {
       UiMapID = 257,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 527,
@@ -1992,7 +1992,7 @@ EJ_EncounterDB = {
       UiMapID = 347,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 528,
@@ -2007,7 +2007,7 @@ EJ_EncounterDB = {
       UiMapID = 347,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 529,
@@ -2022,7 +2022,7 @@ EJ_EncounterDB = {
       UiMapID = 347,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 530,
@@ -2037,7 +2037,7 @@ EJ_EncounterDB = {
       UiMapID = 349,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 531,
@@ -2052,7 +2052,7 @@ EJ_EncounterDB = {
       UiMapID = 349,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 532,
@@ -2067,7 +2067,7 @@ EJ_EncounterDB = {
       UiMapID = 348,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 533,
@@ -2082,7 +2082,7 @@ EJ_EncounterDB = {
       UiMapID = 348,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 534,
@@ -2097,7 +2097,7 @@ EJ_EncounterDB = {
       UiMapID = 272,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 535,
@@ -2112,7 +2112,7 @@ EJ_EncounterDB = {
       UiMapID = 272,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 536,
@@ -2142,7 +2142,7 @@ EJ_EncounterDB = {
       UiMapID = 272,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 538,
@@ -2157,7 +2157,7 @@ EJ_EncounterDB = {
       UiMapID = 274,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 539,
@@ -2172,7 +2172,7 @@ EJ_EncounterDB = {
       UiMapID = 274,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 540,
@@ -2187,7 +2187,7 @@ EJ_EncounterDB = {
       UiMapID = 274,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 541,
@@ -2202,7 +2202,7 @@ EJ_EncounterDB = {
       UiMapID = 258,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 542,
@@ -2232,7 +2232,7 @@ EJ_EncounterDB = {
       UiMapID = 259,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 544,
@@ -2247,7 +2247,7 @@ EJ_EncounterDB = {
       UiMapID = 260,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 545,
@@ -2262,7 +2262,7 @@ EJ_EncounterDB = {
       UiMapID = 260,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 546,
@@ -2277,7 +2277,7 @@ EJ_EncounterDB = {
       UiMapID = 260,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 547,
@@ -2292,7 +2292,7 @@ EJ_EncounterDB = {
       UiMapID = 260,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 548,
@@ -2307,7 +2307,7 @@ EJ_EncounterDB = {
       UiMapID = 269,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 549,
@@ -2322,7 +2322,7 @@ EJ_EncounterDB = {
       UiMapID = 270,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 550,
@@ -2337,7 +2337,7 @@ EJ_EncounterDB = {
       UiMapID = 270,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 551,
@@ -2352,7 +2352,7 @@ EJ_EncounterDB = {
       UiMapID = 271,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 552,
@@ -2367,7 +2367,7 @@ EJ_EncounterDB = {
       UiMapID = 273,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 553,
@@ -2382,7 +2382,7 @@ EJ_EncounterDB = {
       UiMapID = 273,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 554,
@@ -2397,7 +2397,7 @@ EJ_EncounterDB = {
       UiMapID = 273,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 555,
@@ -2412,7 +2412,7 @@ EJ_EncounterDB = {
       UiMapID = 261,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 556,
@@ -2427,7 +2427,7 @@ EJ_EncounterDB = {
       UiMapID = 261,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 557,
@@ -2442,7 +2442,7 @@ EJ_EncounterDB = {
       UiMapID = 261,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 558,
@@ -2457,7 +2457,7 @@ EJ_EncounterDB = {
       UiMapID = 266,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 559,
@@ -2472,7 +2472,7 @@ EJ_EncounterDB = {
       UiMapID = 266,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 560,
@@ -2487,7 +2487,7 @@ EJ_EncounterDB = {
       UiMapID = 266,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 561,
@@ -2502,7 +2502,7 @@ EJ_EncounterDB = {
       UiMapID = 266,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 562,
@@ -2517,7 +2517,7 @@ EJ_EncounterDB = {
       UiMapID = 266,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 563,
@@ -2532,7 +2532,7 @@ EJ_EncounterDB = {
       UiMapID = 267,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 564,
@@ -2547,7 +2547,7 @@ EJ_EncounterDB = {
       UiMapID = 268,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 565,
@@ -2562,7 +2562,7 @@ EJ_EncounterDB = {
       UiMapID = 268,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 566,
@@ -2577,7 +2577,7 @@ EJ_EncounterDB = {
       UiMapID = 246,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 568,
@@ -2592,7 +2592,7 @@ EJ_EncounterDB = {
       UiMapID = 246,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 569,
@@ -2607,7 +2607,7 @@ EJ_EncounterDB = {
       UiMapID = 246,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 570,
@@ -2622,7 +2622,7 @@ EJ_EncounterDB = {
       UiMapID = 265,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 571,
@@ -2637,7 +2637,7 @@ EJ_EncounterDB = {
       UiMapID = 265,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 572,
@@ -2652,7 +2652,7 @@ EJ_EncounterDB = {
       UiMapID = 265,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 573,
@@ -2667,7 +2667,7 @@ EJ_EncounterDB = {
       UiMapID = 263,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 574,
@@ -2682,7 +2682,7 @@ EJ_EncounterDB = {
       UiMapID = 263,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 575,
@@ -2697,7 +2697,7 @@ EJ_EncounterDB = {
       UiMapID = 263,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 576,
@@ -2712,7 +2712,7 @@ EJ_EncounterDB = {
       UiMapID = 262,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 577,
@@ -2727,7 +2727,7 @@ EJ_EncounterDB = {
       UiMapID = 262,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 578,
@@ -2742,7 +2742,7 @@ EJ_EncounterDB = {
       UiMapID = 262,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 579,
@@ -2757,7 +2757,7 @@ EJ_EncounterDB = {
       UiMapID = 262,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 580,
@@ -2772,7 +2772,7 @@ EJ_EncounterDB = {
       UiMapID = 132,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 581,
@@ -2787,7 +2787,7 @@ EJ_EncounterDB = {
       UiMapID = 132,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 582,
@@ -2802,7 +2802,7 @@ EJ_EncounterDB = {
       UiMapID = 132,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 583,
@@ -2832,7 +2832,7 @@ EJ_EncounterDB = {
       UiMapID = 132,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 585,
@@ -2847,7 +2847,7 @@ EJ_EncounterDB = {
       UiMapID = 159,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 586,
@@ -2862,7 +2862,7 @@ EJ_EncounterDB = {
       UiMapID = 158,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 587,
@@ -2877,7 +2877,7 @@ EJ_EncounterDB = {
       UiMapID = 157,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 588,
@@ -2892,7 +2892,7 @@ EJ_EncounterDB = {
       UiMapID = 160,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 589,
@@ -2907,7 +2907,7 @@ EJ_EncounterDB = {
       UiMapID = 160,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 590,
@@ -2922,7 +2922,7 @@ EJ_EncounterDB = {
       UiMapID = 160,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 591,
@@ -2937,7 +2937,7 @@ EJ_EncounterDB = {
       UiMapID = 161,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 592,
@@ -2952,7 +2952,7 @@ EJ_EncounterDB = {
       UiMapID = 154,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 593,
@@ -2967,7 +2967,7 @@ EJ_EncounterDB = {
       UiMapID = 154,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 594,
@@ -2982,7 +2982,7 @@ EJ_EncounterDB = {
       UiMapID = 154,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 595,
@@ -3012,7 +3012,7 @@ EJ_EncounterDB = {
       UiMapID = 154,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 597,
@@ -3027,7 +3027,7 @@ EJ_EncounterDB = {
       UiMapID = 138,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 598,
@@ -3042,7 +3042,7 @@ EJ_EncounterDB = {
       UiMapID = 139,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 599,
@@ -3057,7 +3057,7 @@ EJ_EncounterDB = {
       UiMapID = 139,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 600,
@@ -3072,7 +3072,7 @@ EJ_EncounterDB = {
       UiMapID = 139,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 601,
@@ -3087,7 +3087,7 @@ EJ_EncounterDB = {
       UiMapID = 185,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 602,
@@ -3102,7 +3102,7 @@ EJ_EncounterDB = {
       UiMapID = 185,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 603,
@@ -3117,7 +3117,7 @@ EJ_EncounterDB = {
       UiMapID = 185,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 604,
@@ -3132,7 +3132,7 @@ EJ_EncounterDB = {
       UiMapID = 140,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 605,
@@ -3147,7 +3147,7 @@ EJ_EncounterDB = {
       UiMapID = 140,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 606,
@@ -3162,7 +3162,7 @@ EJ_EncounterDB = {
       UiMapID = 140,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 607,
@@ -3177,7 +3177,7 @@ EJ_EncounterDB = {
       UiMapID = 140,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 608,
@@ -3192,7 +3192,7 @@ EJ_EncounterDB = {
       UiMapID = 184,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 609,
@@ -3207,7 +3207,7 @@ EJ_EncounterDB = {
       UiMapID = 184,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 610,
@@ -3222,7 +3222,7 @@ EJ_EncounterDB = {
       UiMapID = 184,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 611,
@@ -3237,7 +3237,7 @@ EJ_EncounterDB = {
       UiMapID = 131,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 612,
@@ -3252,7 +3252,7 @@ EJ_EncounterDB = {
       UiMapID = 131,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 613,
@@ -3267,7 +3267,7 @@ EJ_EncounterDB = {
       UiMapID = 131,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 614,
@@ -3282,7 +3282,7 @@ EJ_EncounterDB = {
       UiMapID = 131,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 615,
@@ -3297,7 +3297,7 @@ EJ_EncounterDB = {
       UiMapID = 183,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 616,
@@ -3312,7 +3312,7 @@ EJ_EncounterDB = {
       UiMapID = 183,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 617,
@@ -3342,7 +3342,7 @@ EJ_EncounterDB = {
       UiMapID = 129,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 619,
@@ -3357,7 +3357,7 @@ EJ_EncounterDB = {
       UiMapID = 129,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 620,
@@ -3372,7 +3372,7 @@ EJ_EncounterDB = {
       UiMapID = 129,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 621,
@@ -3387,7 +3387,7 @@ EJ_EncounterDB = {
       UiMapID = 129,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 622,
@@ -3402,7 +3402,7 @@ EJ_EncounterDB = {
       UiMapID = 143,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 623,
@@ -3417,7 +3417,7 @@ EJ_EncounterDB = {
       UiMapID = 144,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 624,
@@ -3432,7 +3432,7 @@ EJ_EncounterDB = {
       UiMapID = 145,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 625,
@@ -3447,7 +3447,7 @@ EJ_EncounterDB = {
       UiMapID = 146,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 626,
@@ -3462,7 +3462,7 @@ EJ_EncounterDB = {
       UiMapID = 168,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 627,
@@ -3477,7 +3477,7 @@ EJ_EncounterDB = {
       UiMapID = 168,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 628,
@@ -3492,7 +3492,7 @@ EJ_EncounterDB = {
       UiMapID = 168,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 629,
@@ -3507,7 +3507,7 @@ EJ_EncounterDB = {
       UiMapID = 168,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 630,
@@ -3522,7 +3522,7 @@ EJ_EncounterDB = {
       UiMapID = 168,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 631,
@@ -3537,7 +3537,7 @@ EJ_EncounterDB = {
       UiMapID = 168,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 632,
@@ -3552,7 +3552,7 @@ EJ_EncounterDB = {
       UiMapID = 168,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 634,
@@ -3567,7 +3567,7 @@ EJ_EncounterDB = {
       UiMapID = 171,
       MapDisplayConditionID = 0,
       Flags = 4,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 635,
@@ -3582,7 +3582,7 @@ EJ_EncounterDB = {
       UiMapID = 171,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 636,
@@ -3597,7 +3597,7 @@ EJ_EncounterDB = {
       UiMapID = 171,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 637,
@@ -3612,7 +3612,7 @@ EJ_EncounterDB = {
       UiMapID = 171,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 638,
@@ -3627,7 +3627,7 @@ EJ_EncounterDB = {
       UiMapID = 133,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 639,
@@ -3642,7 +3642,7 @@ EJ_EncounterDB = {
       UiMapID = 134,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 640,
@@ -3657,7 +3657,7 @@ EJ_EncounterDB = {
       UiMapID = 135,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 641,
@@ -3672,7 +3672,7 @@ EJ_EncounterDB = {
       UiMapID = 136,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 642,
@@ -3687,7 +3687,7 @@ EJ_EncounterDB = {
       UiMapID = 137,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 643,
@@ -3702,7 +3702,7 @@ EJ_EncounterDB = {
       UiMapID = 137,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 659,
@@ -3717,7 +3717,7 @@ EJ_EncounterDB = {
       UiMapID = 476,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 660,
@@ -3732,7 +3732,7 @@ EJ_EncounterDB = {
       UiMapID = 431,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 663,
@@ -3747,7 +3747,7 @@ EJ_EncounterDB = {
       UiMapID = 477,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 665,
@@ -3762,7 +3762,7 @@ EJ_EncounterDB = {
       UiMapID = 477,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 666,
@@ -3777,7 +3777,7 @@ EJ_EncounterDB = {
       UiMapID = 477,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 671,
@@ -3792,7 +3792,7 @@ EJ_EncounterDB = {
       UiMapID = 436,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 674,
@@ -3822,7 +3822,7 @@ EJ_EncounterDB = {
       UiMapID = 479,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 688,
@@ -3837,7 +3837,7 @@ EJ_EncounterDB = {
       UiMapID = 435,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 694,
@@ -3852,7 +3852,7 @@ EJ_EncounterDB = {
       UiMapID = 213,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 695,
@@ -3867,7 +3867,7 @@ EJ_EncounterDB = {
       UiMapID = 213,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 696,
@@ -3882,7 +3882,7 @@ EJ_EncounterDB = {
       UiMapID = 213,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 697,
@@ -3897,7 +3897,7 @@ EJ_EncounterDB = {
       UiMapID = 213,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 728,
@@ -3927,7 +3927,7 @@ EJ_EncounterDB = {
       UiMapID = 230,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 749,
@@ -3942,7 +3942,7 @@ EJ_EncounterDB = {
       UiMapID = 317,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 833,
@@ -3972,7 +3972,7 @@ EJ_EncounterDB = {
       UiMapID = 171,
       MapDisplayConditionID = 0,
       Flags = 8,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 895,
@@ -3987,7 +3987,7 @@ EJ_EncounterDB = {
       UiMapID = 301,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 896,
@@ -4002,7 +4002,7 @@ EJ_EncounterDB = {
       UiMapID = 301,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 899,
@@ -4017,7 +4017,7 @@ EJ_EncounterDB = {
       UiMapID = 301,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 900,
@@ -4032,7 +4032,7 @@ EJ_EncounterDB = {
       UiMapID = 301,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 901,
@@ -4047,7 +4047,7 @@ EJ_EncounterDB = {
       UiMapID = 301,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 1141,
@@ -4062,7 +4062,7 @@ EJ_EncounterDB = {
       UiMapID = 300,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 1142,
@@ -4077,7 +4077,7 @@ EJ_EncounterDB = {
       UiMapID = 300,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 1143,
@@ -4092,7 +4092,7 @@ EJ_EncounterDB = {
       UiMapID = 300,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 1144,
@@ -4107,7 +4107,7 @@ EJ_EncounterDB = {
       UiMapID = 319,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 1145,
@@ -4122,7 +4122,7 @@ EJ_EncounterDB = {
       UiMapID = 319,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 1146,
@@ -4137,7 +4137,7 @@ EJ_EncounterDB = {
       UiMapID = 300,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.DungeonMythic
     },
     {
       ID = 1519,
@@ -4152,7 +4152,7 @@ EJ_EncounterDB = {
       UiMapID = 232,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1520,
@@ -4167,7 +4167,7 @@ EJ_EncounterDB = {
       UiMapID = 232,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1521,
@@ -4182,7 +4182,7 @@ EJ_EncounterDB = {
       UiMapID = 232,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1522,
@@ -4197,7 +4197,7 @@ EJ_EncounterDB = {
       UiMapID = 232,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1523,
@@ -4212,7 +4212,7 @@ EJ_EncounterDB = {
       UiMapID = 232,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1524,
@@ -4227,7 +4227,7 @@ EJ_EncounterDB = {
       UiMapID = 232,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1525,
@@ -4242,7 +4242,7 @@ EJ_EncounterDB = {
       UiMapID = 232,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1526,
@@ -4257,7 +4257,7 @@ EJ_EncounterDB = {
       UiMapID = 232,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1527,
@@ -4272,7 +4272,7 @@ EJ_EncounterDB = {
       UiMapID = 232,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1528,
@@ -4287,7 +4287,7 @@ EJ_EncounterDB = {
       UiMapID = 232,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1529,
@@ -4302,7 +4302,7 @@ EJ_EncounterDB = {
       UiMapID = 287,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1530,
@@ -4317,7 +4317,7 @@ EJ_EncounterDB = {
       UiMapID = 287,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1531,
@@ -4332,7 +4332,7 @@ EJ_EncounterDB = {
       UiMapID = 289,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1532,
@@ -4347,7 +4347,7 @@ EJ_EncounterDB = {
       UiMapID = 289,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1533,
@@ -4362,7 +4362,7 @@ EJ_EncounterDB = {
       UiMapID = 289,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1534,
@@ -4377,7 +4377,7 @@ EJ_EncounterDB = {
       UiMapID = 290,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1535,
@@ -4392,7 +4392,7 @@ EJ_EncounterDB = {
       UiMapID = 290,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1536,
@@ -4407,7 +4407,7 @@ EJ_EncounterDB = {
       UiMapID = 290,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1537,
@@ -4422,7 +4422,7 @@ EJ_EncounterDB = {
       UiMapID = 247,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1538,
@@ -4437,7 +4437,7 @@ EJ_EncounterDB = {
       UiMapID = 247,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1539,
@@ -4452,7 +4452,7 @@ EJ_EncounterDB = {
       UiMapID = 247,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1540,
@@ -4467,7 +4467,7 @@ EJ_EncounterDB = {
       UiMapID = 247,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1541,
@@ -4482,7 +4482,7 @@ EJ_EncounterDB = {
       UiMapID = 247,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1542,
@@ -4497,7 +4497,7 @@ EJ_EncounterDB = {
       UiMapID = 247,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1543,
@@ -4512,7 +4512,7 @@ EJ_EncounterDB = {
       UiMapID = 320,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1544,
@@ -4527,7 +4527,7 @@ EJ_EncounterDB = {
       UiMapID = 319,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1545,
@@ -4542,7 +4542,7 @@ EJ_EncounterDB = {
       UiMapID = 319,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1546,
@@ -4557,7 +4557,7 @@ EJ_EncounterDB = {
       UiMapID = 319,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1547,
@@ -4572,7 +4572,7 @@ EJ_EncounterDB = {
       UiMapID = 319,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1548,
@@ -4587,7 +4587,7 @@ EJ_EncounterDB = {
       UiMapID = 319,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1549,
@@ -4602,7 +4602,7 @@ EJ_EncounterDB = {
       UiMapID = 319,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1550,
@@ -4617,7 +4617,7 @@ EJ_EncounterDB = {
       UiMapID = 319,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1551,
@@ -4632,7 +4632,7 @@ EJ_EncounterDB = {
       UiMapID = 321,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1552,
@@ -4647,7 +4647,7 @@ EJ_EncounterDB = {
       UiMapID = 350,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1553,
@@ -4662,7 +4662,7 @@ EJ_EncounterDB = {
       UiMapID = 350,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1554,
@@ -4677,7 +4677,7 @@ EJ_EncounterDB = {
       UiMapID = 352,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1555,
@@ -4692,7 +4692,7 @@ EJ_EncounterDB = {
       UiMapID = 353,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1556,
@@ -4707,7 +4707,7 @@ EJ_EncounterDB = {
       UiMapID = 353,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1557,
@@ -4722,7 +4722,7 @@ EJ_EncounterDB = {
       UiMapID = 358,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1559,
@@ -4737,7 +4737,7 @@ EJ_EncounterDB = {
       UiMapID = 359,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1560,
@@ -4752,7 +4752,7 @@ EJ_EncounterDB = {
       UiMapID = 360,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1561,
@@ -4767,7 +4767,7 @@ EJ_EncounterDB = {
       UiMapID = 362,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1562,
@@ -4782,7 +4782,7 @@ EJ_EncounterDB = {
       UiMapID = 363,
       MapDisplayConditionID = 0,
       Flags = 4,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1563,
@@ -4797,7 +4797,7 @@ EJ_EncounterDB = {
       UiMapID = 366,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1564,
@@ -4812,7 +4812,7 @@ EJ_EncounterDB = {
       UiMapID = 330,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1565,
@@ -4827,7 +4827,7 @@ EJ_EncounterDB = {
       UiMapID = 330,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1566,
@@ -4842,7 +4842,7 @@ EJ_EncounterDB = {
       UiMapID = 331,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1567,
@@ -4857,7 +4857,7 @@ EJ_EncounterDB = {
       UiMapID = 332,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1568,
@@ -4872,7 +4872,7 @@ EJ_EncounterDB = {
       UiMapID = 332,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1569,
@@ -4887,7 +4887,7 @@ EJ_EncounterDB = {
       UiMapID = 332,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1570,
@@ -4902,7 +4902,7 @@ EJ_EncounterDB = {
       UiMapID = 332,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1571,
@@ -4917,7 +4917,7 @@ EJ_EncounterDB = {
       UiMapID = 332,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1572,
@@ -4932,7 +4932,7 @@ EJ_EncounterDB = {
       UiMapID = 332,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1573,
@@ -4947,7 +4947,7 @@ EJ_EncounterDB = {
       UiMapID = 334,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1574,
@@ -4962,7 +4962,7 @@ EJ_EncounterDB = {
       UiMapID = 334,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1575,
@@ -4977,7 +4977,7 @@ EJ_EncounterDB = {
       UiMapID = 334,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1576,
@@ -4992,7 +4992,7 @@ EJ_EncounterDB = {
       UiMapID = 334,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1577,
@@ -5007,7 +5007,7 @@ EJ_EncounterDB = {
       UiMapID = 329,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1578,
@@ -5022,7 +5022,7 @@ EJ_EncounterDB = {
       UiMapID = 329,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1579,
@@ -5037,7 +5037,7 @@ EJ_EncounterDB = {
       UiMapID = 329,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1580,
@@ -5052,7 +5052,7 @@ EJ_EncounterDB = {
       UiMapID = 329,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1581,
@@ -5067,7 +5067,7 @@ EJ_EncounterDB = {
       UiMapID = 329,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1582,
@@ -5082,7 +5082,7 @@ EJ_EncounterDB = {
       UiMapID = 340,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1583,
@@ -5097,7 +5097,7 @@ EJ_EncounterDB = {
       UiMapID = 339,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1584,
@@ -5112,7 +5112,7 @@ EJ_EncounterDB = {
       UiMapID = 341,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1585,
@@ -5127,7 +5127,7 @@ EJ_EncounterDB = {
       UiMapID = 343,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1586,
@@ -5142,7 +5142,7 @@ EJ_EncounterDB = {
       UiMapID = 342,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1587,
@@ -5157,7 +5157,7 @@ EJ_EncounterDB = {
       UiMapID = 342,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1588,
@@ -5172,7 +5172,7 @@ EJ_EncounterDB = {
       UiMapID = 344,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1589,
@@ -5187,7 +5187,7 @@ EJ_EncounterDB = {
       UiMapID = 345,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1590,
@@ -5202,7 +5202,7 @@ EJ_EncounterDB = {
       UiMapID = 346,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1591,
@@ -5217,7 +5217,7 @@ EJ_EncounterDB = {
       UiMapID = 335,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1592,
@@ -5232,7 +5232,7 @@ EJ_EncounterDB = {
       UiMapID = 335,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1593,
@@ -5247,7 +5247,7 @@ EJ_EncounterDB = {
       UiMapID = 335,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1594,
@@ -5262,7 +5262,7 @@ EJ_EncounterDB = {
       UiMapID = 335,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1595,
@@ -5277,7 +5277,7 @@ EJ_EncounterDB = {
       UiMapID = 336,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1596,
@@ -5292,7 +5292,7 @@ EJ_EncounterDB = {
       UiMapID = 336,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1597,
@@ -5307,7 +5307,7 @@ EJ_EncounterDB = {
       UiMapID = 156,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1598,
@@ -5322,7 +5322,7 @@ EJ_EncounterDB = {
       UiMapID = 156,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1599,
@@ -5337,7 +5337,7 @@ EJ_EncounterDB = {
       UiMapID = 156,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1600,
@@ -5352,7 +5352,7 @@ EJ_EncounterDB = {
       UiMapID = 156,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1601,
@@ -5367,7 +5367,7 @@ EJ_EncounterDB = {
       UiMapID = 163,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1602,
@@ -5382,7 +5382,7 @@ EJ_EncounterDB = {
       UiMapID = 163,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1603,
@@ -5397,7 +5397,7 @@ EJ_EncounterDB = {
       UiMapID = 163,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1604,
@@ -5412,7 +5412,7 @@ EJ_EncounterDB = {
       UiMapID = 165,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1605,
@@ -5427,7 +5427,7 @@ EJ_EncounterDB = {
       UiMapID = 165,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1606,
@@ -5442,7 +5442,7 @@ EJ_EncounterDB = {
       UiMapID = 165,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1607,
@@ -5457,7 +5457,7 @@ EJ_EncounterDB = {
       UiMapID = 164,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1608,
@@ -5472,7 +5472,7 @@ EJ_EncounterDB = {
       UiMapID = 164,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1609,
@@ -5487,7 +5487,7 @@ EJ_EncounterDB = {
       UiMapID = 164,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1610,
@@ -5502,7 +5502,7 @@ EJ_EncounterDB = {
       UiMapID = 162,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1611,
@@ -5517,7 +5517,7 @@ EJ_EncounterDB = {
       UiMapID = 162,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1612,
@@ -5532,7 +5532,7 @@ EJ_EncounterDB = {
       UiMapID = 162,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1613,
@@ -5547,7 +5547,7 @@ EJ_EncounterDB = {
       UiMapID = 162,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1614,
@@ -5562,7 +5562,7 @@ EJ_EncounterDB = {
       UiMapID = 167,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1615,
@@ -5577,7 +5577,7 @@ EJ_EncounterDB = {
       UiMapID = 167,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1616,
@@ -5592,7 +5592,7 @@ EJ_EncounterDB = {
       UiMapID = 155,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1617,
@@ -5607,7 +5607,7 @@ EJ_EncounterDB = {
       UiMapID = 141,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1618,
@@ -5622,7 +5622,7 @@ EJ_EncounterDB = {
       UiMapID = 172,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1619,
@@ -5637,7 +5637,7 @@ EJ_EncounterDB = {
       UiMapID = 172,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1620,
@@ -5652,7 +5652,7 @@ EJ_EncounterDB = {
       UiMapID = 172,
       MapDisplayConditionID = 0,
       Flags = 8,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1621,
@@ -5667,7 +5667,7 @@ EJ_EncounterDB = {
       UiMapID = 172,
       MapDisplayConditionID = 0,
       Flags = 4,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1622,
@@ -5682,7 +5682,7 @@ EJ_EncounterDB = {
       UiMapID = 172,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1623,
@@ -5697,7 +5697,7 @@ EJ_EncounterDB = {
       UiMapID = 173,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1624,
@@ -5712,7 +5712,7 @@ EJ_EncounterDB = {
       UiMapID = 186,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1625,
@@ -5727,7 +5727,7 @@ EJ_EncounterDB = {
       UiMapID = 186,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1626,
@@ -5742,7 +5742,7 @@ EJ_EncounterDB = {
       UiMapID = 187,
       MapDisplayConditionID = 0,
       Flags = 4,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1627,
@@ -5757,7 +5757,7 @@ EJ_EncounterDB = {
       UiMapID = 187,
       MapDisplayConditionID = 0,
       Flags = 8,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1628,
@@ -5772,7 +5772,7 @@ EJ_EncounterDB = {
       UiMapID = 188,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1629,
@@ -5787,7 +5787,7 @@ EJ_EncounterDB = {
       UiMapID = 190,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1630,
@@ -5802,7 +5802,7 @@ EJ_EncounterDB = {
       UiMapID = 190,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1631,
@@ -5817,7 +5817,7 @@ EJ_EncounterDB = {
       UiMapID = 190,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1632,
@@ -5832,7 +5832,7 @@ EJ_EncounterDB = {
       UiMapID = 190,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1633,
@@ -5847,7 +5847,7 @@ EJ_EncounterDB = {
       UiMapID = 191,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1634,
@@ -5862,7 +5862,7 @@ EJ_EncounterDB = {
       UiMapID = 190,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1635,
@@ -5877,7 +5877,7 @@ EJ_EncounterDB = {
       UiMapID = 189,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1636,
@@ -5892,7 +5892,7 @@ EJ_EncounterDB = {
       UiMapID = 192,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1637,
@@ -5907,7 +5907,7 @@ EJ_EncounterDB = {
       UiMapID = 147,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1638,
@@ -5922,7 +5922,7 @@ EJ_EncounterDB = {
       UiMapID = 147,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1639,
@@ -5937,7 +5937,7 @@ EJ_EncounterDB = {
       UiMapID = 147,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1640,
@@ -5952,7 +5952,7 @@ EJ_EncounterDB = {
       UiMapID = 147,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1641,
@@ -5967,7 +5967,7 @@ EJ_EncounterDB = {
       UiMapID = 148,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1642,
@@ -5982,7 +5982,7 @@ EJ_EncounterDB = {
       UiMapID = 148,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1643,
@@ -5997,7 +5997,7 @@ EJ_EncounterDB = {
       UiMapID = 149,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1644,
@@ -6012,7 +6012,7 @@ EJ_EncounterDB = {
       UiMapID = 149,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1645,
@@ -6027,7 +6027,7 @@ EJ_EncounterDB = {
       UiMapID = 149,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1646,
@@ -6042,7 +6042,7 @@ EJ_EncounterDB = {
       UiMapID = 149,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1647,
@@ -6057,7 +6057,7 @@ EJ_EncounterDB = {
       UiMapID = 151,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1648,
@@ -6072,7 +6072,7 @@ EJ_EncounterDB = {
       UiMapID = 150,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1649,
@@ -6087,7 +6087,7 @@ EJ_EncounterDB = {
       UiMapID = 150,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1650,
@@ -6117,7 +6117,7 @@ EJ_EncounterDB = {
       UiMapID = 248,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1652,
@@ -6132,7 +6132,7 @@ EJ_EncounterDB = {
       UiMapID = 200,
       MapDisplayConditionID = 0,
       Flags = 0,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     },
     {
       ID = 1764,
@@ -6147,6 +6147,6 @@ EJ_EncounterDB = {
       UiMapID = 363,
       MapDisplayConditionID = 0,
       Flags = 8,
-      DifficultyMask = -1
+      DifficultyMask = DifficultyUtil.ID.RaidAscended
     }
   }

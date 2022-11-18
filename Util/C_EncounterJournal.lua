@@ -10,6 +10,52 @@ C_EncounterJournal = {
     SHOW_RAID = false,
 };
 
+local COLOR = {
+    [1] = "|cff999999", --Trash
+    [2] = "|cffFFFFFF", --Common
+    [3] = "|cff1eff00", --Uncommon
+    [4] = "|cff0070dd", --Rare
+    [5] = "|cff9F3FFF", --Epic
+    [6] = "|cffFF8400", --Legendary
+    [7] = "", --Artifact?
+    [8] = "", --Heirloom?
+    [9] = "", --idk? just in case?
+    ERROR = "|cffff0000";
+    DEFAULT = "|cffFFd200";
+}
+
+local SLOT_STRINGS = {
+    ["INVTYPE_NON_EQUIP"] = "none",
+    ["INVTYPE_HEAD"] = "Head",
+    ["INVTYPE_NECK"] = "Neck",
+    ["INVTYPE_SHOULDER"] = "Shoulder",
+    ["INVTYPE_BODY"] = "Body",
+    ["INVTYPE_CHEST"] = "Chest",
+    ["INVTYPE_WAIST"] = "Waist",
+    ["INVTYPE_LEGS"] = "Legs",
+    ["INVTYPE_FEET"] = "Feet",
+    ["INVTYPE_WRIST"] = "Wrist",
+    ["INVTYPE_HAND"] = "Hand",
+    ["INVTYPE_FINGER"] = "Ring",
+    ["INVTYPE_TRINKET"] = "Trinket",
+    ["INVTYPE_WEAPON"] = "Weapon",
+    ["INVTYPE_SHIELD"] = "Shield",
+    ["INVTYPE_RANGED"] = "Ranged",
+    ["INVTYPE_CLOAK"] = "Cloak",
+    ["INVTYPE_2HWEAPON"] = "Weapon",
+    ["INVTYPE_BAG"] = "Bag",
+    ["INVTYPE_TABARD"] = "Tabard",
+    ["INVTYPE_ROBE"] = "Robe",
+    ["INVTYPE_WEAPONMAINHAND"] = "Weapon",
+    ["INVTYPE_WEAPONOFFHAND"] = "Weapon",
+    ["INVTYPE_HOLDABLE"] = "Held in Off-Hand",
+    ["INVTYPE_AMMO"] = "Ammo",
+    ["INVTYPE_THROWN"] = "Thrown",
+    ["INVTYPE_RANGEDRIGHT"] = "Wand",
+    ["INVTYPE_QUIVER"] = "Quiver",
+    ["INVTYPE_RELIC"] = "Relic"
+};
+--[[
 Enum.ItemSlotFilterType = {};
 Enum.ItemSlotFilterType.Head = 1;
 Enum.ItemSlotFilterType.Neck = 2;
@@ -26,7 +72,7 @@ Enum.ItemSlotFilterType.OffHand = 12;
 Enum.ItemSlotFilterType.Finger = 13;
 Enum.ItemSlotFilterType.Trinket = 14;
 Enum.ItemSlotFilterType.Other = 15;
-
+]]
 local ExpansionInfo = {
     [1] = {"Classic", ""},
     [2] = {"The Burning Crusade", ""},
@@ -81,6 +127,7 @@ local function EJ_BuildTierInstanceCache(index)
 end
 
 local function EJ_CacheEncounterInfo(encounterInfo)
+    if not encounterInfo then return end
     if C_EncounterJournal.encounterInfoCache[encounterInfo.ID] then return encounterInfo.ID end
 
     C_EncounterJournal.encounterInfoCache[encounterInfo.ID] = {
@@ -92,6 +139,7 @@ local function EJ_CacheEncounterInfo(encounterInfo)
 end
 
 local function EJ_BuildInstanceEncounterCache(journalInstanceID)
+    if not journalInstanceID then return end
     C_EncounterJournal.instanceEncounterCache[journalInstanceID] = {};
     for _, v in ipairs(EJ_EncounterDB) do
         if v.JournalInstanceID == journalInstanceID then
@@ -103,12 +151,13 @@ local function EJ_BuildInstanceEncounterCache(journalInstanceID)
 end
 
 local function EJ_BuildInstanceLootCache(journalInstanceID)
+    if not journalInstanceID then return end
     C_EncounterJournal.instanceLootCache[journalInstanceID] = {};
     
     if not C_EncounterJournal.instanceEncounterCache[journalInstanceID] then EJ_BuildInstanceEncounterCache(journalInstanceID) end;
     for _, v in ipairs(C_EncounterJournal.instanceEncounterCache[journalInstanceID]) do
         for _, i in ipairs(EJ_ItemsDB) do
-            if i[2] == v.InfoCacheID then
+            if i[2] == v.InfoCacheID and i[6] < 2 then
                 tinsert(C_EncounterJournal.instanceLootCache[journalInstanceID], i);
             end
         end
@@ -116,9 +165,10 @@ local function EJ_BuildInstanceLootCache(journalInstanceID)
 end
 
 local function EJ_BuildEncounterLootCache(encounterID)
+    if not encounterID then return end;
     C_EncounterJournal.encounterLootCache[encounterID] = {};
     for _, i in ipairs(EJ_ItemsDB) do
-        if i[2] == encounterID then
+        if i[2] == encounterID and i[6] < 2 then
             tinsert(C_EncounterJournal.encounterLootCache[encounterID], i[3]);
         end
     end
@@ -179,7 +229,9 @@ function C_EncounterJournal.InstanceHasLoot(journalInstanceID)
     journalInstanceID = journalInstanceID or C_EncounterJournal.SELECTED_INSTANCE
     if C_EncounterJournal.instanceEncounterCache[journalInstanceID] == nil then
         EJ_BuildInstanceEncounterCache(journalInstanceID);
-    elseif C_EncounterJournal.instanceLootCache[journalInstanceID] == nil then
+    end
+
+    if C_EncounterJournal.instanceLootCache[journalInstanceID] == nil then
         EJ_BuildInstanceLootCache(journalInstanceID)
     end
 
@@ -207,12 +259,13 @@ end
 --
 function C_EncounterJournal.GetLootInfoByIndex(index, encounterIndex)
     encounterIndex = encounterIndex or C_EncounterJournal.SELECTED_ENCOUNTER;
+
     local info = {};
 
     info = {
         itemID = 0;
         encounterId = C_EncounterJournal.SELECTED_ENCOUNTER;
-        name = "";
+        name = nil;
         itemQuality = "";
         filterType = "";
         icon = "";
@@ -221,28 +274,43 @@ function C_EncounterJournal.GetLootInfoByIndex(index, encounterIndex)
         link = "";
     }
 
+    if not index then return info end
+
     if encounterIndex then
         if not C_EncounterJournal.encounterLootCache[encounterIndex] then EJ_BuildEncounterLootCache(encounterIndex) end;
         if index <= #C_EncounterJournal.encounterLootCache[encounterIndex] then
             info.itemID = C_EncounterJournal.encounterLootCache[encounterIndex][index];
-            local itemName, itemLink, itemQuality, _, _, _, itemSubType, _, itemEquipLoc, itemIcon = GetItemInfo(info.itemID);
-            info.name = itemName;
-            info.itemQuality = itemQuality;
-            info.icon = itemIcon;
-            info.slot = itemEquipLoc;
-            info.armorType = itemSubType
-            info.link = itemLink;
+            local item = Item:CreateFromID(info.itemID);
+            local name = item:GetInfo();
+            if not name then
+                item:ContinueOnLoad(function() EncounterJournal_LootCallback(info.itemID) end);
+            else
+                local itemName, itemLink, itemQuality, _, _, _, itemSubType, _, itemEquipLoc, itemIcon = item:GetInfo();
+                info.name = COLOR[itemQuality + 1]..itemName..COLOR.DEFAULT;
+                info.itemQuality = itemQuality;
+                info.icon = itemIcon;
+                info.slot = SLOT_STRINGS[itemEquipLoc];
+                info.armorType = itemSubType
+                info.link = itemLink;
+            end
         end
     else
         if index <= #C_EncounterJournal.instanceLootCache[C_EncounterJournal.SELECTED_INSTANCE] then
             info.itemID = C_EncounterJournal.instanceLootCache[C_EncounterJournal.SELECTED_INSTANCE][index][3];
-            local itemName, itemLink, itemQuality, _, _, _, itemSubType, _, itemEquipLoc, itemIcon = GetItemInfo(info.itemID);
-            info.name = itemName;
-            info.itemQuality = itemQuality;
-            info.icon = itemIcon;
-            info.slot = itemEquipLoc;
-            info.armorType = itemSubType
-            info.link = itemLink;
+            local item = Item:CreateFromID(info.itemID);
+            local name = item:GetInfo();
+            if not name then
+                print(name);
+                item:ContinueOnLoad(function() EncounterJournal_LootCallback(info.itemID) end);
+            else
+                local itemName, itemLink, itemQuality, _, _, _, itemSubType, _, itemEquipLoc, itemIcon = item:GetInfo();
+                info.name = COLOR[itemQuality + 1]..itemName;
+                info.itemQuality = itemQuality;
+                info.icon = itemIcon;
+                info.slot = SLOT_STRINGS[itemEquipLoc];
+                info.armorType = itemSubType
+                info.link = itemLink;
+            end
         end
     end
 
@@ -282,8 +350,7 @@ end
 --EJ_GetCreatureInfo(index [, encounterID]) - Returns encounter boss info.
 function EJ_GetCreatureInfo(index, encounterID)
     local MAX_INDEX = 9;
-
-    index = math.min(MAX_INDEX, index);
+    index = math.min(MAX_INDEX, index or 1);
     encounterID = encounterID or C_EncounterJournal.SELECTED_ENCOUNTER
 
     local info = {0, "", "", 0, 0, 0, 0, 0};
@@ -321,6 +388,8 @@ end
 
 --EJ_GetEncounterInfo(encounterID) - Returns encounter info from the journal.
 function EJ_GetEncounterInfo(encounterID)
+    if not encounterID then return nil end
+
     if C_EncounterJournal.encounterInfoCache[encounterID] then return C_EncounterJournal.encounterInfoCache[encounterID] end
 
     C_EncounterJournal.encounterInfoCache[encounterID] = {"", "", 0, 0, "", 0, 0, 0};
@@ -346,6 +415,8 @@ end
 --EJ_GetEncounterInfoByIndex(index [, journalInstanceID]) - idem
 function EJ_GetEncounterInfoByIndex(index, journalInstanceID)
     journalInstanceID = journalInstanceID or C_EncounterJournal.SELECTED_INSTANCE;
+
+    if not index or not journalInstanceID then return nil end;
 
     if (C_EncounterJournal.instanceEncounterCache[journalInstanceID] == nil) then
         EJ_BuildInstanceEncounterCache(journalInstanceID)
@@ -376,6 +447,8 @@ local InstanceAreaID = 10;
 function EJ_GetInstanceInfo(journalInstanceID)
     journalInstanceID = journalInstanceID or C_EncounterJournal.SELECTED_INSTANCE;
 
+    if not journalInstanceID then return nil end;
+
     if(C_EncounterJournal.instanceInfoCache[journalInstanceID]) then
         local info = C_EncounterJournal.instanceInfoCache[journalInstanceID]; 
         return journalInstanceID, info[1], info[2], info[3], info[4],  info[5], info[6], info[7], info[8], info[9], info[10]  
@@ -392,6 +465,7 @@ end
 
 --EJ_GetInstanceByIndex(index, isRaid) - Returns instance info for the Encounter Journal.
 function EJ_GetInstanceByIndex(index, isRaid)
+    if not index then return nil end
     if not C_EncounterJournal.tierInstanceCache[C_EncounterJournal.SELECTED_TIER] then
         EJ_BuildTierInstanceCache(C_EncounterJournal.SELECTED_TIER);
     end
@@ -451,8 +525,8 @@ end
 
 --EJ_GetTierInfo(index) - Get some information about the encounter journal tier for index.
 function EJ_GetTierInfo(index)
-    if index < 1 then index = 1 end
-    if index > 3 then index = 3 end
+    --index = index or 1;
+    index = math.min(3, math.max(index or 1, 1));
     return ExpansionInfo[index][1], ExpansionInfo[index][2];
 end
 
@@ -472,6 +546,8 @@ end
 
 --EJ_IsValidInstanceDifficulty(difficultyID) - Returns whether the difficultyID is valid for use in the journal.
 function EJ_IsValidInstanceDifficulty(difficultyID)
+    if not difficultyID then return false end
+
     local info = select(10, EJ_GetInstanceInfo());
     if info == DifficultyUtil.ID.DungeonNormal and difficultyID == DifficultyUtil.ID.DungeonNormal then return true end;
     
@@ -491,6 +567,7 @@ end
 --EJ_SelectEncounter(encounterID) - Selects an encounter for the Encounter Journal API state.
 function EJ_SelectEncounter(encounterID)
     C_EncounterJournal.SELECTED_ENCOUNTER = encounterID;
+    if not C_EncounterJournal.SELECTED_ENCOUNTER then return end
     if not C_EncounterJournal.encounterLootCache[C_EncounterJournal.SELECTED_ENCOUNTER] then EJ_BuildEncounterLootCache(C_EncounterJournal.SELECTED_ENCOUNTER) end 
 end
 
@@ -498,6 +575,7 @@ end
 function EJ_SelectInstance(journalInstanceID)
     C_EncounterJournal.SELECTED_ENCOUNTER = nil;
     C_EncounterJournal.SELECTED_INSTANCE = journalInstanceID;
+    if not C_EncounterJournal.SELECTED_INSTANCE then return end
     if not C_EncounterJournal.instanceEncounterCache[C_EncounterJournal.SELECTED_INSTANCE] then EJ_BuildInstanceEncounterCache(C_EncounterJournal.SELECTED_INSTANCE) end
     if not C_EncounterJournal.instanceLootCache[C_EncounterJournal.SELECTED_INSTANCE] then EJ_BuildInstanceLootCache(C_EncounterJournal.SELECTED_INSTANCE) end 
 end
@@ -515,12 +593,12 @@ end
 
 --EJ_SetDifficulty(difficultyID) - Sets the encounter difficulty shown in the Encounter Journal.
 function EJ_SetDifficulty(difficultyID)
-    C_EncounterJournal.SELECTED_DIFFICULTY = difficultyID;
+    C_EncounterJournal.SELECTED_DIFFICULTY = difficultyID or DifficultyUtil.ID.DungeonNormal;
 end
 
 --EJ_SetSearch(text) - Starts a search in the journal.
 function EJ_SetSearch(text)
-    C_EncounterJournal.SEARCH_TEXT = text;
+    C_EncounterJournal.SEARCH_TEXT = text or "";
 end
 
 --GetJournalInfoForSpellConfirmation(spellID)
@@ -540,15 +618,19 @@ function EJ_GetLootFilter()
     return 0;
 end
 
---EJ_GetNumLoot() - Returns the amount of loot for the currently selected instance or encounter.
-function EJ_GetNumLoot()
-    if C_EncounterJournal.SELECTED_ENCOUNTER then
+--EJ_GetNumLoot([typeID [, isEncounter]]) - Returns the amount of loot for the currently selected instance or encounter.
+function EJ_GetNumLoot(typeID, isEncounter)
+    isEncounter = isEncounter or true;
+
+    if C_EncounterJournal.SELECTED_ENCOUNTER and isEncounter then
         if not C_EncounterJournal.encounterLootCache[C_EncounterJournal.SELECTED_ENCOUNTER] then EJ_BuildEncounterLootCache(C_EncounterJournal.SELECTED_ENCOUNTER) end
         return #C_EncounterJournal.encounterLootCache[C_EncounterJournal.SELECTED_ENCOUNTER];
     end
 
-    if not C_EncounterJournal.instanceLootCache[C_EncounterJournal.SELECTED_INSTANCE] then EJ_BuildInstanceLootCache(C_EncounterJournal.SELECTED_INSTANCE) end
-    return #C_EncounterJournal.instanceLootCache[C_EncounterJournal.SELECTED_INSTANCE];
+    typeID = typeID or C_EncounterJournal.SELECTED_INSTANCE;
+
+    if not C_EncounterJournal.instanceLootCache[typeID] then EJ_BuildInstanceLootCache(typeID) end
+    return #C_EncounterJournal.instanceLootCache[typeID];
 end
 
 --EJ_IsLootListOutOfDate() - Returns whether the loot list is out of date in relation to any filters when getting new loot data.
