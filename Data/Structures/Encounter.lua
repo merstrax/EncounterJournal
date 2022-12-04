@@ -39,7 +39,7 @@ end
 
 function encounter:setAttributes(name, desc, mapX, mapY, instanceID, encounterID, orderIndex, rootSectionID, mapID, difficultyID)
     self.Name = name or self.Name;
-    self.Description = desc = self.Description;
+    self.Description = desc or self.Description;
     self.MapX = mapX or self.MapX;
     self.MapY = mapY or self.MapY;
     self.InstanceID = instanceID or self.InstanceID;
@@ -48,6 +48,10 @@ function encounter:setAttributes(name, desc, mapX, mapY, instanceID, encounterID
     self.RootSectionID = rootSectionID or self.RootSectionID;
     self.MapID = mapID or self.MapID;
     self.DifficultyID = difficultyID or self.DifficultyID;
+
+    if self.InstanceID then
+        EJ_Data:addEncounterToInstance(self.InstanceID, self, self.DifficultyID > 4);
+    end
 end
 
 

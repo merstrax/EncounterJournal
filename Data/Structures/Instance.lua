@@ -24,7 +24,8 @@ function instance:addEncounter(encounter)
     return nil;
 end
 
-function instance:setAttributes(name, desc, mapID, bgFile, btnFile, smBtnFile, loreFile, difficultyID)
+function instance:setAttributes(id, name, desc, mapID, bgFile, btnFile, smBtnFile, loreFile, difficultyID)
+    self.ID = id or self.ID;
     self.Name = name or self.Name;
     self.Description = desc or self.Description;
     self.MapID = mapID or self.MapID;
@@ -35,14 +36,6 @@ function instance:setAttributes(name, desc, mapID, bgFile, btnFile, smBtnFile, l
     self.DifficultyID = difficultyID or self.DifficultyID;
 end
 
-function createEncounterInstance(id, name, desc)
-    local newInstance = tcopy(instance);
-    newInstance.ID = id;
-    newInstance.Name = name or nil;
-    newInstance.Description = desc or nil;
-    return newInstance;
-end
-
-function createEncounterInstanceAttributes()
-    return tcopy(instanceAttr);
+function createEncounterInstance()
+    return tcopy(instance);
 end

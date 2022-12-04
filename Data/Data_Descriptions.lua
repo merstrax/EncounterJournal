@@ -91,5 +91,7 @@ EJ_Descriptions.Instances["ULDUAR"] = "";
 EJ_Descriptions.Instances["ONYXIA80"] = "";
 EJ_Descriptions.Instances["RUBYSANCTUM"] = "";
 
+EJ_Descriptions.Encounters = {};
+
 --SFK Descriptions
 EJ_Descriptions.Encounters["GLUBTOK"] = "In a fit of rage, Glubtok unleashed his potent magical abilities and reduced his ogre mound to ash. Upon hearing of his destructive talents, the Defias hired the massive ogre mage to supervise their laborers as head foreman of the Deadmines.";
