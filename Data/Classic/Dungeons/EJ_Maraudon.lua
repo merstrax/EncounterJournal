@@ -3,7 +3,7 @@ local bgFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Backgrounds\\UI-EJ-
 local btnFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Buttons\\UI-EJ-DUNGEONBUTTON-Maraudon.blp";
 local loreFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Lore\\UI-EJ-LOREBG-Maraudon.blp";
 
-instance:setAttributes(232, "Maraudon", EJ_Descriptions.Instances["MARAUDON"], 349, bgFile, btnFile, 0, loreFile, EJ_Data.Normal);
+instance:setAttributes(232, "Maraudon", EJ_Descriptions.Instances["MARAUDON"], 349, bgFile, btnFile, 0, loreFile, DifficultyUtil.ID.DungeonNormal);
 
 local noxxion = EJ_Data:CreateEncounter();
 noxxion:setAttributes("Noxxion", "Noxxion is a living embodiment of corruption. Theradras ordered her ally Lord Vyletongue to create this putrid elemental to be a powerful servant and a loyal pet to ease the princess's loneliness. Noxxion spreads its toxic essence into areas of Maraudon that have not yet withered under Theradras's malign influence.", 0.362022, 0.0983607, 232, 422, 1, 4709, 280, 2);

@@ -3,7 +3,7 @@ local bgFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Backgrounds\\UI-EJ-
 local btnFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Buttons\\UI-EJ-DUNGEONBUTTON-RagefireChasm.blp";
 local loreFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Lore\\UI-EJ-LOREBG-RagefireChasm.blp";
 
-instance:setAttributes(226, "Ragefire Chasm", EJ_Descriptions.Instances["RAGEFIRECHASM"], 389, bgFile, btnFile, 0, loreFile, EJ_Data.Normal);
+instance:setAttributes(226, "Ragefire Chasm", EJ_Descriptions.Instances["RAGEFIRECHASM"], 389, bgFile, btnFile, 0, loreFile, DifficultyUtil.ID.DungeonNormal);
 
 local adarogg = EJ_Data:CreateEncounter();
 adarogg:setAttributes("Adarogg", "Ragefire Chasm's trogg population has rapidly declined in recent months for one reason: Adarogg. This ravenous flame hound was among the first of his kind ripped from the Firelands by dark shaman. Adarogg's handlers feed the unruly beast over twice his weight in trogg flesh per day to keep him appeased.", 0.69273, 0.650206, 226, 1443, 1, 5961, 213, 4);

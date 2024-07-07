@@ -3,7 +3,7 @@ local bgFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Backgrounds\\UI-EJ-
 local btnFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Buttons\\UI-EJ-DUNGEONBUTTON-ShadowfangKeep.blp";
 local loreFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Lore\\UI-EJ-LOREBG-ShadowfangKeep.blp";
 
-instance:setAttributes(64, "Shadowfang Keep", EJ_Descriptions.Instances["SHADOWFANGKEEP"], 33, bgFile, btnFile, 0, loreFile, EJ_Data.Normal);
+instance:setAttributes(64, "Shadowfang Keep", EJ_Descriptions.Instances["SHADOWFANGKEEP"], 33, bgFile, btnFile, 0, loreFile, DifficultyUtil.ID.DungeonNormal);
 
 local baron_ashbury = EJ_Data:CreateEncounter();
 baron_ashbury:setAttributes("Baron Ashbury", "Slain by worgen and raised into undeath by the Forsaken, the traitor Baron Ashbury toys with his foes, keeping them alive so he can inflict maximum pain and suffering.", 0.66467136, 0.732036, 64, 1069, 1, 2107, 310, 2);

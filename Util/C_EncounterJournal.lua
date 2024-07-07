@@ -435,10 +435,10 @@ function EJ_GetInstanceInfo(journalInstanceID)
     if(EJ_Data.Tiers[C_EncounterJournal.SELECTED_TIER]) then
         if(C_EncounterJournal.SHOW_RAID) then
             local info = EJ_Data.Tiers[C_EncounterJournal.SELECTED_TIER].Raids[journalInstanceID];
-            return info.ID, info.Name, info.Description, info.BackgroundFile, info.ButtonFile, info.LoreFile, info.SmallButtonFile, 0, EJ_BuildJournalLink(EJ_TYPES.Instance, info.ID, 0, info.Name), 0, info.MapID;
+            return info.ID, info.Name, info.Description, info.BackgroundFile, info.ButtonFile, info.LoreFile, info.SmallButtonFile, 0, EJ_BuildJournalLink(EJ_TYPES.Instance, info.ID, 0, info.Name), info.DifficultyID, info.MapID;
         else
             local info = EJ_Data.Tiers[C_EncounterJournal.SELECTED_TIER].Dungeons[journalInstanceID];
-            return info.ID, info.Name, info.Description, info.BackgroundFile, info.ButtonFile, info.LoreFile, info.SmallButtonFile, 0, EJ_BuildJournalLink(EJ_TYPES.Instance, info.ID, 0, info.Name), 0, info.MapID;
+            return info.ID, info.Name, info.Description, info.BackgroundFile, info.ButtonFile, info.LoreFile, info.SmallButtonFile, 0, EJ_BuildJournalLink(EJ_TYPES.Instance, info.ID, 0, info.Name), info.DifficultyID, info.MapID;
         end
     end
 end

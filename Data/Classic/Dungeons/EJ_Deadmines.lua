@@ -3,7 +3,7 @@ local bgFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Backgrounds\\UI-EJ-
 local btnFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Buttons\\UI-EJ-DUNGEONBUTTON-Deadmines.blp";
 local loreFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Lore\\UI-EJ-LOREBG-Deadmines.blp";
 
-instance:setAttributes(63, "Deadmines", EJ_Descriptions.Instances["DEADMINES"], 36, bgFile, btnFile, 0, loreFile, EJ_Data.Normal);
+instance:setAttributes(63, "Deadmines", EJ_Descriptions.Instances["DEADMINES"], 36, bgFile, btnFile, 0, loreFile, DifficultyUtil.ID.DungeonNormal);
 
 local glubtok = EJ_Data:CreateEncounter();
 glubtok:setAttributes("Glubtok", "In a fit of rage, Glubtok unleashed his potent magical abilities and reduced his ogre mound to ash. Upon hearing of his destructive talents, the Defias hired the massive ogre mage to supervise their laborers as head foreman of the Deadmines.", 0.3652697, 0.6122755, 63, 1064, 1, 2010, 291, 2);

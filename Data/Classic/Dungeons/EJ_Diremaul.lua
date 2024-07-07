@@ -3,7 +3,7 @@ local bgFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Backgrounds\\UI-EJ-
 local btnFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Buttons\\UI-EJ-DUNGEONBUTTON-DireMaul.blp";
 local loreFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Lore\\UI-EJ-LOREBG-DireMaul.blp";
 
-instance:setAttributes(230, "Dire Maul", EJ_Descriptions.Instances["DIREMAUL"], 429, bgFile, btnFile, 0, loreFile, EJ_Data.Heroic);
+instance:setAttributes(230, "Dire Maul", EJ_Descriptions.Instances["DIREMAUL"], 429, bgFile, btnFile, 0, loreFile, DifficultyUtil.ID.DungeonMythic);
 
 local zevrim_thornhoof = EJ_Data:CreateEncounter();
 zevrim_thornhoof:setAttributes("Zevrim Thornhoof", "Desperate to show his worth to the Burning Legion, Zevrim Thornhoof told his masters he could enslave the formidable ancients who still roamed Dire Maul. When his own power proved insufficient, Thornhoof turned to other living creatures for additional energy, butchering them atop his sacrificial altar and harvesting their essence in their final, agonizing moments.", 0.575137, 0.743852, 230, 343, 1, 4655, 240, 4);

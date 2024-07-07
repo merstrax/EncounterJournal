@@ -3,7 +3,7 @@ local bgFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Backgrounds\\UI-EJ-
 local btnFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Buttons\\UI-EJ-DUNGEONBUTTON-RuinsofAhnQiraj.blp";
 local loreFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Lore\\UI-EJ-LOREBG-RuinsofAhnQiraj.blp";
 
-instance:setAttributes(743, "Ruins of Ahn'Qiraj", EJ_Descriptions.Instances["RUINSOFAHNQIRAJ"], 247, bgFile, btnFile, 0, loreFile, EJ_Data.Raid);
+instance:setAttributes(743, "Ruins of Ahn'Qiraj", EJ_Descriptions.Instances["RUINSOFAHNQIRAJ"], 247, bgFile, btnFile, 0, loreFile, DifficultyUtil.ID.RaidAscended);
 
 local kurinnaxx = EJ_Data:CreateEncounter();
 kurinnaxx:setAttributes("Kurinnaxx", "", 0.563507, 0.357434, 743, 718, 1, 0, 247, 8);

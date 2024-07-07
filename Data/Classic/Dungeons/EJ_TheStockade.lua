@@ -3,7 +3,7 @@ local bgFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Backgrounds\\UI-EJ-
 local btnFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Buttons\\UI-EJ-DUNGEONBUTTON-TheStockade.blp";
 local loreFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Lore\\UI-EJ-LOREBG-TheStockade.blp";
 
-instance:setAttributes(238, "The Stockade", EJ_Descriptions.Instances["THESTOCKADES"], 34, bgFile, btnFile, 0, loreFile, EJ_Data.Normal);
+instance:setAttributes(238, "The Stockade", EJ_Descriptions.Instances["THESTOCKADES"], 34, bgFile, btnFile, 0, loreFile, DifficultyUtil.ID.DungeonNormal);
 
 local hogger = EJ_Data:CreateEncounter();
 hogger:setAttributes("Hogger", "Convict #SC55: Hogger Charges: Too many to list here Imprisoning the Riverpaw leader has come at a high cost, including the partial blinding of the warden. Fearing that Hogger might escape, Thelwater has authorized the gnoll's termination with extreme prejudice.", 0.218579, 0.262295, 238, 1144, 1, 4811, 225, 2);

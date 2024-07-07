@@ -3,7 +3,7 @@ local bgFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Backgrounds\\UI-EJ-
 local btnFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Buttons\\UI-EJ-DUNGEONBUTTON-Stratholme.blp";
 local loreFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Lore\\UI-EJ-LOREBG-Stratholme.blp";
 
-instance:setAttributes(236, "Stratholme", EJ_Descriptions.Instances["STRATHOLME"], 329, bgFile, btnFile, 0, loreFile, EJ_Data.Heroic);
+instance:setAttributes(236, "Stratholme", EJ_Descriptions.Instances["STRATHOLME"], 329, bgFile, btnFile, 0, loreFile, DifficultyUtil.ID.DungeonMythic);
 
 local hearthsinger_forresten = EJ_Data:CreateEncounter();
 hearthsinger_forresten:setAttributes("Hearthsinger Forresten", "The Culling of Stratholme claimed the lives of innumerable people whose only crime was being in the doomed city. A traveling singer and piccolo player named Forresten was one such victim. He continues to wander the city in death, unable to accept his tragic fate.", 0.605191, 0.313524, 236, 473, 1, 4794, 317, 4);

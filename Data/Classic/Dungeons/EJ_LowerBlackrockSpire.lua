@@ -3,7 +3,7 @@ local bgFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Backgrounds\\UI-EJ-
 local btnFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Buttons\\UI-EJ-DUNGEONBUTTON-BlackrockSpire.blp";
 local loreFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Lore\\UI-EJ-LOREBG-BlackrockSpire.blp";
 
-instance:setAttributes(229, "Lower Blackrock Spire", EJ_Descriptions.Instances["LOWERBLACKROCKSPIRE"], 229, bgFile, btnFile, 0, loreFile, EJ_Data.Heroic);
+instance:setAttributes(229, "Lower Blackrock Spire", EJ_Descriptions.Instances["LOWERBLACKROCKSPIRE"], 229, bgFile, btnFile, 0, loreFile, DifficultyUtil.ID.DungeonMythic);
 
 local highlord_omokk = EJ_Data:CreateEncounter();
 highlord_omokk:setAttributes("Highlord Omokk", "Omokk rules over the spire's ogres with an iron fist. Many underlings have challenged him to single combat in the hopes of seizing the highlord's title, but all have fallen without landing a solitary blow. This mysterious phenomenon has led to rumors that dark magic is protecting Omokk.", 0.386612, 0.590164, 229, 267, 1, 4523, 252, 4);

@@ -3,7 +3,7 @@ local bgFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Backgrounds\\UI-EJ-
 local btnFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Buttons\\UI-EJ-DUNGEONBUTTON-TempleofAhnQiraj.blp";
 local loreFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Lore\\UI-EJ-LOREBG-TempleofAhnQiraj.blp";
 
-instance:setAttributes(744, "Temple of Ahn'Qiraj", EJ_Descriptions.Instances["TEMPLEOFAHNQIRAJ"], 320, bgFile, btnFile, 0, loreFile, EJ_Data.Raid);
+instance:setAttributes(744, "Temple of Ahn'Qiraj", EJ_Descriptions.Instances["TEMPLEOFAHNQIRAJ"], 320, bgFile, btnFile, 0, loreFile, DifficultyUtil.ID.RaidAscended);
 
 local the_prophet_skeram = EJ_Data:CreateEncounter();
 the_prophet_skeram:setAttributes("The Prophet Skeram", "", 0.457866, 0.522049, 744, 709, 0, 0, 320, 8);

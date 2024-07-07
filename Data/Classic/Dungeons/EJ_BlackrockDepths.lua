@@ -4,7 +4,7 @@ local btnFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Buttons\\UI-EJ-DUN
 local loreFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Lore\\UI-EJ-LOREBG-BlackrockDepths.blp";
 
 --id, name, desc, mapID, bgFile, btnFile, smBtnFile, loreFile, difficultyID
-instance:setAttributes(228, "Blackrock Depths", EJ_Descriptions.Instances["BLACKROCKDEPTHS"], 230, bgFile, btnFile, 0, loreFile, EJ_Data.Heroic);
+instance:setAttributes(228, "Blackrock Depths", EJ_Descriptions.Instances["BLACKROCKDEPTHS"], 230, bgFile, btnFile, 0, loreFile, DifficultyUtil.ID.DungeonMythic);
 
 --name, desc, mapX, mapY, instanceID, encounterID, orderIndex, rootSectionID, mapID, difficultyID
 local high_interrogator_gerstahn = EJ_Data:CreateEncounter();

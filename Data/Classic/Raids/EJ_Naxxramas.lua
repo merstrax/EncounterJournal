@@ -3,7 +3,7 @@ local bgFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Backgrounds\\UI-EJ-
 local btnFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Buttons\\UI-EJ-DUNGEONBUTTON-Naxxramas.blp";
 local loreFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Lore\\UI-EJ-LOREBG-Naxxramas.blp";
 
-instance:setAttributes(754, "Naxxramas", EJ_Descriptions.Instances["NAXXRAMAS"], 163, bgFile, btnFile, 0, loreFile, EJ_Data.Raid);
+instance:setAttributes(754, "Naxxramas", EJ_Descriptions.Instances["NAXXRAMAS"], 163, bgFile, btnFile, 0, loreFile, DifficultyUtil.ID.RaidAscended);
 
 local anub_rekhan = EJ_Data:CreateEncounter();
 anub_rekhan:setAttributes("Anub'Rekhan", "", 0.306925, 0.469885, 754, 1107, 0, 0, 163, 8);

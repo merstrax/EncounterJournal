@@ -3,7 +3,7 @@ local bgFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Backgrounds\\UI-EJ-
 local btnFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Buttons\\UI-EJ-DUNGEONBUTTON-ZulGurub.blp";
 local loreFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Lore\\UI-EJ-LOREBG-ZulGurub.blp";
 
-instance:setAttributes(77, "Zul'Gurub", EJ_Descriptions.Instances["ZULGURUB"], 333, bgFile, btnFile, 0, loreFile, EJ_Data.Raid);
+instance:setAttributes(77, "Zul'Gurub", EJ_Descriptions.Instances["ZULGURUB"], 333, bgFile, btnFile, 0, loreFile, DifficultyUtil.ID.RaidAscended);
 
 local high_priest_venoxis = EJ_Data:CreateEncounter();
 high_priest_venoxis:setAttributes("High Priest Venoxis", "Originally sent to kill Hakkar, Venoxis became enslaved to the murderous entity before falling to Azeroth's heroes. Through the efforts of the Soulflayer's agents, Venoxis has been ripped from the spirit world and ordered to defend Zul'Gurub with his venomous serpentine minions.", 0.5099801, 0.53742516, 76, 1178, 1, 2787, 337, 8);

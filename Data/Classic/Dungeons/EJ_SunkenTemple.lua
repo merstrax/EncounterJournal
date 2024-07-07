@@ -3,7 +3,7 @@ local bgFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Backgrounds\\UI-EJ-
 local btnFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Buttons\\UI-EJ-DUNGEONBUTTON-SunkenTemple.blp";
 local loreFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Lore\\UI-EJ-LOREBG-SunkenTemple.blp";
 
-instance:setAttributes(237, "The Temple of Atal'hakkar", EJ_Descriptions.Instances["SUNKENTEMPLE"], 109, bgFile, btnFile, 0, loreFile, EJ_Data.Normal);
+instance:setAttributes(237, "The Temple of Atal'hakkar", EJ_Descriptions.Instances["SUNKENTEMPLE"], 109, bgFile, btnFile, 0, loreFile, DifficultyUtil.ID.DungeonNormal);
 
 local avatar_of_hakkar = EJ_Data:CreateEncounter();
 avatar_of_hakkar:setAttributes("Avatar of Hakkar", "Hakkar was notorious for demanding sacrifices from his followers. Many millennia ago, he instructed the Atal'ai to bring forth his avatar, using blood ritually drained from living victims to feed him. The Atal'ai priests now seek to raise Hakkar's avatar with a modified version of this ritual, one that involves sacrificing green dragons. If the Atal'ai succeed, the re-emergence of Hakkar's avatar could spell doom for Azeroth.", 0.243169, 0.459016, 237, 492, 1, 4903, 220, 2);

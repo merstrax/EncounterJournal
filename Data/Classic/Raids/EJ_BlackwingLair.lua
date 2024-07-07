@@ -3,7 +3,7 @@ local bgFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Backgrounds\\UI-EJ-
 local btnFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Buttons\\UI-EJ-DUNGEONBUTTON-BlackwingLair.blp";
 local loreFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Lore\\UI-EJ-LOREBG-BlackwingLair.blp";
 
-instance:setAttributes(742, "Blackwing Lair", EJ_Descriptions.Instances["BLACKWINGLAIR"], 287, bgFile, btnFile, 0, loreFile, EJ_Data.Raid);
+instance:setAttributes(742, "Blackwing Lair", EJ_Descriptions.Instances["BLACKWINGLAIR"], 287, bgFile, btnFile, 0, loreFile, DifficultyUtil.ID.RaidAscended);
 
 local razorgore_the_untamed = EJ_Data:CreateEncounter();
 razorgore_the_untamed:setAttributes("Razorgore the Untamed", "", 0.419285, 0.602438, 742, 610, 1, 0, 287, 8);

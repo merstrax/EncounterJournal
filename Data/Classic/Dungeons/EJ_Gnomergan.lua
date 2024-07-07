@@ -3,7 +3,7 @@ local bgFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Backgrounds\\UI-EJ-
 local btnFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Buttons\\UI-EJ-DUNGEONBUTTON-Gnomeregan.blp";
 local loreFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Lore\\UI-EJ-LOREBG-Gnomeregan.blp";
 
-instance:setAttributes(231, "Gnomeregan", EJ_Descriptions.Instances["GNOMERGAN"], 90, bgFile, btnFile, 0, loreFile, EJ_Data.Normal);
+instance:setAttributes(231, "Gnomeregan", EJ_Descriptions.Instances["GNOMERGAN"], 90, bgFile, btnFile, 0, loreFile, DifficultyUtil.ID.DungeonNormal);
 
 local crowd_pummeler_9_60 = EJ_Data:CreateEncounter();
 crowd_pummeler_9_60:setAttributes("Crowd Pummeler 9-60", "In Gnomeregan's heyday, inventors would compete for status by pitting their creations against one another. The mekgineer Oglethorpe Obnoticus built an unbeatable robot, and this earned him respect in the high tinker's court. Sicco Thermaplugg stole Obnoticus's blueprints and then made a giant version of the machine. He set his forgery loose, and the horrific results drove the ruling council to banish the innocent Obnoticus. The Crowd Pummeler 9-60 is still one of Thermaplugg's favorite (stolen) inventions.", 0.431694, 0.883197, 231, 381, 4, 4670, 228, 2);

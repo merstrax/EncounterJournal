@@ -3,7 +3,7 @@ local bgFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Backgrounds\\UI-EJ-
 local btnFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Buttons\\UI-EJ-DUNGEONBUTTON-WailingCaverns.blp";
 local loreFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Lore\\UI-EJ-LOREBG-WailingCaverns.blp";
 
-instance:setAttributes(240, "Wailing Caverns", EJ_Descriptions.Instances["WAILINGCAVERNS"], 43, bgFile, btnFile, 0, loreFile, EJ_Data.Normal);
+instance:setAttributes(240, "Wailing Caverns", EJ_Descriptions.Instances["WAILINGCAVERNS"], 43, bgFile, btnFile, 0, loreFile, DifficultyUtil.ID.DungeonNormal);
 
 local lady_anacondra = EJ_Data:CreateEncounter();
 lady_anacondra:setAttributes("Lady Anacondra", "Scarletleaf was the first to volunteer for Naralex's self-appointed mission to the Barrens. After her master's nightmare shattered her mind, the young acolyte cast aside her name, now envisioning a sinister reptilian future for Azeroth.", 0.306011, 0.430328, 240, 585, 1, 4954, 279, 2);

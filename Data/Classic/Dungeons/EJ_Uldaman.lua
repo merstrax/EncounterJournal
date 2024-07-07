@@ -3,7 +3,7 @@ local bgFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Backgrounds\\UI-EJ-
 local btnFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Buttons\\UI-EJ-DUNGEONBUTTON-Uldaman.blp";
 local loreFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Lore\\UI-EJ-LOREBG-Uldaman.blp";
 
-instance:setAttributes(239, "Uldaman", EJ_Descriptions.Instances["ULDAMAN"], 70, bgFile, btnFile, 0, loreFile, EJ_Data.Normal);
+instance:setAttributes(239, "Uldaman", EJ_Descriptions.Instances["ULDAMAN"], 70, bgFile, btnFile, 0, loreFile, DifficultyUtil.ID.DungeonNormal);
 
 local obsidian_sentinel = EJ_Data:CreateEncounter();
 obsidian_sentinel:setAttributes("Obsidian Sentinel", "The Obsidian Sentinel was responsible for guarding Uldaman's secrets until it was corrupted by an unknown force. Originally crafted from the same stone as the halls of Uldaman itself, this keeper has had the majority of its body replaced with dark glass capable of reflecting spells. Whatever was responsible for the Obsidian Sentinel's transformation must be incredibly potent, for it is not easy to alter the enchanted stone of a titan construct.", 0.289425, 0.597403, 239, 1887, 4, 6448, 230, 4);

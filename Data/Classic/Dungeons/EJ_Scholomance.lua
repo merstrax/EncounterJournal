@@ -3,7 +3,7 @@ local bgFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Backgrounds\\UI-EJ-
 local btnFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Buttons\\UI-EJ-DUNGEONBUTTON-Scholomance.blp";
 local loreFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Lore\\UI-EJ-LOREBG-Scholomance.blp";
 
-instance:setAttributes(246, "Scholomance", EJ_Descriptions.Instances["SCHOLOMANCE"], 1007, bgFile, btnFile, 0, loreFile, EJ_Data.Heroic);
+instance:setAttributes(246, "Scholomance", EJ_Descriptions.Instances["SCHOLOMANCE"], 1007, bgFile, btnFile, 0, loreFile, DifficultyUtil.ID.DungeonMythic);
 
 local instructor_chillheart = EJ_Data:CreateEncounter();
 instructor_chillheart:setAttributes("Instructor Chillheart", "Course: Introduction to the Dark Arts Instructor Chillheart journeyed from Northrend to teach aspiring necromancers discipline, harshly punishing those who disappoint her. She commands the icy chill of the north and masterfully uses Scholomance's libraries to deadly effect.", 0.652879, 0.604144, 246, 1426, 1, 5524, 476, 4);

@@ -3,5 +3,5 @@ local bgFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Backgrounds\\UI-EJ-
 local btnFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Buttons\\UI-EJ-DUNGEONBUTTON-ScarletMonastery.blp";
 local loreFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Lore\\UI-EJ-LOREBG-ScarletMonastery.blp";
 
-instance:setAttributes(235, "Scarlet Monastery", EJ_Descriptions.Instances["SCARLETMONASTERY"], 189, bgFile, btnFile, 0, loreFile, EJ_Data.Normal);
+instance:setAttributes(235, "Scarlet Monastery", EJ_Descriptions.Instances["SCARLETMONASTERY"], 189, bgFile, btnFile, 0, loreFile, DifficultyUtil.ID.DungeonNormal);
 EJ_Data:addInstance(EJ_Data.CLASSIC, tcopy(instance), false);

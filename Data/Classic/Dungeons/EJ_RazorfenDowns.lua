@@ -3,7 +3,7 @@ local bgFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Backgrounds\\UI-EJ-
 local btnFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Buttons\\UI-EJ-DUNGEONBUTTON-RazorfenDowns.blp";
 local loreFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Lore\\UI-EJ-LOREBG-RazorfenDowns.blp";
 
-instance:setAttributes(233, "Razorfen Downs", EJ_Descriptions.Instances["RAZORFENDOWNS"], 129, bgFile, btnFile, 0, loreFile, EJ_Data.Normal);
+instance:setAttributes(233, "Razorfen Downs", EJ_Descriptions.Instances["RAZORFENDOWNS"], 129, bgFile, btnFile, 0, loreFile, DifficultyUtil.ID.DungeonNormal);
 
 local mordresh_fire_eye = EJ_Data:CreateEncounter();
 mordresh_fire_eye:setAttributes("Mordresh Fire Eye", "Through necromantic magic Death Speaker Blackthorn was able to rekindle the flames of Mordresh Fire Eye's soul, returning him to undeath. As a former shaman, Mordresh has exerted his twisted control over the elements.  He burns and scorches all those who threaten the Death Speaker's work.", 0.860656, 0.467213, 233, 1663, 2, 4767, 300, 2);
