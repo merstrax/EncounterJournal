@@ -22,4 +22,12 @@
     <Script file="Dungeons\EJ_WailingCaverns.lua"/>
     <Script file="Dungeons\EJ_ZulFarrack.lua"/>
 
+    <!--Raids-->
+    <Script file="Raids\EJ_BlackwingLair.lua"/>
+    <Script file="Raids\EJ_MoltenCore.lua"/>
+    <Script file="Raids\EJ_Naxxramas.lua"/>
+    <Script file="Raids\EJ_OnyxiaLair.lua"/>
+    <Script file="Raids\EJ_RuinsofAhnQiraj.lua"/>
+    <Script file="Raids\EJ_TempleofAhnQiraj.lua"/>
+    <Script file="Raids\EJ_ZulGurub.lua"/>
 </Ui>
