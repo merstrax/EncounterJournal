@@ -79,21 +79,6 @@ local ExpansionInfo = {
     [3] = {"Wrath of the Lich King", ""}
 }
 
-local instancedb = EJ_InstanceDB;
-local tierinstancedb = EJ_TierInstanceDB;
-local e_tierinstance = Enum.EJTierInstanceStruct;
-
-local encounterdb = EJ_EncounterDB;
-local sectiondb = EJ_EncounterSectionDB;
-
-local creaturedb = EJ_CreatureDB;
-local e_creature = Enum.EJCreatureStruct;
-
-local itemdb = EJ_ItemDB;
-local e_item = Enum.EJItemStruct;
-
-local filedata = EJ_FileData;
-
 C_EncounterJournal.tierInstanceCache = {};
 
 C_EncounterJournal.instanceInfoCache = {};
@@ -104,7 +89,7 @@ C_EncounterJournal.encounterInfoCache = {};
 C_EncounterJournal.encounterLootCache = {};
 
 local function EJ_BuildJournalLink(journalType, journalID, difficulty, name)
-    local _link = "|cff66bbff|Hjournal:"..tostring(journalType)..":"..tostring(journalID)..":"..tostring(difficulty).."|h["..name.."]|h|r";
+    local _link = "";--"|cff66bbff|Hjournal:"..tostring(journalType)..":"..tostring(journalID)..":"..tostring(difficulty).."|h["..name.."]|h|r";
     return _link;
 end
 
@@ -122,7 +107,7 @@ local function EJ_BuildTierInstanceCache(index)
         table.insert(C_EncounterJournal.tierInstanceCache[index][2], v);
     end
 
-    table.sort(C_EncounterJournal.tierInstanceCache[index][2], function(k1, k2) return k1.OrderIndex < k2.OrderIndex end);
+    --table.sort(C_EncounterJournal.tierInstanceCache[index][2], function(k1, k2) return k1.OrderIndex < k2.OrderIndex end);
 end
 
 local function EJ_CacheEncounterInfo(encounterInfo)
@@ -208,7 +193,7 @@ function C_EncounterJournal.GetSectionInfo(sectionID)
         _s.title = sectionID.Title;
         _s.description = sectionID.Desc;
         _s.headerType = sectionID.Type;
-        _s.abilityIcon = sectionID.IconFileDataID;
+        _, _, _s.abilityIcon = GetSpellInfo(sectionID.SpellID);
         _s.creatureDisplayID = 0;
         _s.uiModelSceneID = 0;
 
@@ -304,7 +289,7 @@ function C_EncounterJournal.GetLootInfoByIndex(index, encounterIndex)
         end
     else
         if index <= #C_EncounterJournal.instanceLootCache[C_EncounterJournal.SELECTED_INSTANCE] then
-            info.itemID = C_EncounterJournal.instanceLootCache[C_EncounterJournal.SELECTED_INSTANCE][index][3];
+            info.itemID = C_EncounterJournal.instanceLootCache[C_EncounterJournal.SELECTED_INSTANCE][index];
             local item = Item:CreateFromID(info.itemID);
             local name = item:GetInfo();
             if not name then
@@ -404,7 +389,6 @@ function EJ_GetEncounterInfo(encounterID)
     C_EncounterJournal.encounterInfoCache[encounterID] = {"", "", 0, 0, "", 0, 0, 0};
     for _, v in pairs(EJ_Data:getEncounterList(C_EncounterJournal.SELECTED_INSTANCE)) do
         if (v.EncounterID == encounterID) then
-            print(unpack(v.Sections))
             info = v;
             C_EncounterJournal.encounterInfoCache[encounterID] = 
             {
@@ -441,17 +425,6 @@ end
 function EJ_GetInstanceForMap(mapID)
     return 0;
 end
-
-local InstanceID = 1;
-local InstanceName = 2;
-local InstanceDesc = 3;
-local InstanceMapID = 4;
-local InstanceBGID = 5;
-local InstanceBtnID = 6;
-local InstanceSmBtnID = 7;
-local InstanceLoreID = 8;
-local InstanceFlags = 9;
-local InstanceAreaID = 10;
 
 --EJ_GetInstanceInfo([journalInstanceID]) - Returns instance info for the Encounter Journal.
 function EJ_GetInstanceInfo(journalInstanceID)
@@ -637,7 +610,10 @@ function EJ_GetNumLoot(typeID, isEncounter)
     typeID = typeID or C_EncounterJournal.SELECTED_INSTANCE;
 
     if not C_EncounterJournal.instanceLootCache[typeID] then EJ_BuildInstanceLootCache(typeID) end
-    --return #C_EncounterJournal.instanceLootCache[typeID];
+
+    if type(C_EncounterJournal.instanceLootCache[typeID]) == "table" then
+        return #C_EncounterJournal.instanceLootCache[typeID];
+    end
 end
 
 --EJ_IsLootListOutOfDate() - Returns whether the loot list is out of date in relation to any filters when getting new loot data.

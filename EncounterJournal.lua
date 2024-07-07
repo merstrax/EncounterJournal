@@ -1,4 +1,3 @@
-
 --FILE CONSTANTS
 local HEADER_INDENT = 15;
 local MAX_CREATURES_PER_ENCOUNTER = 9;
@@ -250,14 +249,14 @@ function EncounterJournal_OnLoad(self)
 	};
 
 	-- check if tabs are active
-	local dungeonInstanceID = EJ_GetInstanceByIndex(1, false);
-	if( not dungeonInstanceID ) then
-		instanceSelect.dungeonsTab.grayBox:Show();
-	end
-	local raidInstanceID = EJ_GetInstanceByIndex(1, true);
-	if( not raidInstanceID ) then
-		instanceSelect.raidsTab.grayBox:Show();
-	end
+	--local dungeonInstanceID = EJ_GetInstanceByIndex(1, false);
+	--if( not dungeonInstanceID ) then
+		--instanceSelect.dungeonsTab.grayBox:Show();
+	--end
+	--local raidInstanceID = EJ_GetInstanceByIndex(1, true);
+	--if( not raidInstanceID ) then
+		--instanceSelect.raidsTab.grayBox:Show();
+	--end
 end
 
 function EncounterJournal_EnableTierDropDown()
@@ -578,16 +577,16 @@ function EncounterJournal_ListInstances()
 	EJ_HideInstances(index);
 
 	--check if the other tab is empty
-	local instanceText = EJ_GetInstanceByIndex(1, not showRaid);
+	--local instanceText = EJ_GetInstanceByIndex(1, not showRaid);
 	--No instances in the other tab
-	if not instanceText then
+	--if not instanceText then
 		--disable the other tab.
-		if ( showRaid ) then
-			instanceSelect.dungeonsTab.grayBox:Show();
-		else
-			instanceSelect.raidsTab.grayBox:Show();
-		end
-	end
+		--if ( showRaid ) then
+			--instanceSelect.dungeonsTab.grayBox:Show();
+		--else
+			--instanceSelect.raidsTab.grayBox:Show();
+		--end
+	--end
 end
 
 function EncounterJournalInstanceButton_OnClick(self)
@@ -819,8 +818,6 @@ function EncounterJournal_DisplayEncounter(encounterID, noButton)
 	local self = EncounterJournal.encounter;
 
 	local ename, description, _, rootSectionID = unpack(EJ_GetEncounterInfo(encounterID));
-
-	print(unpack(rootSectionID));
 
 	if (EncounterJournal.encounterID == encounterID) then
 		--EJ_NavBar is already set to the right button, don't add another
@@ -1479,7 +1476,7 @@ function EncounterJournal_ToggleHeaders(self, doNotShift)
 					local textLeftAnchor = infoHeader.button.expandedIcon;
 					--Show ability Icon
 					if sectionInfo.abilityIcon then
-						--infoHeader.button.abilityIcon:SetTexture(EJ_FileData[sectionInfo.abilityIcon]);
+						infoHeader.button.abilityIcon:SetTexture(sectionInfo.abilityIcon);
 						infoHeader.button.abilityIcon:Show();
 						textLeftAnchor = infoHeader.button.abilityIcon;
 					else
@@ -2322,19 +2319,20 @@ function EJNAV_RefreshEncounter()
 end
 
 function EJNAV_SelectEncounter(self, index, EJ_NavBar)
-	local _, _, bossID = unpack(EJ_GetEncounterInfoByIndex(index));
+	local bossID = EJ_GetEncounterInfoByIndex(index).EncounterID;
+	EJ_GetEncounterInfo(bossID);
 	EncounterJournal_DisplayEncounter(bossID);
 end
 
 function EJNAV_GetEncounterList(self)
 	local list = { };
-	local name = unpack(EJ_GetEncounterInfoByIndex(1));
+	local name = EJ_GetEncounterInfoByIndex(1).Name;
 	while name do
 		local entry = { text = name, id = #list + 1, func = EJNAV_SelectEncounter };
 		tinsert(list, entry);
 		local n = EJ_GetEncounterInfoByIndex(#list + 1);
 		if n then 
-			name = unpack(EJ_GetEncounterInfoByIndex(#list + 1));
+			name = EJ_GetEncounterInfoByIndex(#list + 1).Name;
 		else
 			name = nil;
 		end

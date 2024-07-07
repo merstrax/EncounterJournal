@@ -34,18 +34,18 @@ function EJ_Data:getInstanceList(tier, isRaid)
 end
 
 function EJ_Data:getEncounterList(instanceID)
-    local tierData = self:getInstanceTier(instanceID)
+    local tier, isRaid = unpack(self:getInstanceTier(instanceID));
 
-    if(tierData[2]) then
-        return self.Tiers[tierData[1]].Raids[instanceID].Encounters;
+    if(isRaid) then
+        return self.Tiers[tier].Raids[instanceID].Encounters;
     end
 
-    return self.Tiers[tierData[1]].Dungeons[instanceID].Encounters;
+    return self.Tiers[tier].Dungeons[instanceID].Encounters;
 end
 
 function EJ_Data:getInstanceTier(instanceID)
     if type(self.InstanceToTier) == "table" then
-        return self.InstanceToTier[instanceID] or {1, false};
+        return self.InstanceToTier[instanceID];
     end
 end
 
@@ -56,7 +56,7 @@ function EJ_Data:addInstance(tier, instance_data, isRaid)
         self.Tiers[tier].Dungeons[instance_data.ID] = instance_data;
     end
 
-    self.InstanceToTier[instance_data.MapID] = {tier, isRaid};
+    self.InstanceToTier[instance_data.ID] = {tier, isRaid};
 end
 
 ------------------------------

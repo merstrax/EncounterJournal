@@ -1552,7 +1552,7 @@
 							</Layer>
 						</Layers>
 						<Frames>
-							<Button name="$parentInstanceButton" motionScriptsWhileDisabled="true" parentKey="instanceButton">
+							<Button name="$parentInstanceButton" motionScriptsWhileDisabled="true" parentKey="instanceButton" hidden="true">
 								<Size x="64" y="61"/>
 								<Anchors>
 									<Anchor point="TOPLEFT" x="0" y="-3"/>
