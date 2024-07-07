@@ -1,0 +1,12 @@
+## Interface: 30300
+## Title: Encounter Journal
+## Notes:  Simple downport from retail, minus a few things
+## Author: Merstrax (Downport)
+## Version: 1.0
+
+Util\DifficultyUtil.lua
+Data\Data.xml
+Frames\include.xml
+Util\C_EncounterJournal.lua
+
+EncounterJournal.xml
