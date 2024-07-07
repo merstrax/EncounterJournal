@@ -36,9 +36,9 @@ Enum.EncounterJournalTypes.Encounter = 1;
 Enum.EncounterJournalTypes.Section = 3;
 EJ_TYPES = Enum.EncounterJournalTypes;
 
-AtlasInfo["UI-EJ-Classic"] = { "Interface\\ENCOUNTERJOURNAL\\UI-EJ-Classic", 786, 425, 0, 1, 0, 0.9995, false, false}
-AtlasInfo["UI-EJ-BurningCrusade"] = { "Interface\\ENCOUNTERJOURNAL\\UI-EJ-BurningCrusade", 786, 425, 0, 1, 0, 0.9995, false, false}
-AtlasInfo["UI-EJ-WrathoftheLichKing"] = { "Interface\\ENCOUNTERJOURNAL\\UI-EJ-WrathoftheLichKing", 786, 425, 0, 1, 0, 0.9995, false, false}
+AtlasInfo["UI-EJ-Classic"] = { "Interface\\AddOns\\EncounterJournal\\Assets\\UI-EJ-Classic", 786, 425, 0, 1, 0, 0.9995, false, false}
+AtlasInfo["UI-EJ-BurningCrusade"] = { "Interface\\AddOns\\EncounterJournal\\Assets\\UI-EJ-BurningCrusade", 786, 425, 0, 1, 0, 0.9995, false, false}
+AtlasInfo["UI-EJ-WrathoftheLichKing"] = { "Interface\\AddOns\\EncounterJournal\\Assets\\UI-EJ-WrathoftheLichKing", 786, 425, 0, 1, 0, 0.9995, false, false}
 
 -- Priority list for *not my spec*
 local overviewPriorities = {
@@ -192,7 +192,7 @@ local INSTANCE_LOOT_BUTTON_HEIGHT = 64;
 function EncounterJournal_OnLoad(self)
 	Mixin(self, "PortraitFrameMixin");
 	EncounterJournalTitleText:SetText("Dungeon Journal");
-	EncounterJournal:SetPortraitToAsset("Interface\\EncounterJournal\\UI-EJ-PortraitIcon");
+	EncounterJournal:SetPortraitToAsset("Interface\\AddOns\\EncounterJournal\\Assets\\UI-EJ-PortraitIcon");
 	--self:RegisterEvent("EJ_LOOT_DATA_RECIEVED");
 	self:RegisterEvent("EJ_DIFFICULTY_UPDATE");
 	self:RegisterEvent("UNIT_PORTRAIT_UPDATE");
@@ -743,7 +743,7 @@ function EncounterJournal_DisplayInstance(instanceID, noButton)
 		bossButton.encounterID = bossID;
 		--Use the boss' first creature as the button icon
 		local _, _, _, _, bossImage = nil;--EJ_GetCreatureInfo(1, bossID);
-		bossImage = bossImage or "Interface\\EncounterJournal\\UI-EJ-BOSS-Default";
+		bossImage = bossImage or "Interface\\AddOns\\EncounterJournal\\Assets\\UI-EJ-BOSS-Default";
 		bossButton.creature:SetTexture(bossImage);
 		bossButton:UnlockHighlight();
 		
@@ -911,7 +911,7 @@ function EncounterJournal_DisplayEncounter(encounterID, noButton)
 		bossButton.encounterID = bossID;
 		--Use the boss' first creature as the button icon
 		local _, _, _, _, bossImage = nil;--EJ_GetCreatureInfo(1, bossID);
-		bossImage = bossImage or "Interface\\EncounterJournal\\UI-EJ-BOSS-Default";
+		bossImage = bossImage or "Interface\\AddOns\\EncounterJournal\\Assets\\UI-EJ-BOSS-Default";
 		bossButton.creature:SetTexture(bossImage);
 
 		if (encounterID == bossID) then
