@@ -2408,3 +2408,49 @@ EncounterJournalScrollBarOldMixin = {};
 function EncounterJournalScrollBarOldMixin:OnLoad()
 	--self.trackBG:SetVertexColor(ENCOUNTER_JOURNAL_SCROLL_BAR_BACKGROUND_COLOR:GetRGBA());
 end
+
+local addon = LibStub("AceAddon-3.0"):NewAddon("EncounterJournal");
+
+-- handle minimap tooltip
+local function GetTipAnchor(frame)
+    local x, y = frame:GetCenter();
+    if not x or not y then return 'TOPLEFT', 'BOTTOMLEFT' end
+    local hhalf = (x > UIParent:GetWidth() * 2 / 3) and 'RIGHT' or (x < UIParent:GetWidth() / 3) and 'LEFT' or '';
+    local vhalf = (y > UIParent:GetHeight() / 2) and 'TOP' or 'BOTTOM';
+    return vhalf .. hhalf, frame, (vhalf == 'TOP' and 'BOTTOM' or 'TOP') .. hhalf;
+end
+
+local minimap = LibStub:GetLibrary('LibDataBroker-1.1'):NewDataObject("EncounterJournal", {
+    type = 'data source',
+    text = "Encounter Journal",
+    icon = "Interface\\AddOns\\EncounterJournal\\Assets\\UI-EJ-PortraitIcon",
+    OnClick = function(self, button)
+        GameTooltip:Hide();
+        _G["EncounterJournal"]:Show()
+    end,
+    OnEnter = function(self)
+        GameTooltip:SetOwner(self, 'ANCHOR_NONE');
+        GameTooltip:SetPoint(GetTipAnchor(self));
+        GameTooltip:ClearLines();
+        GameTooltip:AddLine("|cffccccccEncounter Journal|r");
+        GameTooltip:AddLine("Click to open the Encounter Journal");
+        GameTooltip:Show();
+    end,
+    OnLeave = function()
+        GameTooltip:Hide();
+    end,
+})
+
+local icon = LibStub('LibDBIcon-1.0');
+
+function addon:OnInitialize()
+	self.db = LibStub("AceDB-3.0"):New("EJ_Options", {
+        profile = {
+            minimap = {
+                hide = false,
+            },
+        },
+    })
+
+	icon:Register("EncounterJournal", minimap, self.db.profile.minimap);
+end

@@ -3,6 +3,9 @@
 ## Notes:  Simple downport from retail, minus a few things
 ## Author: Merstrax (Downport)
 ## Version: 1.0
+## SavedVariables: EJ_Options
+
+embeds.xml
 
 Util\DifficultyUtil.lua
 Data\Data.xml
