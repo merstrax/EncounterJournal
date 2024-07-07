@@ -1,4 +1,25 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
 ..\..\FrameXML\UI.xsd">
+    <!--Dungeons-->
+    <Script file="Dungeons\EJ_BlackfathomDeeps.lua"/>
     <Script file="Dungeons\EJ_BlackrockDepths.lua"/>
+    <Script file="Dungeons\EJ_Deadmines.lua"/>
+    <Script file="Dungeons\EJ_Diremaul.lua"/>
+    <Script file="Dungeons\EJ_Gnomergan.lua"/>
+    <Script file="Dungeons\EJ_LowerBlackrockSpire.lua"/>
+    <Script file="Dungeons\EJ_Maraudon.lua"/>
+    <Script file="Dungeons\EJ_RagefireChasm.lua"/>
+    <Script file="Dungeons\EJ_RazorfenKraul.lua"/>
+    <Script file="Dungeons\EJ_RazorfenDowns.lua"/>
+    <Script file="Dungeons\EJ_ScarletMonastery.lua"/>
+    <Script file="Dungeons\EJ_Scholomance.lua"/>
+    <Script file="Dungeons\EJ_ShadowfangKeep.lua"/>
+    <Script file="Dungeons\EJ_Stratholme.lua"/>
+    <Script file="Dungeons\EJ_SunkenTemple.lua"/>
+    <Script file="Dungeons\EJ_TheStockade.lua"/>
+    <Script file="Dungeons\EJ_Uldaman.lua"/>
+    <Script file="Dungeons\EJ_UpperBlackrockSpire.lua"/>
+    <Script file="Dungeons\EJ_WailingCaverns.lua"/>
+    <Script file="Dungeons\EJ_ZulFarrack.lua"/>
+
 </Ui>

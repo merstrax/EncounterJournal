@@ -1,12 +1,10 @@
-if EJ_Data then 
 local instance = EJ_Data:CreateInstance();
-local description = EJ_Descriptions.Instances["BLACKROCKDEPTHS"];
-local bgFile = "Interface\\AddOns\\EncounterJournal\\Assets\\UI-EJ-BACKGROUND-BlackrockDepths.blp";
-local btnFile = "Interface\\AddOns\\EncounterJournal\\Assets\\UI-EJ-DUNGEONBUTTON-BlackrockDepths.blp";
-local loreFile = "Interface\\AddOns\\EncounterJournal\\Assets\\UI-EJ-LOREBG-BlackrockDepths.blp";
+local bgFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Backgrounds\\UI-EJ-BACKGROUND-BlackrockDepths.blp";
+local btnFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Buttons\\UI-EJ-DUNGEONBUTTON-BlackrockDepths.blp";
+local loreFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Lore\\UI-EJ-LOREBG-BlackrockDepths.blp";
 
 --id, name, desc, mapID, bgFile, btnFile, smBtnFile, loreFile, difficultyID
-instance:setAttributes(228, "Blackrock Depths", description, 230, bgFile, btnFile, 0, loreFile, EJ_Data.Heroic);
+instance:setAttributes(228, "Blackrock Depths", EJ_Descriptions.Instances["BLACKROCKDEPTHS"], 230, bgFile, btnFile, 0, loreFile, EJ_Data.Heroic);
 
 --name, desc, mapX, mapY, instanceID, encounterID, orderIndex, rootSectionID, mapID, difficultyID
 local high_interrogator_gerstahn = EJ_Data:CreateEncounter();
@@ -103,4 +101,3 @@ instance:addEncounter(emperor_dagran_thaurissan);
 
 --Add instance to list
 EJ_Data:addInstance(EJ_Data.CLASSIC, instance, false);
-end
