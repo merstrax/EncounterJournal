@@ -968,9 +968,12 @@
 						self.tex.down[3]:Hide();
 					</OnMouseUp>
 					<OnEnter>
-						if ( self.title) then
+						if ( self.title and self.link == 0) then
 							GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
 							GameTooltip:SetText(self.title:GetText(), nil, nil, nil, nil, true);
+						else
+							GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
+							GameTooltip:SetHyperlink(self.link);
 						end
 					</OnEnter>
 					<OnLeave>

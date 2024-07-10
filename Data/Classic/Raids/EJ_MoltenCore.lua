@@ -8,7 +8,12 @@ instance:setAttributes(741, "Molten Core", EJ_Descriptions.Instances["MOLTENCORE
 local lucifron = EJ_Data:CreateEncounter();
 lucifron:setAttributes("Lucifron", "", 0.658633, 0.374995, 741, 663, 1, 0, 232, 8);
 lucifron:setLoot({18872,19145,19146,18875,18870,18861,17109,18879,19147,18878,17077,2522362});
-lucifron:setLoot({}); 
+
+local lucifron_phase_1 = EJ_Data:CreateSection("Phase 1", "", 0, 0, 0, 1, 3, -1);
+lucifron:addSection(lucifron_phase_1, 1, nil)
+lucifron:addSection(EJ_Data:CreateSection("Test 1", "Test 1", 2, 0, 0, 0, 64, -1), 1, lucifron_phase_1);
+lucifron:addSection(EJ_Data:CreateSection(GetSpellLink(72133), "Spell Link Test", 2, 72133, 0, 0, 128, -1), 2, lucifron_phase_1);
+
 instance:addEncounter(lucifron); 
 
 local magmadar = EJ_Data:CreateEncounter();

@@ -120,12 +120,9 @@ local encounter = {
     OrderIndex = nil;
 
     RootSectionID = nil;
-    
     DifficultyID = nil;
 
     Loot = {};
-
-    Sections = {};
     SectionCount = 0;
 
     isEncounter = true;
@@ -136,9 +133,8 @@ local section = {
     Desc = ""; 
     Index = 1; 
     ParentSection = nil; 
-    ChildSection = {};
-    ChildCount = 0; 
-    --NextSiblingSectionID = 4631; 
+    FirstChildSection = nil;
+    NextSiblingSection = nil; 
     Type = 0; 
     --IconCreatureDisplayInfoID = 0; 
     --UiModelSceneID = 0; 
@@ -163,8 +159,18 @@ function encounter:getLootCount()
 end
 
 function encounter:addSection(section, index, parent)
-    if (parent and index) then
-        parent.ChildSection[index] = section;
+    if (parent) then
+        local sibling = nil;
+        if(not parent.FirstChildSection) then
+            parent.FirstChildSection = section;
+        else
+            sibling = parent.FirstChildSection
+            while(sibling.NextSiblingSection) do
+                sibling = sibling.NextSiblingSection;
+            end
+            sibling.NextSiblingSection = section;
+        end
+        
         section.ParentSection = parent;
         section.Index = index;
     else
@@ -172,8 +178,15 @@ function encounter:addSection(section, index, parent)
         if index == nil then
             index = self.SectionCount;
         end
-        self.Sections[index] = section;
-        section.ParentSection = self.Sections;
+        if(not self.RootSectionID) then
+            self.RootSectionID = section;
+        else
+            sibling = self.RootSectionID;
+            while(sibling.NextSiblingSection) do
+                sibling = sibling.NextSiblingSection;
+            end
+            sibling.NextSiblingSection = section;
+        end
         section.Index = index;
     end
 end
@@ -186,7 +199,6 @@ function encounter:setAttributes(name, desc, mapX, mapY, instanceID, encounterID
     self.InstanceID = instanceID or self.InstanceID;
     self.EncounterID = encounterID or self.EncounterID;
     self.OrderIndex = orderIndex or self.OrderIndex;
-    self.RootSectionID = rootSectionID or self.RootSectionID;
     self.MapID = mapID or self.MapID;
     self.DifficultyID = difficultyID or self.DifficultyID;
 end

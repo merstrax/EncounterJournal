@@ -749,7 +749,7 @@ function EncounterJournal_DisplayInstance(instanceID, noButton)
 		--EncounterJournalBossButton_UpdateDifficultyOverlay(bossButton);
 		
 		if ( not hasBossAbilities ) then
-			hasBossAbilities = rootSectionID > 0;
+			hasBossAbilities = rootSectionID ~= nil;
 		end
 
 		bossIndex = bossIndex + 1;
@@ -836,10 +836,10 @@ function EncounterJournal_DisplayEncounter(encounterID, noButton)
 
 	self.info.encounterTitle:SetText(ename);
 
-	EncounterJournal_SetTabEnabled(EncounterJournal.encounter.info.overviewTab, rootSectionID);
+	EncounterJournal_SetTabEnabled(EncounterJournal.encounter.info.overviewTab, rootSectionID or description ~= "");
 	EncounterJournal_SetTabEnabled(EncounterJournal.encounter.info.lootTab, C_EncounterJournal.InstanceHasLoot());	
 
-	local sectionInfo = C_EncounterJournal.GetSectionInfo(rootSectionID[1]);
+	local sectionInfo = C_EncounterJournal.GetSectionInfo(rootSectionID);
 
 	local overviewFound;
 	if (sectionInfo and EncounterJournal_IsHeaderTypeOverview(sectionInfo.headerType)) then
@@ -947,8 +947,8 @@ function EncounterJournal_DisplayEncounter(encounterID, noButton)
 	end]]
 
 	--enable model and abilities tab
-	EncounterJournal_SetTabEnabled(EncounterJournal.encounter.info.modelTab, true);
-	EncounterJournal_SetTabEnabled(EncounterJournal.encounter.info.bossTab, true);
+	EncounterJournal_SetTabEnabled(EncounterJournal.encounter.info.modelTab, false);
+	EncounterJournal_SetTabEnabled(EncounterJournal.encounter.info.bossTab, false);
 
 	if (overviewFound) then
 		EncounterJournal_ToggleHeaders(EncounterJournal.encounter.overviewFrame);
@@ -1127,7 +1127,7 @@ function EncounterJournal_SetBullets(object, description, hideBullets)
 	if (not string.find(description, "\$bullet;")) then
 		object.Text:SetText(description);
 		object.textString = description;
-		object:SetHeight(object.Text:GetContentHeight());
+		object:SetHeight(object.Text:GetHeight());
 		EncounterJournal_CleanBullets(parent);
 		return;
 	end
@@ -1137,7 +1137,7 @@ function EncounterJournal_SetBullets(object, description, hideBullets)
 	if (desc) then
 		object.Text:SetText(desc);
 		object.textString = desc;
-		object:SetHeight(object.Text:GetContentHeight());
+		object:SetHeight(object.Text:GetHeight());
 	end
 
 	local bullets = {}
@@ -1174,8 +1174,8 @@ function EncounterJournal_SetBullets(object, description, hideBullets)
 				bullet:SetPoint("TOP", parent.Bullets[k-1], "BOTTOM", 0, 0);
 			end
 			bullet.Text:SetText(text);
-			if (bullet.Text:GetContentHeight() ~= 0) then
-				bullet:SetHeight(bullet.Text:GetContentHeight());
+			if (bullet.Text:GetHeight() ~= 0) then
+				bullet:SetHeight(bullet.Text:GetHeight());
 			end
 
 			if (hideBullets) then
@@ -1418,7 +1418,7 @@ function EncounterJournal_ToggleHeaders(self, doNotShift)
 			else
 				--This sets the base encounter header
 				parentID = self.encounterID;
-				nextSectionID = self.rootSectionID[1];
+				nextSectionID = self.rootSectionID;
 				topLevelSection = true;
 			end
 
@@ -2386,9 +2386,11 @@ function EncounterJournalBossButton_OnEvent(self, event)
 end
 
 function EncounterJournalBossButton_OnClick(self)
-	local _, _, _, rootSectionID = EJ_GetEncounterInfo(self.encounterID);
-	if ( rootSectionID == 0 ) then
+	local _, desc, _, rootSectionID = EJ_GetEncounterInfo(self.encounterID);
+	if ( not rootSectionID and desc == "") then
 		EncounterJournal_SetTab(EncounterJournal.encounter.info.lootTab:GetID());
+	else
+		EncounterJournal_SetTab(EncounterJournal.encounter.info.overviewTab:GetID());
 	end
 	EncounterJournal_DisplayEncounter(self.encounterID);
 end

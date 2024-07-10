@@ -141,7 +141,9 @@ local function EJ_BuildInstanceLootCache(journalInstanceID)
     for _, v in ipairs(EJ_Data:getEncounterList(journalInstanceID)) do
         if v.Loot then
             for _, i in ipairs(v.Loot) do
-                tinsert(C_EncounterJournal.instanceLootCache[journalInstanceID], i);
+                if(not tContains(C_EncounterJournal.instanceLootCache[journalInstanceID], i)) then
+                    tinsert(C_EncounterJournal.instanceLootCache[journalInstanceID], i);
+                end
             end
         end
     end
@@ -152,9 +154,7 @@ local function EJ_BuildEncounterLootCache(encounterID)
     C_EncounterJournal.encounterLootCache[encounterID] = {};
     for _, v in ipairs(EJ_Data:getEncounterList(C_EncounterJournal.SELECTED_INSTANCE)) do
         if v.EncounterID == encounterID and v.Loot then
-            for _, i in ipairs(v.Loot) do
-                tinsert(C_EncounterJournal.encounterLootCache[encounterID], i);
-            end
+            C_EncounterJournal.encounterLootCache[encounterID] = v.Loot;
         end
     end
 end
@@ -193,22 +193,20 @@ function C_EncounterJournal.GetSectionInfo(sectionID)
         _s.title = sectionID.Title;
         _s.description = sectionID.Desc;
         _s.headerType = sectionID.Type;
-        _, _, _s.abilityIcon = GetSpellInfo(sectionID.SpellID);
         _s.creatureDisplayID = 0;
         _s.uiModelSceneID = 0;
-
-        if(sectionID.ParentSection) then
-            _s.siblingSectionID = sectionID.ParentSection[sectionID.Index + 1] or 0;
-        end
-
-        if(sectionID.ChildCount > 0) then
-            _s.firstChildSectionID = sectionID.ChildSection[1];
-        else
-            _s.firstChildSectionID = 0;
-        end
-
+        _s.siblingSectionID = sectionID.NextSiblingSection;
+        _s.firstChildSectionID = sectionID.FirstChildSection;
         _s.filteredByDifficulty = false;
-        _s.link = "";
+
+        if(sectionID.SpellID ~= 0) then
+            _s.link = GetSpellLink(sectionID.SpellID);
+            _, _, _s.abilityIcon = GetSpellInfo(sectionID.SpellID);
+        else
+            _s.abilityIcon = nil;
+            _s.link = 0;
+        end
+
         _s.startsOpen = false;
 
         return _s;
@@ -393,7 +391,7 @@ function EJ_GetEncounterInfo(encounterID)
             C_EncounterJournal.encounterInfoCache[encounterID] = 
             {
                 v.Name, v.Description, v.EncounterID, 
-                v.Sections, EJ_BuildJournalLink(EJ_TYPES.Encounter, v.ID, 0, v.Name), 
+                v.RootSectionID, EJ_BuildJournalLink(EJ_TYPES.Encounter, v.ID, 0, v.Name), 
                 v.InstanceID, v.EncounterID, select(10, EJ_GetInstanceInfo(v.InstanceID))
             };
             break;
