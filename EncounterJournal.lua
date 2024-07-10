@@ -660,6 +660,10 @@ function EncounterJournal_DisplayInstance(instanceID, noButton)
 	EncounterJournal.instanceID = instanceID;
 	EncounterJournal.encounterID = nil;
 	EJ_SelectInstance(instanceID);
+	
+	local difficultyStr = GetEJDifficultyString(difficultyID);
+	EncounterJournal.encounter.info.difficulty:SetText(difficultyStr);
+
 	EncounterJournal_LootUpdate();
 	EncounterJournal_ClearDetails();
 
@@ -774,18 +778,14 @@ function EncounterJournal_DisplayInstance(instanceID, noButton)
 	if (EncounterJournal_SearchForOverview(instanceID)) then
 		EJ_Tabs[1].frame = "overviewScroll";
 		EJ_Tabs[3].frame = "detailsScroll"; -- flip them back
-		self.info[EJ_Tabs[1].button].tooltip = OVERVIEW;
+		self.info[EJ_Tabs[1].button].tooltip = "Overview";
 		self.info[EJ_Tabs[3].button]:Show();
 		self.info[EJ_Tabs[4].button]:SetPoint("TOP", self.info[EJ_Tabs[3].button], "BOTTOM", 0, 2)
 		self.info.overviewFound = true;
 	else
 		EJ_Tabs[1].frame = "detailsScroll";
 		EJ_Tabs[3].frame = "overviewScroll"; -- flip these so detailsScroll won't get hidden, overview will never be shown here
-		if ( hasBossAbilities ) then
-			self.info[EJ_Tabs[1].button].tooltip = ABILITIES;
-		else
-			self.info[EJ_Tabs[1].button].tooltip = OVERVIEW;
-		end
+		self.info[EJ_Tabs[1].button].tooltip = "Overview";
 		self.info[EJ_Tabs[3].button]:Hide();
 		self.info[EJ_Tabs[4].button]:SetPoint("TOP", self.info[EJ_Tabs[2].button], "BOTTOM", 0, 2)
 		self.info.overviewFound = false;

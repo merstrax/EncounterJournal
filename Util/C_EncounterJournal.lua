@@ -539,6 +539,11 @@ function EJ_IsValidInstanceDifficulty(difficultyID)
         return true;
     end
 
+    if(info == DifficultyUtil.ID.RaidAscended) then
+        C_EncounterJournal.SELECTED_DIFFICULTY = DifficultyUtil.ID.RaidNormal;
+    else
+        C_EncounterJournal.SELECTED_DIFFICULTY = DifficultyUtil.ID.DungeonNormal;
+    end  
     return false;
 end
 
@@ -556,6 +561,8 @@ function EJ_SelectInstance(journalInstanceID)
     if not C_EncounterJournal.SELECTED_INSTANCE then return end
     if not C_EncounterJournal.instanceEncounterCache[C_EncounterJournal.SELECTED_INSTANCE] then EJ_BuildInstanceEncounterCache(C_EncounterJournal.SELECTED_INSTANCE) end
     if not C_EncounterJournal.instanceLootCache[C_EncounterJournal.SELECTED_INSTANCE] then EJ_BuildInstanceLootCache(C_EncounterJournal.SELECTED_INSTANCE) end 
+
+    EJ_IsValidInstanceDifficulty(C_EncounterJournal.SELECTED_DIFFICULTY);
 end
 
 --EJ_SelectTier(index) - Selects a tier for the Encounter Journal API state.
