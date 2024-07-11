@@ -4,4 +4,5 @@
     <Script file="Data_Handler.lua"/>
     
     <Include file="Classic\ClassicData.xml"/>
+    <Include file="TBC\TBCData.xml"/>
 </Ui>

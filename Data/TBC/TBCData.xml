@@ -1,0 +1,15 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\..\FrameXML\UI.xsd">
+    <!--Dungeons-->
+    <Script file="Dungeons\EJ_HellfireRamparts.lua"/>
+
+    <!--Raids-->
+    <Script file="Raids\EJ_BlackTemple.lua"/>
+    <Script file="Raids\EJ_GruulsLair.lua"/>
+    <Script file="Raids\EJ_Karazhan.lua"/>
+    <Script file="Raids\EJ_MagtheridonsLair.lua"/>
+    <Script file="Raids\EJ_MountHyjal.lua"/>
+    <Script file="Raids\EJ_SerpentshrineCavern.lua"/>
+    <Script file="Raids\EJ_SunwellPlateau.lua"/>
+    <Script file="Raids\EJ_TheEye.lua"/>
+</Ui>
