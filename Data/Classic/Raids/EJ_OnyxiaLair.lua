@@ -7,7 +7,7 @@ instance:setAttributes(760, "Onyxia's Lair", EJ_Descriptions.Instances["ONYXIA"]
 
 local onyxia = EJ_Data:CreateEncounter();
 onyxia:setAttributes("Onyxia", "", 760, 1084, 0, 8);
-onyxia:setLoot({}); 
+onyxia:setLoot({17078,18205,18813,17064,17067,17075,17068,18215,18216,18211,17084,18212,2522460});
 instance:addEncounter(onyxia); 
 
 EJ_Data:addInstance(EJ_Data.CLASSIC, tcopy(instance), true);

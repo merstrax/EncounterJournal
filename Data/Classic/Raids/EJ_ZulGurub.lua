@@ -5,49 +5,69 @@ local loreFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Lore\\UI-EJ-LOREB
 
 instance:setAttributes(77, "Zul'Gurub", EJ_Descriptions.Instances["ZULGURUB"], 333, bgFile, btnFile, loreFile, DifficultyUtil.ID.RaidAscended);
 
+local high_priestess_jeklik = EJ_Data:CreateEncounter();
+high_priestess_jeklik:setAttributes("High Priestess Jeklik", "", 76, 11780, 1, 8);
+high_priestess_jeklik:setLoot({19918,19928,20262,20265,19923,19920,19915,22721,22722,22711,22712,22720,22716,22718,22715,22714,22713}); 
+instance:addEncounter(high_priestess_jeklik);
+
 local high_priest_venoxis = EJ_Data:CreateEncounter();
-high_priest_venoxis:setAttributes("High Priest Venoxis", "Originally sent to kill Hakkar, Venoxis became enslaved to the murderous entity before falling to Azeroth's heroes. Through the efforts of the Soulflayer's agents, Venoxis has been ripped from the spirit world and ordered to defend Zul'Gurub with his venomous serpentine minions.", 76, 1178, 1, 8);
-high_priest_venoxis:setLoot({}); 
-instance:addEncounter(high_priest_venoxis); 
+high_priest_venoxis:setAttributes("High Priest Venoxis", "", 76, 11781, 2, 8);
+high_priest_venoxis:setLoot({19904,19903,19907,19906,19905,19900,22721,22722,22711,22712,22720,22716,22718,22715,22714,22713}); 
+instance:addEncounter(high_priest_venoxis);
+
+local high_priestess_marli = EJ_Data:CreateEncounter();
+high_priestess_marli:setAttributes("High Priestess Mar'li", "", 76, 11782, 3, 8);
+high_priestess_marli:setLoot({20032,19927,19919,19871,19925,19930,22721,22722,22711,22712,22720,22716,22718,22715,22714,22713}); 
+instance:addEncounter(high_priestess_marli);
 
 local bloodlord_mandokir = EJ_Data:CreateEncounter();
-bloodlord_mandokir:setAttributes("Bloodlord Mandokir", "The infamous Bloodlord Mandokir died a torturous death before Bloodscalp trolls desecrated his body years ago. Word has now spread that Mandokir walks the jungles of Stranglethorn yet again, using the corpse of the mighty Bloodscalp chieftain Gan'zulah as a host for his malevolent spirit.", 76, 1179, 2, 8);
-bloodlord_mandokir:setLoot({}); 
+bloodlord_mandokir:setAttributes("Bloodlord Mandokir", "", 76, 11783, 4, 8);
+bloodlord_mandokir:setLoot({19867,19866,19874,20038,19872,19870,19895,19869,19877,19878,19873,19893,19863}); 
 instance:addEncounter(bloodlord_mandokir); 
 
-local cache_of_madness_gri_lek = EJ_Data:CreateEncounter();
-cache_of_madness_gri_lek:setAttributes("Cache of Madness - Gri'lek", "Among the hateful spirits in the Cache of Madness are Gri'lek, a dire troll stripped of his regenerative abilities by the loa; Renataki, an infamous and sadistic warrior; Hazza'rah, a seer tormented by dire future visions; and Wushoolay, a mighty combatant bristling with the powers of the storms.", 76, 788, 3, 8);
-cache_of_madness_gri_lek:setLoot({}); 
-instance:addEncounter(cache_of_madness_gri_lek); 
+local edge_of_madness_gri_lek = EJ_Data:CreateEncounter();
+edge_of_madness_gri_lek:setAttributes("Edge of Madness - Gri'lek", "", 76, 11784, 5, 8);
+edge_of_madness_gri_lek:setLoot({19961,19962}); 
+instance:addEncounter(edge_of_madness_gri_lek); 
 
-local cache_of_madness_hazza_rah = EJ_Data:CreateEncounter();
-cache_of_madness_hazza_rah:setAttributes("Cache of Madness - Hazza'rah", "Among the hateful spirits in the Cache of Madness are Gri'lek, a dire troll stripped of his regenerative abilities by the loa; Renataki, an infamous and sadistic warrior; Hazza'rah, a seer tormented by dire future visions; and Wushoolay, a mighty combatant bristling with the powers of the storms.", 76, 788, 4, 8);
-cache_of_madness_hazza_rah:setLoot({}); 
-instance:addEncounter(cache_of_madness_hazza_rah); 
+local edge_of_madness_hazza_rah = EJ_Data:CreateEncounter();
+edge_of_madness_hazza_rah:setAttributes("Edge of Madness - Hazza'rah", "", 76, 11785, 6, 8);
+edge_of_madness_hazza_rah:setLoot({19968,19967}); 
+instance:addEncounter(edge_of_madness_hazza_rah); 
 
-local cache_of_madness_renataki = EJ_Data:CreateEncounter();
-cache_of_madness_renataki:setAttributes("Cache of Madness - Renataki", "Among the hateful spirits in the Cache of Madness are Gri'lek, a dire troll stripped of his regenerative abilities by the loa; Renataki, an infamous and sadistic warrior; Hazza'rah, a seer tormented by dire future visions; and Wushoolay, a mighty combatant bristling with the powers of the storms.", 76, 788, 5, 8);
-cache_of_madness_renataki:setLoot({}); 
-instance:addEncounter(cache_of_madness_renataki); 
+local edge_of_madness_renataki = EJ_Data:CreateEncounter();
+edge_of_madness_renataki:setAttributes("Edge of Madness - Renataki", "", 76, 11786, 7, 8);
+edge_of_madness_renataki:setLoot({19964,19963}); 
+instance:addEncounter(edge_of_madness_renataki); 
 
-local cache_of_madness_wushoolay = EJ_Data:CreateEncounter();
-cache_of_madness_wushoolay:setAttributes("Cache of Madness - Wushoolay", "Among the hateful spirits in the Cache of Madness are Gri'lek, a dire troll stripped of his regenerative abilities by the loa; Renataki, an infamous and sadistic warrior; Hazza'rah, a seer tormented by dire future visions; and Wushoolay, a mighty combatant bristling with the powers of the storms.", 76, 788, 6, 8);
-cache_of_madness_wushoolay:setLoot({}); 
-instance:addEncounter(cache_of_madness_wushoolay); 
+local edge_of_madness_wushoolay = EJ_Data:CreateEncounter();
+edge_of_madness_wushoolay:setAttributes("Edge of Madness - Wushoolay", "", 76, 11787, 8, 8);
+edge_of_madness_wushoolay:setLoot({19965,19993}); 
+instance:addEncounter(edge_of_madness_wushoolay);
 
-local high_priestess_kilnara = EJ_Data:CreateEncounter();
-high_priestess_kilnara:setAttributes("High Priestess Kilnara", "When High Priestess Arlokk was killed, the panther loa Bethekk chose her sister, Kilnara, as her new mortal champion. Supporting the recent pact between the Gurubashi and Zandalar tribes, Kilnara has unleashed her savage panther minions on the region's unsuspecting denizens.", 76, 1180, 7, 8);
-high_priestess_kilnara:setLoot({}); 
-instance:addEncounter(high_priestess_kilnara); 
+local gahzranka = EJ_Data:CreateEncounter();
+gahzranka:setAttributes("Gahz'ranka", "", 76, 11788, 9, 8);
+gahzranka:setLoot({19945,19944,19947,19946}); 
+instance:addEncounter(gahzranka);
 
-local zanzil = EJ_Data:CreateEncounter();
-zanzil:setAttributes("Zanzil", "Exiled from the Skullsplitter tribe for turning his fellow trolls into mindless slaves, Zanzil was recently offered a place among the Gurubashi by Jin'do the Godbreaker in exchange for bolstering Zul'Gurub's forces. It is well-known that his toxic elixirs can even rouse the dead from their graves.", 76, 1181, 8, 8);
-zanzil:setLoot({}); 
-instance:addEncounter(zanzil); 
+local high_priest_thekal = EJ_Data:CreateEncounter();
+high_priest_thekal:setAttributes("High Priest Thekal", "", 76, 11789, 10, 8);
+high_priest_thekal:setLoot({19897,19896,19902,19898,19899,20260,20266,19901,22721,22722,22711,22712,22720,22716,22718,22715,22714,22713}); 
+instance:addEncounter(high_priest_thekal); 
 
-local jin_do_the_godbreaker = EJ_Data:CreateEncounter();
-jin_do_the_godbreaker:setAttributes("Jin'do the Godbreaker", "After his defeat in Zul'Gurub, Jin'do's spirit was tormented by his failure to serve Hakkar's wishes. Jin'do recently found a way back into the world and enslaved the Soulflayer. Bristling with the dread god's terrible powers, Jin'do plans to restore the Gurubashi empire to its former glory.", 76, 1182, 9, 8);
-jin_do_the_godbreaker:setLoot({});
-instance:addEncounter(jin_do_the_godbreaker); 
+local high_priestess_arlokk = EJ_Data:CreateEncounter();
+high_priestess_arlokk:setAttributes("High Priestess Arlokk", "", 76, 11790, 11, 8);
+high_priestess_arlokk:setLoot({19910,19909,19913,19912,19922,19914,22721,22722,22711,22712,22720,22716,22718,22715,22714,22713});
+instance:addEncounter(high_priestess_arlokk); 
+
+local jin_do_the_hexxar = EJ_Data:CreateEncounter();
+jin_do_the_hexxar:setAttributes("Jin'do the Hexxer", "", 76, 11791, 12, 8);
+jin_do_the_hexxar:setLoot({19885,19891,19890,19884,19888,19886,19929,19889,19892,19875,19887,19894});
+instance:addEncounter(jin_do_the_hexxar);
+
+local hakkar = EJ_Data:CreateEncounter();
+hakkar:setAttributes("Hakkar", "", 76, 11791, 12, 8);
+hakkar:setLoot({19857,20257,20264,19855,19876,19856,19859,19864,19865,19854,19852,19862,19853,19861});
+instance:addEncounter(hakkar); 
 
 EJ_Data:addInstance(EJ_Data.CLASSIC, tcopy(instance), true);
