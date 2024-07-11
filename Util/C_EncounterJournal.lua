@@ -178,10 +178,21 @@ end
 
 --C_EncounterJournal.GetSectionIconFlags(sectionID) : iconFlags - Returns the icon flags for a section, such as Magic Effect and Heroic Difficulty
 function C_EncounterJournal.GetSectionIconFlags(sectionID)
+    local iconList = {};
+    local counter = 0;
+    local flags = 0;
     if sectionID then
-        return sectionID.IconFlags;
+        flags = sectionID.IconFlags;
+        while(flags > 0 and #iconList < 4) do
+            if(bit.band(flags, 1) == 1) then
+                tinsert(iconList, counter);
+            end
+            counter = counter + 1;
+            flags = bit.rshift(flags, 1);
+        end
     end
-    return 0;
+    return iconList;
+    --return sectionID.IconFlags;
 end
 
 --C_EncounterJournal.GetSectionInfo(sectionID) : info - Returns information about an entry in the Abilities section of the Encounter Journal.
@@ -197,7 +208,7 @@ function C_EncounterJournal.GetSectionInfo(sectionID)
         _s.uiModelSceneID = 0;
         _s.siblingSectionID = sectionID.NextSiblingSection;
         _s.firstChildSectionID = sectionID.FirstChildSection;
-        _s.filteredByDifficulty = false;
+        _s.filteredByDifficulty = sectionID.DifficultyMask > C_EncounterJournal.SELECTED_DIFFICULTY;
 
         if(sectionID.SpellID ~= 0) then
             _s.link = GetSpellLink(sectionID.SpellID);

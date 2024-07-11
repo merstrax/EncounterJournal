@@ -25,6 +25,40 @@ EJ_Data.Tiers = {
 
 EJ_Data.InstanceToTier = {};
 
+EJ_Data.Icons = {
+    Tank = 1, -- 0
+    DPS = 2, -- 1
+    Healer = 3, -- 2
+    Heroic = 4, -- 4
+    Fatal = 5,
+    Important = 6,
+    Interruptable = 7,
+    Magic = 8,
+    Curse = 9,
+    Poison = 10,
+    Disease = 11,
+    Adds = 12,
+    Mythic = 13,
+    Bleed = 14
+}
+
+EJ_Data.IconFlags = {
+    Tank = 1, -- 0
+    DPS = 2, -- 1
+    Healer = 4, -- 2
+    Heroic = 8, -- 4
+    Fatal = 16,
+    Important = 32,
+    Interruptable = 64,
+    Magic = 128,
+    Curse = 256,
+    Poison = 512,
+    Disease = 1024,
+    Adds = 2048,
+    Mythic = 4096,
+    Bleed = 8192
+}
+
 function EJ_Data:getInstanceList(tier, isRaid)
     if isRaid then
         return self.Tiers[tier].Raids;
@@ -88,7 +122,7 @@ function instance:addEncounter(encounter)
     return nil;
 end
 
-function instance:setAttributes(id, name, desc, mapID, bgFile, btnFile, smBtnFile, loreFile, difficultyID)
+function instance:setAttributes(id, name, desc, mapID, bgFile, btnFile, loreFile, difficultyID)
     self.ID = id or self.ID;
     self.Name = name or self.Name;
     self.Description = desc or self.Description;
@@ -111,9 +145,9 @@ local encounter = {
     Name = nil;
     Description = nil;
 
-    MapID = nil;
-    MapX = nil;
-    MapY = nil;
+    MapID = 0;
+    MapX = 0;
+    MapY = 0;
 
     InstanceID = nil;
     EncounterID = nil;
@@ -158,7 +192,7 @@ function encounter:getLootCount()
     return #self.Loot
 end
 
-function encounter:addSection(section, index, parent)
+function encounter:addSection(section, parent)
     if (parent) then
         local sibling = nil;
         if(not parent.FirstChildSection) then
@@ -172,12 +206,12 @@ function encounter:addSection(section, index, parent)
         end
         
         section.ParentSection = parent;
-        section.Index = index;
+        --section.Index = index;
     else
-        self.SectionCount = self.SectionCount + 1;
-        if index == nil then
-            index = self.SectionCount;
-        end
+        --self.SectionCount = self.SectionCount + 1;
+        --if index == nil then
+            --index = self.SectionCount;
+        --end
         if(not self.RootSectionID) then
             self.RootSectionID = section;
         else
@@ -187,19 +221,16 @@ function encounter:addSection(section, index, parent)
             end
             sibling.NextSiblingSection = section;
         end
-        section.Index = index;
+        --section.Index = index;
     end
 end
 
-function encounter:setAttributes(name, desc, mapX, mapY, instanceID, encounterID, orderIndex, rootSectionID, mapID, difficultyID)
+function encounter:setAttributes(name, desc, instanceID, encounterID, orderIndex, difficultyID)
     self.Name = name or self.Name;
     self.Description = desc or self.Description;
-    self.MapX = mapX or self.MapX;
-    self.MapY = mapY or self.MapY;
     self.InstanceID = instanceID or self.InstanceID;
     self.EncounterID = encounterID or self.EncounterID;
     self.OrderIndex = orderIndex or self.OrderIndex;
-    self.MapID = mapID or self.MapID;
     self.DifficultyID = difficultyID or self.DifficultyID;
 end
 
@@ -208,14 +239,12 @@ function EJ_Data:CreateEncounter()
     return tcopy(encounter)
 end
 
-function EJ_Data:CreateSection(title, desc, sectionType, spellID, iconID, flags, iconFlags, difficulty)
+function EJ_Data:CreateSection(title, desc, spellID, iconFlags, difficulty)
     local _section = tcopy(section);
+
     _section.Title = title;
     _section.Desc = desc;
-    _section.Type = sectionType;
     _section.SpellID = spellID;
-    _section.IconFileDataID = iconID;
-    _section.Flags = flags;
     _section.IconFlags = iconFlags;
     _section.DifficultyMask = difficulty;
 

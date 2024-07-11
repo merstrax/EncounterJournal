@@ -603,13 +603,20 @@ local function EncounterJournal_SetupIconFlags(sectionID, infoHeaderButton)
 	infoHeaderButton.icon3:Hide();
 	infoHeaderButton.icon4:Hide();
 
-	if iconFlag ~= 0 then
+	if #iconFlag ~= 0 then
 		textRightAnchor = infoHeaderButton.icon1;
-		infoHeaderButton.icon1:Show();
+		--infoHeaderButton.icon1:Show();
 		--infoHeaderButton.icon1.tooltipTitle = _G["ENCOUNTER_JOURNAL_SECTION_FLAG"..iconFlag];
 		--infoHeaderButton.icon1.tooltipText = _G["ENCOUNTER_JOURNAL_SECTION_FLAG_DESCRIPTION"..iconFlag];
-		EncounterJournal_SetFlagIcon(infoHeaderButton.icon1.icon, iconFlag);
+		--EncounterJournal_SetFlagIcon(infoHeaderButton.icon1.icon, iconFlag - 1);
 	end
+	
+	for i = 1, #iconFlag do
+		infoHeaderButton["icon"..tostring(i)]:Show();
+		EncounterJournal_SetFlagIcon(infoHeaderButton["icon"..tostring(i)].icon, iconFlag[i]);
+	end
+	
+	
 
 	if textRightAnchor then
 		infoHeaderButton.title:SetPoint("RIGHT", textRightAnchor, "LEFT", -5, 0);
