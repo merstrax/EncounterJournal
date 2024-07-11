@@ -3,7 +3,7 @@ local bgFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Backgrounds\\UI-EJ-
 local btnFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Buttons\\UI-EJ-DUNGEONBUTTON-ZulGurub.blp";
 local loreFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Lore\\UI-EJ-LOREBG-ZulGurub.blp";
 
-instance:setAttributes(77, "Zul'Gurub", EJ_Descriptions.Instances["ZULGURUB"], 333, bgFile, btnFile, loreFile, DifficultyUtil.ID.RaidAscended);
+instance:setAttributes(76, "Zul'Gurub", EJ_Descriptions.Instances["ZULGURUB"], 333, bgFile, btnFile, loreFile, DifficultyUtil.ID.RaidAscended);
 
 local high_priestess_jeklik = EJ_Data:CreateEncounter();
 high_priestess_jeklik:setAttributes("High Priestess Jeklik", "", 76, 11780, 1, 8);
@@ -66,7 +66,7 @@ jin_do_the_hexxar:setLoot({19885,19891,19890,19884,19888,19886,19929,19889,19892
 instance:addEncounter(jin_do_the_hexxar);
 
 local hakkar = EJ_Data:CreateEncounter();
-hakkar:setAttributes("Hakkar", "", 76, 11791, 12, 8);
+hakkar:setAttributes("Hakkar", "", 76, 11792, 13, 8);
 hakkar:setLoot({19857,20257,20264,19855,19876,19856,19859,19864,19865,19854,19852,19862,19853,19861});
 instance:addEncounter(hakkar); 
 

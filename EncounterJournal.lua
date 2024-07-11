@@ -648,6 +648,9 @@ end
 local IconIndexByDifficulty = {
 	[3] = 3, -- Heroic
 	[4] = 12, -- Mythic
+	[6] = 3,
+	[7] = 12,
+	[8] = 14,
 };
 
 local function GetIconIndexForDifficultyID(difficultyID)

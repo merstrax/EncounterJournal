@@ -37,7 +37,7 @@ instance:addEncounter(viscidus);
 
 local the_twin_emperors = EJ_Data:CreateEncounter();
 the_twin_emperors:setAttributes("The Twin Emperors", "", 744, 715, 6, 8);
-the_twin_emperors:setLoot({21600,21602,21599,21598,21597,21601,20735,20930}); 
+the_twin_emperors:setLoot({21600,21602,21599,21598,21597,21601,20930});
 instance:addEncounter(the_twin_emperors); 
 
 local ouro = EJ_Data:CreateEncounter();

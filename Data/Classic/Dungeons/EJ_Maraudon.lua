@@ -7,7 +7,7 @@ instance:setAttributes(232, "Maraudon", EJ_Descriptions.Instances["MARAUDON"], 3
 
 local noxxion = EJ_Data:CreateEncounter();
 noxxion:setAttributes("Noxxion", "Noxxion is a living embodiment of corruption. Theradras ordered her ally Lord Vyletongue to create this putrid elemental to be a powerful servant and a loyal pet to ease the princess's loneliness. Noxxion spreads its toxic essence into areas of Maraudon that have not yet withered under Theradras's malign influence.", 232, 422, 1, 2);
-noxxion:setLoot({17746,17744,17745,17702}); 
+noxxion:setLoot({17746,17744,17745}); 
 instance:addEncounter(noxxion); 
 
 local razorlash = EJ_Data:CreateEncounter();
@@ -22,7 +22,7 @@ instance:addEncounter(tinkerer_gizlock);
 
 local lord_vyletongue = EJ_Data:CreateEncounter();
 lord_vyletongue:setAttributes("Lord Vyletongue", "The satyr lord Vyletongue journeyed into Maraudon's depths after hearing of its corruption. Theradras was wary of the conniving demon at first, but Vyletongue proved his worth by creating an array of wretched minions, such as Noxxion and Razorlash, for the princess.", 232, 424, 4, 2);
-lord_vyletongue:setLoot({1775,17754,17752}); 
+lord_vyletongue:setLoot({17755,17754,17752}); 
 instance:addEncounter(lord_vyletongue); 
 
 local celebras_the_cursed = EJ_Data:CreateEncounter();

@@ -16,7 +16,7 @@ instance:addEncounter(high_interrogator_gerstahn);
 
 local lord_roccor = EJ_Data:CreateEncounter();
 lord_roccor:setAttributes("Lord Roccor", "Lord Roccor loathes the scheming and backstabbing of his fellow fire elementals. To avoid serving alongside his kind in the Molten Core, the mighty being purposefully angered the Firelord. Roccor's risky gambit paid off: he was expelled from the core and forced to guard Blackrock Depths in isolation.", 228, 228, 2, 4);
-lord_roccor:setLoot({22234,11632,22397,11631,11630}); 
+lord_roccor:setLoot({22234,11632,22397,11631});
 instance:addEncounter(lord_roccor);
 
 local houndmaster_grebmar = EJ_Data:CreateEncounter();
@@ -26,7 +26,7 @@ instance:addEncounter(houndmaster_grebmar);
 
 local ring_of_law = EJ_Data:CreateEncounter();
 ring_of_law:setAttributes("Ring of Law", "There is only one punishment for crimes committed against the Dark Iron dwarves: death. Ancient tradition calls for the guilty to pay the blood price in the Ring of the Law by battling savage creatures gathered from across Azeroth. To date, it is unknown if anyone has ever survived this brutal crucible.", 228, 230, 4, 4);
-ring_of_law:setLoot({11677,11675,11731,11678,11685,11686,11679,11730,11726,22271,11729,11722,11703,22270,22257,22266,11702,11610,11634,11633,11635,11662,11665,11728,11824}); 
+ring_of_law:setLoot({11677,11675,11731,11678,11685,11686,11679,11730,11726,22271,11729,11722,11703,22270,22257,22266,11702,11634,11633,11635,11662,11665,11728,11824}); 
 instance:addEncounter(ring_of_law);
 
 --Theldren?
@@ -48,7 +48,7 @@ instance:addEncounter(warder_stilgiss);
 
 local fineous_darkvire = EJ_Data:CreateEncounter();
 fineous_darkvire:setAttributes("Fineous Darkvire", "Chief Architect Fineous Darkvire earned his title by passing off the ideas of more gifted masons as his own. His arrogance and scheming have drawn the ire of his predecessor, Franclorn Forgewright, from beyond the grave. The ghost of the late chief architect seeks to reclaim his incredibly powerful hammer--Ironfel--from Darkvire before it can be used for ill.", 228, 234, 8, 4);
-fineous_darkvire:setLoot({11839,11841,11842,22223,11840,10999}); 
+fineous_darkvire:setLoot({11839,11841,11842,22223});
 instance:addEncounter(fineous_darkvire);
 
 local bael_gar = EJ_Data:CreateEncounter();
@@ -98,7 +98,7 @@ instance:addEncounter(magmus);
 
 local emperor_dagran_thaurissan = EJ_Data:CreateEncounter();
 emperor_dagran_thaurissan:setAttributes("Emperor Dagran Thaurissan", "Emperor Dagran Thaurissan rules alongside Princess Moira of the rival Bronzebeard clan. Debate rages over whether the emperor ensorcelled his bride or she willingly joined him. Whatever the truth, Thaurissan's continued presence bodes ill for the future of his clan. So long as he lives, the Dark Irons will remain pawns of Ragnaros, and a dire threat to kingdoms throughout Azeroth.", 228, 245, 19, 4);
-emperor_dagran_thaurissan:setLoot({11684,11930,11924,22204,22207,11933,11934,11815,11931,11932,11928,12033,12554,12556,12557,12553}); 
+emperor_dagran_thaurissan:setLoot({11684,11930,11924,22204,22207,11933,11934,11815,11931,11932,11928,12554,12556,12557,12553});
 instance:addEncounter(emperor_dagran_thaurissan);
 
 --Add instance to list

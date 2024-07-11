@@ -62,7 +62,7 @@ instance:addEncounter(grobbulus);
 
 local gluth = EJ_Data:CreateEncounter();
 gluth:setAttributes("Gluth", "", 754, 1108, 11, 8);
-gluth:setLoot({22983,22813,23075,22994,22981,22354,22355,22356,22358,22726}); 
+gluth:setLoot({22983,22813,23075,22994,22981,22354,22355,22356,22358});
 instance:addEncounter(gluth); 
 
 local thaddius = EJ_Data:CreateEncounter();
@@ -77,7 +77,7 @@ instance:addEncounter(sapphiron);
 
 local kel_thuzad = EJ_Data:CreateEncounter();
 kel_thuzad:setAttributes("Kel'Thuzad", "", 754, 1114, 14, 8);
-kel_thuzad:setLoot({22802,23054,23577,23056,22798,22799,22821,22812,22819,23057,23053,22520,23207,23206,1510496});
+kel_thuzad:setLoot({22802,23054,23577,23056,22798,22799,22821,22812,22819,23057,23053,1510496});
 instance:addEncounter(kel_thuzad); 
 
 EJ_Data:addInstance(EJ_Data.CLASSIC, tcopy(instance), true);

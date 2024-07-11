@@ -7,7 +7,7 @@ instance:setAttributes(743, "Ruins of Ahn'Qiraj", EJ_Descriptions.Instances["RUI
 
 local kurinnaxx = EJ_Data:CreateEncounter();
 kurinnaxx:setAttributes("Kurinnaxx", "", 743, 718, 1, 8);
-kurinnaxx:setLoot({21499,21498,21500,21501,21502,21503,22217,1506051}); 
+kurinnaxx:setLoot({21499,21498,21500,21501,21502,21503,1506051});
 instance:addEncounter(kurinnaxx); 
 
 local general_rajaxx = EJ_Data:CreateEncounter();

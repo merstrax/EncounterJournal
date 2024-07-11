@@ -12,17 +12,17 @@ instance:addEncounter(kirtonos_the_herald);
 
 local jandice_barov = EJ_Data:CreateEncounter();
 jandice_barov:setAttributes("Jandice Barov", "Course: Advanced Illusions Barov's spirit lurked in the recesses of Scholomance for years, but now she has taken a more active role in educating the next generation of magi. Her vast knowledge of illusions has made her both a valued educator and a dangerous opponent to anyone foolish enough to draw her ire.", 246, 1427, 2, 4);
-jandice_barov:setLoot({18689,14543,14545,14548,18690,14541,22394,13725,13523,16701}); 
+jandice_barov:setLoot({18689,14543,14545,14548,18690,14541,22394,16701});
 instance:addEncounter(jandice_barov); 
 
 local rattlegore = EJ_Data:CreateEncounter();
 rattlegore:setAttributes("Rattlegore", "Course: Reanimation 101 Rattlegore was thought to have been destroyed in Andorhal, but Gandling immediately began preparations to reanimate the clattering terror so he could guard against intruders. The Darkmaster sought to make Rattlegore more ferocious than ever, imbuing him with an insatiable desire to harvest raw materials from his enemies.", 246, 1428, 3, 4);
-rattlegore:setLoot({14538,14539,18686,14537,14531,14528,13873,16711,18782,12726}); 
+rattlegore:setLoot({14538,14539,18686,14537,14531,14528,16711});
 instance:addEncounter(rattlegore); 
 
 local death_knight_darkreaver = EJ_Data:CreateEncounter();
 death_knight_darkreaver:setAttributes("Death Knight Darkreaver", "", 246, 14260, 4, 4);
-death_knight_darkreaver:setLoot({18760,18758,18759,18761,18749}); 
+death_knight_darkreaver:setLoot({18760,18758,18759,18761});
 instance:addEncounter(death_knight_darkreaver);
 
 local ras_frostwhisper = EJ_Data:CreateEncounter();

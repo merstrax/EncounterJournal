@@ -36,13 +36,13 @@ fenrus_the_devourer:setLoot({6340,3230});
 instance:addEncounter(fenrus_the_devourer);
 
 local wolf_master_nandos = EJ_Data:CreateEncounter();
-wolf_master_nandos:setAttributes("Wolf Master Nandos", "", 64, 64002, 7, 2);
+wolf_master_nandos:setAttributes("Wolf Master Nandos", "", 64, 64003, 7, 2);
 wolf_master_nandos:setLoot({6314,3748}); 
 instance:addEncounter(wolf_master_nandos);
 
 local archmage_arugal = EJ_Data:CreateEncounter();
 archmage_arugal:setAttributes("Archmage Arugal", "", 64, 1072, 8, 2);
-archmage_arugal:setLoot({6324,6391,6220}); 
+archmage_arugal:setLoot({6324,6392,6220});
 instance:addEncounter(archmage_arugal); 
 
 EJ_Data:addInstance(EJ_Data.CLASSIC, tcopy(instance), false);

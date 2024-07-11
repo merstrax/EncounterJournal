@@ -22,7 +22,7 @@ instance:addEncounter(gelihast);
 
 local baron_aquanis = EJ_Data:CreateEncounter();
 baron_aquanis:setAttributes("Baron Aquanis", "", 0, 0, 227, 1675, 4, 4);
-baron_aquanis:setLoot({16782,16886,16887});
+baron_aquanis:setLoot({16886,16887});
 instance:addEncounter(baron_aquanis);
 
 local old_serrakis = EJ_Data:CreateEncounter();

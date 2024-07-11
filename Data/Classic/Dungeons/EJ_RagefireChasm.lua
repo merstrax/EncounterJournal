@@ -7,7 +7,7 @@ instance:setAttributes(226, "Ragefire Chasm", EJ_Descriptions.Instances["RAGEFIR
 
 local taragaman_the_hungerer = EJ_Data:CreateEncounter();
 taragaman_the_hungerer:setAttributes("Taragaman the Hungerer", "", 226, 1443, 1, 4);
-taragaman_the_hungerer:setLoot({}); 
+taragaman_the_hungerer:setLoot({14149,14148,14145}); 
 instance:addEncounter(taragaman_the_hungerer); 
 
 local jergosh_the_invoker = EJ_Data:CreateEncounter();
