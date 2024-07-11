@@ -9,10 +9,34 @@ DifficultyUtil.ID = {
 	RaidHeroic = 6,
 	RaidMythic = 7,
 	RaidAscended = 8,
-	DungeonPlus = 9,
-	DungeonTimewalker = 10,
-	RaidTimewalker = 11,
 };
+
+DifficultyUtil.Mask = {
+	-1, --None
+	1, --Dungeon Normal
+	2, --Dungeon Heroic
+	4, --Dungeon Mythic
+	8, --Raid Normal
+	16, --Raid Heroic
+	32, --Raid Mythic
+	64, --Raid Ascended
+};
+
+--So we dont have to do loops to add them together
+DifficultyUtil.MaskTable = {
+	[1] = -1,
+	[DifficultyUtil.ID.DungeonNormal] = 1,
+	[DifficultyUtil.ID.DungeonHeroic] = 2 + 4,
+	[DifficultyUtil.ID.DungeonMythic] = 4,
+	[DifficultyUtil.ID.RaidNormal] = 8,
+	[DifficultyUtil.ID.RaidHeroic] = 16 + 32 + 64,
+	[DifficultyUtil.ID.RaidMythic] = 32 + 64,
+	[DifficultyUtil.ID.RaidAscended] = 64,
+};
+
+function DifficultyUtil.OrHigher(difficultyID)
+	return DifficultyUtil.MaskTable[difficultyID];
+end
 
 local DIFFICULTY_NAMES =
 {
@@ -24,9 +48,6 @@ local DIFFICULTY_NAMES =
 	[DifficultyUtil.ID.RaidHeroic] = "Heroic",
 	[DifficultyUtil.ID.RaidMythic] = "Mythic",
 	[DifficultyUtil.ID.RaidAscended] = "Ascended",
-	[DifficultyUtil.ID.DungeonPlus] = "Mythic+",
-	[DifficultyUtil.ID.DungeonTimewalker] = "Timewalking",
-	[DifficultyUtil.ID.RaidTimewalker] = "Timewalking",
 }
 
 local PRIMARY_RAIDS = { DifficultyUtil.ID.RaidNormal, DifficultyUtil.ID.RaidHeroic, DifficultyUtil.ID.RaidMythic, DifficultyUtil.ID.RaidAscended };

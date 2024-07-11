@@ -56,7 +56,8 @@ EJ_Data.IconFlags = {
     Disease = 1024,
     Adds = 2048,
     Mythic = 4096,
-    Bleed = 8192
+    Bleed = 8192,
+    Ascended = 16384
 }
 
 function EJ_Data:getInstanceList(tier, isRaid)

@@ -195,6 +195,16 @@ function C_EncounterJournal.GetSectionIconFlags(sectionID)
     --return sectionID.IconFlags;
 end
 
+local function GetFilteredByDifficulty(difficultyMask)
+    if difficultyMask <= 0 then return false end
+
+    if bit.band(difficultyMask, DifficultyUtil.Mask[C_EncounterJournal.SELECTED_DIFFICULTY]) > 0 then
+        return false;
+    end
+
+    return true;
+end
+
 --C_EncounterJournal.GetSectionInfo(sectionID) : info - Returns information about an entry in the Abilities section of the Encounter Journal.
 function C_EncounterJournal.GetSectionInfo(sectionID)
     local _s = {};
@@ -208,11 +218,12 @@ function C_EncounterJournal.GetSectionInfo(sectionID)
         _s.uiModelSceneID = 0;
         _s.siblingSectionID = sectionID.NextSiblingSection;
         _s.firstChildSectionID = sectionID.FirstChildSection;
-        _s.filteredByDifficulty = sectionID.DifficultyMask > C_EncounterJournal.SELECTED_DIFFICULTY;
+        _s.filteredByDifficulty = GetFilteredByDifficulty(sectionID.DifficultyMask);
 
         if(sectionID.SpellID ~= 0) then
             _s.link = GetSpellLink(sectionID.SpellID);
             _, _, _s.abilityIcon = GetSpellInfo(sectionID.SpellID);
+            _s.description = _s.description.."\n\n"..GetSpellDescription(sectionID.SpellID);
         else
             _s.abilityIcon = nil;
             _s.link = 0;

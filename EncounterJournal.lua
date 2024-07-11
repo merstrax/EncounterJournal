@@ -71,12 +71,10 @@ local EJ_DIFFICULTIES = {
 	DifficultyUtil.ID.DungeonNormal,
 	DifficultyUtil.ID.DungeonHeroic,
 	DifficultyUtil.ID.DungeonMythic,
-	DifficultyUtil.ID.DungeonTimewalker,
 	DifficultyUtil.ID.RaidNormal,
 	DifficultyUtil.ID.RaidHeroic,
 	DifficultyUtil.ID.RaidMythic,
 	DifficultyUtil.ID.RaidAscended,
-	DifficultyUtil.ID.RaidTimewalker,
 };
 
 local function IsEJDifficulty(difficultyID)
@@ -1999,6 +1997,7 @@ end
 
 function EncounterJournal_SelectDifficulty(self, value)
 	EJ_SetDifficulty(value);
+	EncounterJournal_ResetHeaders();
 	EncounterJournal.encounter.info.difficulty:SetText(GetEJDifficultyString(value));
 end
 
