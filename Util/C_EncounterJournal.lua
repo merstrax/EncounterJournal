@@ -24,6 +24,16 @@ C_EncounterJournal.LootInfo = {
 C_EncounterJournal.IconList = {};
 C_EncounterJournal.SectionInfo = {};
 
+C_EncounterJournal.AL_Difficulty = {
+    [DifficultyUtil.ID.DungeonNormal] = 2,
+    [DifficultyUtil.ID.DungeonHeroic] = 3,
+    [DifficultyUtil.ID.DungeonMythic] = 4,
+	[DifficultyUtil.ID.RaidNormal] = 2,
+	[DifficultyUtil.ID.RaidHeroic] = 3,
+	[DifficultyUtil.ID.RaidMythic] = "MythicRaid",
+	[DifficultyUtil.ID.RaidAscended] = 4,
+}
+
 local COLOR = {
     [1] = "|cff999999", --Trash
     [2] = "|cffFFFFFF", --Common
@@ -190,6 +200,12 @@ function C_EncounterJournal.GetLootInfoByIndex(index, encounterIndex)
     if encounterIndex then
         if index <= #EJ_Data.Encounters[encounterIndex].Loot then
             info.itemID = EJ_Data.Encounters[encounterIndex].Loot[index];
+            if(EJ_Data.AL_LOADED) then
+                local AL_DIFF = C_EncounterJournal.AL_Difficulty[C_EncounterJournal.SELECTED_DIFFICULTY];
+                if(ItemIDsDatabase[info.itemID]) then
+                    info.itemID = ItemIDsDatabase[info.itemID][AL_DIFF] or info.itemID;
+                end
+            end
             local item = GetItemInfo(info.itemID);
             if not item then
                 item = Item:CreateFromID(info.itemID);
@@ -207,6 +223,12 @@ function C_EncounterJournal.GetLootInfoByIndex(index, encounterIndex)
     else
         if index <= #EJ_Data.Instances[C_EncounterJournal.SELECTED_INSTANCE].Loot then
             info.itemID = EJ_Data.Instances[C_EncounterJournal.SELECTED_INSTANCE].Loot[index];
+            if(EJ_Data.AL_LOADED) then
+                local AL_DIFF = C_EncounterJournal.AL_Difficulty[C_EncounterJournal.SELECTED_DIFFICULTY];
+                if(ItemIDsDatabase[info.itemID]) then
+                    info.itemID = ItemIDsDatabase[info.itemID][AL_DIFF] or info.itemID;
+                end
+            end
             local item = GetItemInfo(info.itemID);
             if not item then
                 item = Item:CreateFromID(info.itemID);

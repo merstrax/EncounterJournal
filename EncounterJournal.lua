@@ -147,6 +147,8 @@ function EncounterJournal_OnLoad(self)
 	EncounterJournalTitleText:SetText("Dungeon Journal");
 	EncounterJournal:SetPortraitToAsset("Interface\\AddOns\\EncounterJournal\\Assets\\UI-EJ-PortraitIcon");
 
+	EncounterJournal:RegisterEvent("VARIABLES_LOADED");
+
 	EncounterJournal.selectedTab = 1;
 
 	EncounterJournal.encounter.freeHeaders = {};
@@ -192,6 +194,8 @@ function EncounterJournal_OnLoad(self)
 		instanceSelect.dungeonsTab,
 		instanceSelect.raidssTab
 	};
+
+	
 end
 
 function EncounterJournal_EnableTierDropDown()
@@ -356,7 +360,9 @@ local function EncounterJournal_UpdateSpellText(self, spellID)
 end
 
 function EncounterJournal_OnEvent(self, event, ...)
-	
+	if(event == "VARIABLES_LOADED") then
+		EJ_Data:LoadAddons();
+	end
 end
 
 function EncounterJournal_UpdateDifficulty(newDifficultyID)

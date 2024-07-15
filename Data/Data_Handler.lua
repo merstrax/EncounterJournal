@@ -49,6 +49,14 @@ EJ_Data.IconFlags = {
     Ascended = 16384
 }
 
+EJ_Data.AL_LOADED = false;
+
+function EJ_Data:LoadAddons()
+    if IsAddOnLoaded("AtlasLoot") then
+		EJ_Data.AL_LOADED = true;
+	end
+end
+
 function EJ_Data:addInstance(tier, instance_data, isRaid)
     local selectType = 0;
 
