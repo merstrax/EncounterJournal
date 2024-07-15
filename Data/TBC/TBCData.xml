@@ -1,7 +1,22 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
 ..\..\FrameXML\UI.xsd">
     <!--Dungeons-->
+    <Script file="Dungeons\EJ_Arcatraz.lua"/>
+    <Script file="Dungeons\EJ_AuchenaiCrypts.lua"/>
+    <Script file="Dungeons\EJ_BlackMorass.lua"/>
+    <Script file="Dungeons\EJ_BloodFurnace.lua"/>
+    <Script file="Dungeons\EJ_Botanica.lua"/>
     <Script file="Dungeons\EJ_HellfireRamparts.lua"/>
+    <Script file="Dungeons\EJ_MagistersTerrace.lua"/>
+    <Script file="Dungeons\EJ_ManaTombs.lua"/>
+    <Script file="Dungeons\EJ_Mechanar.lua"/>
+    <Script file="Dungeons\EJ_OldHillsbrad.lua"/>
+    <Script file="Dungeons\EJ_SethekkHalls.lua"/>
+    <Script file="Dungeons\EJ_ShadowLabyrinth.lua"/>
+    <Script file="Dungeons\EJ_ShatteredHalls.lua"/>
+    <Script file="Dungeons\EJ_SlavePens.lua"/>
+    <Script file="Dungeons\EJ_Steamvault.lua"/>
+    <Script file="Dungeons\EJ_Underbog.lua"/>
 
     <!--Raids-->
     <Script file="Raids\EJ_BlackTemple.lua"/>
