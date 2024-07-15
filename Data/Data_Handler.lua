@@ -52,7 +52,7 @@ EJ_Data.IconFlags = {
 EJ_Data.AL_LOADED = false;
 
 function EJ_Data:LoadAddons()
-    if IsAddOnLoaded("AtlasLoot") then
+    if IsAddOnLoaded("AtlasLoot_Cache") then
 		EJ_Data.AL_LOADED = true;
 	end
 end

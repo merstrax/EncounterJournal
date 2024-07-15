@@ -4,6 +4,7 @@
 ## Author: Merstrax (Downport)
 ## Version: 1.0
 ## SavedVariables: EJ_Options
+## OptionalDeps: AtlasLoot_Cache
 
 embeds.xml
 

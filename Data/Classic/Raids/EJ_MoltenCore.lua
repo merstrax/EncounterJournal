@@ -5,6 +5,10 @@ local loreFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Lore\\UI-EJ-LOREB
 
 instance:setAttributes(741, "Molten Core", EJ_Descriptions.Instances["MOLTENCORE"], 232, bgFile, btnFile, loreFile, DifficultyUtil.ID.RaidAscended);
 
+local diffID = DifficultyUtil.ID;
+local diffMask = DifficultyUtil.DifficultyMask;
+local iconFlags = EJ_Data.IconFlags;
+
 ----------------------
 -------Lucifron-------
 ----------------------
@@ -16,31 +20,31 @@ lucifron:setLoot({18872,19145,19146,18875,18870,18861,17109,18879,19147,18878,17
 local lucifron_phase_1 = EJ_Data:CreateSection("Phase 1", "", 0, 0, -1);
 lucifron:addSection(lucifron_phase_1, nil)
 lucifron:addSection(EJ_Data:CreateSection("Test 1", "Test 1", 0, 0, -1), lucifron_phase_1);
-lucifron:addSection(EJ_Data:CreateSection(GetSpellLink(72133), "Spell Link Test", 72133, EJ_Data.IconFlags.Magic, -1), lucifron_phase_1);
-lucifron:addSection(EJ_Data:CreateSection("Heroic", "This should only show up when Heroic is selected", 0, EJ_Data.IconFlags.Heroic, DifficultyUtil.Mask[DifficultyUtil.ID.RaidHeroic]), lucifron_phase_1);
-lucifron:addSection(EJ_Data:CreateSection("Mythic or Higher", "This should only show up when Mythic or higher is selected", 0, EJ_Data.IconFlags.Mythic, DifficultyUtil.OrHigher(DifficultyUtil.ID.RaidMythic)), lucifron_phase_1);
-lucifron:addSection(EJ_Data:CreateSection("Ascended", "This should only show up when Ascended is selected", 0, EJ_Data.IconFlags.Ascended, DifficultyUtil.Mask[DifficultyUtil.ID.RaidAscended]), lucifron_phase_1);
+lucifron:addSection(EJ_Data:CreateSection(GetSpellLink(72133), "Spell Link Test", 72133, iconFlags.Magic, -1), lucifron_phase_1);
+lucifron:addSection(EJ_Data:CreateSection("Heroic", "This should only show up when Heroic is selected", 0, iconFlags.Heroic, diffMask[diffID.RaidHeroic]), lucifron_phase_1);
+lucifron:addSection(EJ_Data:CreateSection("Mythic or Higher", "This only shows up when Mythic or higher is selected", 0, iconFlags.Mythic, DifficultyUtil.OrHigher(diffID.RaidMythic)), lucifron_phase_1);
+lucifron:addSection(EJ_Data:CreateSection("Ascended", "This should only show up when Ascended is selected", 0, iconFlags.Ascended, diffMask[diffID.RaidAscended]), lucifron_phase_1);
 
 --Phase 2 Section
 local lucifron_phase_2 = EJ_Data:CreateSection("Phase 2", "Test description with subsections", 0, 0, -1);
 lucifron:addSection(lucifron_phase_2, nil)
 --Tank Section
-local lucifron_phase_2_tank = EJ_Data:CreateSection("Tank", "", 0, EJ_Data.IconFlags.Tank, -1);
+local lucifron_phase_2_tank = EJ_Data:CreateSection("Tank", "", 0, iconFlags.Tank, -1);
 lucifron:addSection(lucifron_phase_2_tank, lucifron_phase_2);
-lucifron:addSection(EJ_Data:CreateSection("Fatal", "This is a fatal subsection", 0, EJ_Data.IconFlags.Fatal, -1), lucifron_phase_2_tank);
-lucifron:addSection(EJ_Data:CreateSection("Bleed", "This is a bleed subsection", 0, EJ_Data.IconFlags.Bleed, -1), lucifron_phase_2_tank);
-lucifron:addSection(EJ_Data:CreateSection("Adds", "This is an adds subsection", 0, EJ_Data.IconFlags.Adds, -1), lucifron_phase_2_tank);
+lucifron:addSection(EJ_Data:CreateSection("Fatal", "This is a fatal subsection", 0, iconFlags.Fatal, -1), lucifron_phase_2_tank);
+lucifron:addSection(EJ_Data:CreateSection("Bleed", "This is a bleed subsection", 0, iconFlags.Bleed, -1), lucifron_phase_2_tank);
+lucifron:addSection(EJ_Data:CreateSection("Adds", "This is an adds subsection", 0, iconFlags.Adds, -1), lucifron_phase_2_tank);
 --DPS Section
-local lucifron_phase_2_dps = EJ_Data:CreateSection("DPS", "", 0, EJ_Data.IconFlags.DPS, -1);
+local lucifron_phase_2_dps = EJ_Data:CreateSection("DPS", "", 0, iconFlags.DPS, -1);
 lucifron:addSection(lucifron_phase_2_dps, lucifron_phase_2);
-lucifron:addSection(EJ_Data:CreateSection("Important", "This is an important subsection", 0, EJ_Data.IconFlags.Important, -1), lucifron_phase_2_dps);
-lucifron:addSection(EJ_Data:CreateSection("Interruptable", "This is an interruptable subsection", 0, EJ_Data.IconFlags.Interruptable, -1), lucifron_phase_2_dps);
+lucifron:addSection(EJ_Data:CreateSection("Important", "This is an important subsection", 0, iconFlags.Important, -1), lucifron_phase_2_dps);
+lucifron:addSection(EJ_Data:CreateSection("Interruptable", "This is an interruptable subsection", 0, iconFlags.Interruptable, -1), lucifron_phase_2_dps);
 --Healer Section
-local lucifron_phase_2_heals = EJ_Data:CreateSection("Healer", "", 0, EJ_Data.IconFlags.Healer, -1);
+local lucifron_phase_2_heals = EJ_Data:CreateSection("Healer", "", 0, iconFlags.Healer, -1);
 lucifron:addSection(lucifron_phase_2_heals, lucifron_phase_2);
-lucifron:addSection(EJ_Data:CreateSection("Curse", "This is a curse subsection", 0, EJ_Data.IconFlags.Curse, -1), lucifron_phase_2_heals);
-lucifron:addSection(EJ_Data:CreateSection("Poison", "This is a poison subsection", 0, EJ_Data.IconFlags.Poison, -1), lucifron_phase_2_heals);
-lucifron:addSection(EJ_Data:CreateSection("Disease", "This is a disease subsection", 0, EJ_Data.IconFlags.Disease, -1), lucifron_phase_2_heals);
+lucifron:addSection(EJ_Data:CreateSection("Curse", "This is a curse subsection", 0, iconFlags.Curse, -1), lucifron_phase_2_heals);
+lucifron:addSection(EJ_Data:CreateSection("Poison", "This is a poison subsection", 0, iconFlags.Poison, -1), lucifron_phase_2_heals);
+lucifron:addSection(EJ_Data:CreateSection("Disease", "This is a disease subsection", 0, iconFlags.Disease, -1), lucifron_phase_2_heals);
 
 instance:addEncounter(lucifron); 
 
