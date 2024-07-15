@@ -10,6 +10,20 @@ C_EncounterJournal = {
     SHOW_RAID = false,
 };
 
+C_EncounterJournal.LootInfo = {
+    itemID = 0;
+    encounterId = C_EncounterJournal.SELECTED_ENCOUNTER;
+    name = nil;
+    itemQuality = "";
+    filterType = "";
+    icon = "";
+    slot = "";
+    armorType = "";
+    link = "";
+}
+C_EncounterJournal.IconList = {};
+C_EncounterJournal.SectionInfo = {};
+
 local COLOR = {
     [1] = "|cff999999", --Trash
     [2] = "|cffFFFFFF", --Common
@@ -81,7 +95,9 @@ end
 
 --C_EncounterJournal.GetSectionIconFlags(sectionID) : iconFlags - Returns the icon flags for a section, such as Magic Effect and Heroic Difficulty
 function C_EncounterJournal.GetSectionIconFlags(sectionID)
-    local iconList = {};
+    local iconList = C_EncounterJournal.IconList;
+    wipe(iconList);
+
     local counter = 0;
     local flags = 0;
     if sectionID then
@@ -110,7 +126,7 @@ end
 
 --C_EncounterJournal.GetSectionInfo(sectionID) : info - Returns information about an entry in the Abilities section of the Encounter Journal.
 function C_EncounterJournal.GetSectionInfo(sectionID)
-    local _s = {};
+    local _s = C_EncounterJournal.SectionInfo;
 
     if type(sectionID) == "table" then
         _s.spellID = sectionID.SpellID;
@@ -167,32 +183,19 @@ end
 --
 function C_EncounterJournal.GetLootInfoByIndex(index, encounterIndex)
     encounterIndex = encounterIndex or C_EncounterJournal.SELECTED_ENCOUNTER;
-
-    local info = {};
-
-    info = {
-        itemID = 0;
-        encounterId = C_EncounterJournal.SELECTED_ENCOUNTER;
-        name = nil;
-        itemQuality = "";
-        filterType = "";
-        icon = "";
-        slot = "";
-        armorType = "";
-        link = "";
-    }
+    local info = C_EncounterJournal.LootInfo;
 
     if not index then return info end
 
     if encounterIndex then
         if index <= #EJ_Data.Encounters[encounterIndex].Loot then
             info.itemID = EJ_Data.Encounters[encounterIndex].Loot[index];
-            local item = Item:CreateFromID(info.itemID);
-            local name = item:GetInfo();
-            if not name then
+            local item = GetItemInfo(info.itemID);
+            if not item then
+                item = Item:CreateFromID(info.itemID);
                 item:ContinueOnLoad(function() EncounterJournal_LootCallback(info.itemID) end);
             else
-                local itemName, itemLink, itemQuality, _, _, _, itemSubType, _, itemEquipLoc, itemIcon = item:GetInfo();
+                local itemName, itemLink, itemQuality, _, _, _, itemSubType, _, itemEquipLoc, itemIcon = GetItemInfo(info.itemID);
                 info.name = COLOR[itemQuality + 1]..itemName..COLOR.DEFAULT;
                 info.itemQuality = itemQuality;
                 info.icon = itemIcon;
@@ -204,13 +207,13 @@ function C_EncounterJournal.GetLootInfoByIndex(index, encounterIndex)
     else
         if index <= #EJ_Data.Instances[C_EncounterJournal.SELECTED_INSTANCE].Loot then
             info.itemID = EJ_Data.Instances[C_EncounterJournal.SELECTED_INSTANCE].Loot[index];
-            local item = Item:CreateFromID(info.itemID);
-            local name = item:GetInfo();
-            if not name then
+            local item = GetItemInfo(info.itemID);
+            if not item then
+                item = Item:CreateFromID(info.itemID);
                 item:ContinueOnLoad(function() EncounterJournal_LootCallback(info.itemID) end);
             else
-                local itemName, itemLink, itemQuality, _, _, _, itemSubType, _, itemEquipLoc, itemIcon = item:GetInfo();
-                info.name = COLOR[itemQuality + 1]..itemName;
+                local itemName, itemLink, itemQuality, _, _, _, itemSubType, _, itemEquipLoc, itemIcon = GetItemInfo(info.itemID);
+                info.name = COLOR[itemQuality + 1]..itemName..COLOR.DEFAULT;
                 info.itemQuality = itemQuality;
                 info.icon = itemIcon;
                 info.slot = SLOT_STRINGS[itemEquipLoc];
@@ -391,7 +394,7 @@ end
 function EJ_GetTierInfo(index)
     --index = index or 1;
     index = math.min(3, math.max(index or 1, 1));
-    return EJ_Data.Tiers[index][1], ExpansionInfo[index][2];
+    return ExpansionInfo[index][1], ExpansionInfo[index][2];
 end
 
 --EJ_HandleLinkPath(jtype, id) - Returns the supplementary instance and encounter ID for an encounter or section ID.

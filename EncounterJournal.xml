@@ -604,9 +604,6 @@
 		</HighlightFont>
 		<DisabledFont style="GameFontHighlightMedium"/>
 		<Scripts>
-			<OnShow function="EncounterJournalBossButton_OnShow"/>
-			<OnHide function="EncounterJournalBossButton_OnHide"/>
-			<OnEvent function="EncounterJournalBossButton_OnEvent"/>
 			<OnClick function="EncounterJournalBossButton_OnClick"/>
 		</Scripts>
 	</Button>
