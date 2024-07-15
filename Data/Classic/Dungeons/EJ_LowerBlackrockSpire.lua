@@ -52,4 +52,5 @@ overlord_wyrmthalak:setAttributes("Overlord Wyrmthalak", "The black dragonspawn 
 overlord_wyrmthalak:setLoot({13143,13162,13164,22321,13163,13148,13161,16679});
 instance:addEncounter(overlord_wyrmthalak); 
 
-EJ_Data:addInstance(EJ_Data.CLASSIC, tcopy(instance), false);
+instance:generateLootList();
+EJ_Data:addInstance(EJ_Data.CLASSIC, instance, false);

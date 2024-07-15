@@ -573,7 +573,7 @@ function EncounterJournal_ListInstances()
 	end
 
 	EJ_HideInstances(index);
-
+	EJ_SelectInstance(nil);
 	--check if the other tab is empty
 	--local instanceText = EJ_GetInstanceByIndex(1, not showRaid);
 	--No instances in the other tab
@@ -732,8 +732,6 @@ function EncounterJournal_DisplayInstance(instanceID, noButton)
 		link = "";
 	end
 
-	
-
 	local hasBossAbilities = false;
 	
 	while bossID do
@@ -825,7 +823,7 @@ end
 function EncounterJournal_DisplayEncounter(encounterID, noButton)
 	local self = EncounterJournal.encounter;
 
-	local ename, description, _, rootSectionID = unpack(EJ_GetEncounterInfo(encounterID));
+	local ename, description, _, rootSectionID = EJ_GetEncounterInfo(encounterID);
 
 	if (EncounterJournal.encounterID == encounterID) then
 		--EJ_NavBar is already set to the right button, don't add another
@@ -1825,15 +1823,16 @@ function EncounterJournal_SetLootButton(item)
 end
 
 function EncounterJournal_LootCallback(itemID)
+	local scrollFrame = EncounterJournal.encounter.info.lootScroll;
 	local itemIndex = 1
-	local itemButton = _G["EncounterJournalEncounterFrameInfoLootItemButton"..itemIndex];
+	local itemButton = scrollFrame["ItemButton"..itemIndex];
 	while itemButton do
 		if itemButton.itemID == itemID and itemButton:IsShown() then
 			EncounterJournal_SetLootButton(item, item.index);
 			break;
 		end
 		itemIndex = itemIndex + 1;
-		itemButton = _G["EncounterJournalEncounterFrameInfoLootItemButton"..itemIndex];
+		itemButton = scrollFrame["ItemButton"..itemIndex];
 	end
 end
 
@@ -1843,11 +1842,11 @@ function EncounterJournal_LootUpdate()
 	local buttonSize = BOSS_LOOT_BUTTON_HEIGHT;
 
 	local itemIndex = 1
-	local itemButton = _G["EncounterJournalEncounterFrameInfoItemButton"..itemIndex];
+	local itemButton = scrollFrame["ItemButton"..itemIndex];
 	while itemButton do
 		itemButton:Hide();
 		itemIndex = itemIndex + 1;
-		itemButton = _G["EncounterJournalEncounterFrameInfoItemButton"..itemIndex];
+		itemButton = scrollFrame["ItemButton"..itemIndex];
 	end
 
 	for itemIndex = 1, numLoot do
@@ -2002,6 +2001,7 @@ function EncounterJournal_SelectDifficulty(self, value)
 	EJ_SetDifficulty(value);
 	EncounterJournal_ResetHeaders();
 	EncounterJournal.encounter.info.difficulty:SetText(GetEJDifficultyString(value));
+	EncounterJournal_Refresh();
 end
 
 function EncounterJournal_DifficultyInit(self, level)

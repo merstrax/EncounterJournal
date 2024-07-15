@@ -45,4 +45,5 @@ mutanus_the_devourer:setAttributes("Mutanus the Devourer", "From the darkest cor
 mutanus_the_devourer:setLoot({6461,6627,6463}); 
 instance:addEncounter(mutanus_the_devourer); 
 
-EJ_Data:addInstance(EJ_Data.CLASSIC, tcopy(instance), false);
+instance:generateLootList();
+EJ_Data:addInstance(EJ_Data.CLASSIC, instance, false);

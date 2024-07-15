@@ -32,4 +32,5 @@ charlga_razorflank:setAttributes("Charlga Razorflank", "The leader (or \"crone\"
 charlga_razorflank:setLoot({6693,6692,6694});
 instance:addEncounter(charlga_razorflank); 
 
-EJ_Data:addInstance(EJ_Data.CLASSIC, tcopy(instance), false);
+instance:generateLootList();
+EJ_Data:addInstance(EJ_Data.CLASSIC, instance, false);

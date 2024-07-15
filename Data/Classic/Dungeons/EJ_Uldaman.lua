@@ -45,4 +45,5 @@ archaedas:setAttributes("Archaedas", "Deep within Uldaman is a chamber containin
 archaedas:setLoot({11118,9418,9413});
 instance:addEncounter(archaedas); 
 
-EJ_Data:addInstance(EJ_Data.CLASSIC, tcopy(instance), false);
+instance:generateLootList();
+EJ_Data:addInstance(EJ_Data.CLASSIC, instance, false);

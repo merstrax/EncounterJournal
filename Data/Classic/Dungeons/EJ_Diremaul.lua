@@ -85,4 +85,5 @@ king_gordok:setAttributes("King Gordok", "To rule the Gordok ogres, one must sim
 king_gordok:setLoot({18526,18525,18527,18524,18521,18522,18523,18520});
 instance:addEncounter(king_gordok); 
 
-EJ_Data:addInstance(EJ_Data.CLASSIC, tcopy(instance), false);
+instance:generateLootList();
+EJ_Data:addInstance(EJ_Data.CLASSIC, instance, false);

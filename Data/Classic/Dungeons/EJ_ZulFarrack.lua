@@ -30,4 +30,5 @@ chief_ukorz_sandscalp:setAttributes("Chief Ukorz Sandscalp", "Chief Ukorz Sandsc
 chief_ukorz_sandscalp:setLoot({9479,9476,9478,9477,11086}); 
 instance:addEncounter(chief_ukorz_sandscalp); 
 
-EJ_Data:addInstance(EJ_Data.CLASSIC, tcopy(instance), false);
+instance:generateLootList();
+EJ_Data:addInstance(EJ_Data.CLASSIC, instance, false);

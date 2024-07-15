@@ -15,4 +15,5 @@ jergosh_the_invoker:setAttributes("Jergosh the Invoker", "", 226, 1446, 2, 4);
 jergosh_the_invoker:setLoot({24150,14147,14151}); 
 instance:addEncounter(jergosh_the_invoker); 
 
-EJ_Data:addInstance(EJ_Data.CLASSIC, tcopy(instance), false);
+instance:generateLootList();
+EJ_Data:addInstance(EJ_Data.CLASSIC, instance, false);

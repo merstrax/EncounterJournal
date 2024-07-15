@@ -45,4 +45,5 @@ archmage_arugal:setAttributes("Archmage Arugal", "", 64, 1072, 8, 2);
 archmage_arugal:setLoot({6324,6392,6220});
 instance:addEncounter(archmage_arugal); 
 
-EJ_Data:addInstance(EJ_Data.CLASSIC, tcopy(instance), false);
+instance:generateLootList();
+EJ_Data:addInstance(EJ_Data.CLASSIC, instance, false);

@@ -25,4 +25,5 @@ shade_of_eranikus:setAttributes("Shade of Eranikus", "Eranikus, former consort t
 shade_of_eranikus:setLoot({10847,10833,10829,10828,10837,10835,10836,}); 
 instance:addEncounter(shade_of_eranikus); 
 
-EJ_Data:addInstance(EJ_Data.CLASSIC, tcopy(instance), false);
+instance:generateLootList();
+EJ_Data:addInstance(EJ_Data.CLASSIC, instance, false);

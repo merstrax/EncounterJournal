@@ -102,4 +102,5 @@ emperor_dagran_thaurissan:setLoot({11684,11930,11924,22204,22207,11933,11934,118
 instance:addEncounter(emperor_dagran_thaurissan);
 
 --Add instance to list
+instance:generateLootList();
 EJ_Data:addInstance(EJ_Data.CLASSIC, instance, false);

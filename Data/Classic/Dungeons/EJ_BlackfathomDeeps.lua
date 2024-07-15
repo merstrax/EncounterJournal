@@ -40,4 +40,5 @@ aku_mai:setAttributes("Aku'mai", "Aku'mai, an ancient evil, carries within him a
 aku_mai:setLoot({6910,6911,6909}); 
 instance:addEncounter(aku_mai); 
 
-EJ_Data:addInstance(EJ_Data.CLASSIC, tcopy(instance), false);
+instance:generateLootList();
+EJ_Data:addInstance(EJ_Data.CLASSIC, instance, false);

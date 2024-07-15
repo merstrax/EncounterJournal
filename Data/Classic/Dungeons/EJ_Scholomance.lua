@@ -70,4 +70,5 @@ darkmaster_gandling:setAttributes("Darkmaster Gandling", "Course: Advanced Studi
 darkmaster_gandling:setLoot({13937,13944,13398,13950,13951,22433,13964,13953,13938,16698,16686,16693,16707,16720,16677,16667,16731,16727}); 
 instance:addEncounter(darkmaster_gandling); 
 
-EJ_Data:addInstance(EJ_Data.CLASSIC, tcopy(instance), false);
+instance:generateLootList();
+EJ_Data:addInstance(EJ_Data.CLASSIC, instance, false);

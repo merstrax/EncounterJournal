@@ -292,12 +292,10 @@ function EJ_NavBar_ListOverFlowButtons(self)
 	return list;
 end
 
-
 function EJ_NavBar_ToggleMenu(self, button)
 	self:GetParent().dropDown.buttonOwner = self;
 	ToggleDropDownMenu(nil, nil, self:GetParent().dropDown, self, 20, 3);
 end
-
 
 function EJ_NavBar_DropDown_Initialize(self, level)
 	local navButton = self.buttonOwner;
@@ -320,7 +318,6 @@ function EJ_NavBar_DropDown_Initialize(self, level)
 	end
 end
 
-
 function EJ_NavBar_DropDown_Click(self, index, func)
 	local navButton = self.owner;
 	local EJ_NavBar = navButton:GetParent();
@@ -330,8 +327,6 @@ function EJ_NavBar_DropDown_Click(self, index, func)
 	end
 	func(self, index, EJ_NavBar);
 end
-
-
 
 function EJ_NavBar_OverflowItemOnClick(junk, index, EJ_NavBar)
 	local button = EJ_NavBar.navList[index];

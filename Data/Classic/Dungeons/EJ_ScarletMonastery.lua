@@ -40,4 +40,5 @@ high_inquisitor_whitemane:setAttributes("High Inquisitor Whitemane", "", 311, 23
 high_inquisitor_whitemane:setLoot({7720,7722,7721}); 
 instance:addEncounter(high_inquisitor_whitemane);
 
+instance:generateLootList();
 EJ_Data:addInstance(EJ_Data.CLASSIC, instance, false);

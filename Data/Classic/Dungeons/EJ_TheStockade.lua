@@ -10,4 +10,5 @@ bruegal_ironknuckle:setAttributes("Bruegal Ironknuckle", "", 238, 1146, 1, 2);
 bruegal_ironknuckle:setLoot({}); 
 instance:addEncounter(bruegal_ironknuckle); 
 
-EJ_Data:addInstance(EJ_Data.CLASSIC, tcopy(instance), false);
+instance:generateLootList();
+EJ_Data:addInstance(EJ_Data.CLASSIC, instance, false);

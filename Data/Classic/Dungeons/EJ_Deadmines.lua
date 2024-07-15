@@ -35,4 +35,5 @@ edwin_vancleef:setAttributes("Edwin VanCleef", "", 63, 1081, 6, 2);
 edwin_vancleef:setLoot({5193,5202,10399,5191});
 instance:addEncounter(edwin_vancleef); 
 
-EJ_Data:addInstance(EJ_Data.CLASSIC, tcopy(instance), false);
+instance:generateLootList();
+EJ_Data:addInstance(EJ_Data.CLASSIC, instance, false);

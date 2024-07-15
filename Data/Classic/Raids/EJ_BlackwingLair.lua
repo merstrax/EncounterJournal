@@ -45,4 +45,5 @@ nefarian:setAttributes("Nefarian", "", 742, 617, 8, 8);
 nefarian:setLoot({19378,19375,19381,19380,19377,19376,19382,19379,19364,19363,19360,19356,14001,2522450});
 instance:addEncounter(nefarian); 
 
-EJ_Data:addInstance(EJ_Data.CLASSIC, tcopy(instance), true);
+instance:generateLootList();
+EJ_Data:addInstance(EJ_Data.CLASSIC, instance, true);

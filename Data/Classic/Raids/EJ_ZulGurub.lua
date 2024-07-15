@@ -70,4 +70,5 @@ hakkar:setAttributes("Hakkar", "", 76, 11792, 13, 8);
 hakkar:setLoot({19857,20257,20264,19855,19876,19856,19859,19864,19865,19854,19852,19862,19853,19861});
 instance:addEncounter(hakkar); 
 
-EJ_Data:addInstance(EJ_Data.CLASSIC, tcopy(instance), true);
+instance:generateLootList();
+EJ_Data:addInstance(EJ_Data.CLASSIC, instance, true);

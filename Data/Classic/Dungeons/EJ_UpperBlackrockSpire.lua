@@ -45,4 +45,5 @@ general_drakkisath:setAttributes("General Drakkisath", "", 242, 2427, 8, 4);
 general_drakkisath:setLoot({12592,22269,22267,13142,13141,13098,22268,22253,12602,16688,16700,16690,16706,16721,16674,16666,16730,16726}); 
 instance:addEncounter(general_drakkisath);
 
-EJ_Data:addInstance(EJ_Data.CLASSIC, tcopy(instance), false);
+instance:generateLootList();
+EJ_Data:addInstance(EJ_Data.CLASSIC, instance, false);

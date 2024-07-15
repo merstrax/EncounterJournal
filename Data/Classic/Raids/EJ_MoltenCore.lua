@@ -116,4 +116,5 @@ ragnaros:setAttributes("Ragnaros", "", 741, 672, 10, 8);
 ragnaros:setLoot({17102,17107,18817,19137,18814,19138,17063,17082,18815,18816,17076,17104,17106,17083,2522459});
 instance:addEncounter(ragnaros); 
 
-EJ_Data:addInstance(EJ_Data.CLASSIC, tcopy(instance), true);
+instance:generateLootList();
+EJ_Data:addInstance(EJ_Data.CLASSIC, instance, true);

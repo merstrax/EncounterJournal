@@ -45,4 +45,5 @@ princess_theradras:setAttributes("Princess Theradras", "The earth elemental Ther
 princess_theradras:setLoot({17780,17715,17714,17711,17707,17713,17710});
 instance:addEncounter(princess_theradras); 
 
-EJ_Data:addInstance(EJ_Data.CLASSIC, tcopy(instance), false);
+instance:generateLootList();
+EJ_Data:addInstance(EJ_Data.CLASSIC, instance, false);

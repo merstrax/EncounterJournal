@@ -8,39 +8,28 @@ EJ_Data.Normal = 1;
 EJ_Data.Heroic = 2;
 EJ_Data.Raid = 3;
 
+EJ_Data.Dungeons = 1;
+EJ_Data.Raids = 2
+
 EJ_Data.Tiers = {
     [EJ_Data.CLASSIC] = {
-        Dungeons = {},
-        Raids = {},
+        [EJ_Data.Dungeons] = {},
+        [EJ_Data.Raids] = {},
     },
     [EJ_Data.TBC] = {
-        Dungeons = {},
-        Raids = {},
+        [EJ_Data.Dungeons] = {},
+        [EJ_Data.Raids] = {},
     },
     [EJ_Data.WLK] = {
-        Dungeons = {},
-        Raids = {},
+        [EJ_Data.Dungeons] = {},
+        [EJ_Data.Raids] = {},
     }, 
 };
 
+--Used to access Encounter and Instance IDs quicker
+EJ_Data.Encounters = {};
+EJ_Data.Instances = {};
 EJ_Data.InstanceToTier = {};
-
-EJ_Data.Icons = {
-    Tank = 1, -- 0
-    DPS = 2, -- 1
-    Healer = 3, -- 2
-    Heroic = 4, -- 4
-    Fatal = 5,
-    Important = 6,
-    Interruptable = 7,
-    Magic = 8,
-    Curse = 9,
-    Poison = 10,
-    Disease = 11,
-    Adds = 12,
-    Mythic = 13,
-    Bleed = 14
-}
 
 EJ_Data.IconFlags = {
     Tank = 1, -- 0
@@ -60,38 +49,16 @@ EJ_Data.IconFlags = {
     Ascended = 16384
 }
 
-function EJ_Data:getInstanceList(tier, isRaid)
-    if isRaid then
-        return self.Tiers[tier].Raids;
-    end
-
-    return self.Tiers[tier].Dungeons;
-end
-
-function EJ_Data:getEncounterList(instanceID)
-    local tier, isRaid = unpack(self:getInstanceTier(instanceID));
-
-    if(isRaid) then
-        return self.Tiers[tier].Raids[instanceID].Encounters;
-    end
-
-    return self.Tiers[tier].Dungeons[instanceID].Encounters;
-end
-
-function EJ_Data:getInstanceTier(instanceID)
-    if type(self.InstanceToTier) == "table" then
-        return self.InstanceToTier[instanceID];
-    end
-end
-
 function EJ_Data:addInstance(tier, instance_data, isRaid)
-    if isRaid then
-        self.Tiers[tier].Raids[instance_data.ID] = instance_data;
-    else
-        self.Tiers[tier].Dungeons[instance_data.ID] = instance_data;
-    end
+    local selectType = 0;
 
-    self.InstanceToTier[instance_data.ID] = {tier, isRaid};
+    if isRaid then
+        selectType = 1;
+    end
+ 
+    tinsert(self.Tiers[tier][self.Dungeons + selectType], instance_data);
+    self.Instances[instance_data.ID] = instance_data;
+    self.InstanceToTier[instance_data.ID] = {tier, selectType};
 end
 
 ------------------------------
@@ -112,12 +79,14 @@ local instance = {
     DifficultyID = nil;
 
     Encounters = {};
+    Loot = {};
 };
 
 --Returns Index where Encounter was added or nil
 function instance:addEncounter(encounter)
     if encounter and encounter.isEncounter then
         tinsert(self.Encounters, encounter);
+        EJ_Data.Encounters[encounter.EncounterID] = encounter;
         return #self.Encounters;
     end
     return nil;
@@ -133,6 +102,16 @@ function instance:setAttributes(id, name, desc, mapID, bgFile, btnFile, loreFile
     self.SmallButtonFile = smBtnFile or self.SmallButtonFile;
     self.LoreFile = loreFile or self.LoreFile;
     self.DifficultyID = difficultyID or self.DifficultyID;
+end
+
+function instance:generateLootList()
+    for _, v in ipairs(self.Encounters) do
+        for _, i in ipairs(v.Loot) do
+            if(not tContains(self.Loot, i)) then
+                tinsert(self.Loot, i);
+            end
+        end
+    end
 end
 
 function EJ_Data:CreateInstance()
@@ -185,14 +164,6 @@ function encounter:setLoot(lootTable)
     self.Loot = lootTable;
 end
 
-function encounter:addLoot(itemID)
-    tinsert(self.Loot, itemID);
-end
-
-function encounter:getLootCount()
-    return #self.Loot
-end
-
 function encounter:addSection(section, parent)
     if (parent) then
         local sibling = nil;
@@ -207,12 +178,7 @@ function encounter:addSection(section, parent)
         end
         
         section.ParentSection = parent;
-        --section.Index = index;
     else
-        --self.SectionCount = self.SectionCount + 1;
-        --if index == nil then
-            --index = self.SectionCount;
-        --end
         if(not self.RootSectionID) then
             self.RootSectionID = section;
         else
@@ -222,7 +188,6 @@ function encounter:addSection(section, parent)
             end
             sibling.NextSiblingSection = section;
         end
-        --section.Index = index;
     end
 end
 

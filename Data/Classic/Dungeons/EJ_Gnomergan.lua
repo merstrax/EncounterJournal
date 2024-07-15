@@ -30,4 +30,5 @@ mekgineer_thermaplugg:setAttributes("Mekgineer Thermaplugg", "Murderer, traitor,
 mekgineer_thermaplugg:setLoot({9492,9461,9459,9458}); 
 instance:addEncounter(mekgineer_thermaplugg); 
 
-EJ_Data:addInstance(EJ_Data.CLASSIC, tcopy(instance), false);
+instance:generateLootList()
+EJ_Data:addInstance(EJ_Data.CLASSIC, instance, false);

@@ -75,4 +75,5 @@ baron_rivendare:setAttributes("Baron Rivendare", "", 236, 32914, 14, 4);
 baron_rivendare:setLoot({13505,13335,13340,22412,13346,22409,13344,22410,22411,13345,13368,13361,13349,22408,16687,16699,16694,16709,16719,16668,16678,16732,16728}); 
 instance:addEncounter(baron_rivendare); 
 
-EJ_Data:addInstance(EJ_Data.CLASSIC, tcopy(instance), false);
+instance:generateLootList();
+EJ_Data:addInstance(EJ_Data.CLASSIC, instance, false);

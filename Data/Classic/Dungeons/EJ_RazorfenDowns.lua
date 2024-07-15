@@ -30,4 +30,5 @@ amnennar_the_coldbringer:setAttributes("Amnennar the Coldbringer", "The lich Amn
 amnennar_the_coldbringer:setLoot({10762,10765,10764,10763,10761}); 
 instance:addEncounter(amnennar_the_coldbringer); 
 
-EJ_Data:addInstance(EJ_Data.CLASSIC, tcopy(instance), false);
+instance:generateLootList();
+EJ_Data:addInstance(EJ_Data.CLASSIC, instance, false);
