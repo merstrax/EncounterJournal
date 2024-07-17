@@ -146,7 +146,7 @@ function EncounterJournal_OnLoad(self)
 	Mixin(self, "PortraitFrameMixin");
 	EncounterJournalTitleText:SetText("Dungeon Journal");
 	EncounterJournal:SetPortraitToAsset("Interface\\AddOns\\EncounterJournal\\Assets\\UI-EJ-PortraitIcon");
-
+	self:RegisterForDrag("LeftButton");
 	EncounterJournal:RegisterEvent("VARIABLES_LOADED");
 
 	EncounterJournal.selectedTab = 1;

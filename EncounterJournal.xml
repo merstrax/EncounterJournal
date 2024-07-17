@@ -1257,7 +1257,7 @@
 		</Scripts>
 	</Slider>
 
-	<Frame name="EncounterJournal" inherits="EJPortraitFrameTemplate" toplevel="true" enableMouse="true" parent="UIParent" hidden="true">
+	<Frame name="EncounterJournal" inherits="EJPortraitFrameTemplate" toplevel="true" enableMouse="true" parent="UIParent" hidden="true" movable="true">
 		<Size x="800" y="496"/>
 		<Anchors>
 			<Anchor point="CENTER" x="0" y="0"/>
@@ -2097,6 +2097,8 @@
 			</Frame>
 		</Frames>
 		<Scripts>
+  			<OnDragStart>self:StartMoving();</OnDragStart>
+  			<OnDragStop>self:StopMovingOrSizing();</OnDragStop>
 			<OnShow function="EncounterJournal_OnShow"/>
 			<OnHide function="EncounterJournal_OnHide"/>
 			<OnLoad function="EncounterJournal_OnLoad"/>
