@@ -6,7 +6,7 @@ local loreFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Lore\\UI-EJ-LOREB
 instance:setAttributes(741, "Molten Core", EJ_Descriptions.Instances["MOLTENCORE"], 232, bgFile, btnFile, loreFile, DifficultyUtil.ID.RaidAscended);
 
 local diffID = DifficultyUtil.ID;
-local diffMask = DifficultyUtil.DifficultyMask;
+local diffMask = DifficultyUtil.Mask;
 local iconFlags = EJ_Data.IconFlags;
 
 ----------------------

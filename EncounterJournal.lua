@@ -636,9 +636,14 @@ function EncounterJournal_DisplayInstance(instanceID, noButton)
 		bossButton:Show();
 		bossButton.encounterID = bossID;
 		--Use the boss' first creature as the button icon
-		local _, _, _, _, bossImage = nil;--EJ_GetCreatureInfo(1, bossID);
+		local bossImage = EJ_GetCreatureInfo(bossID);
 		bossImage = bossImage or "Interface\\AddOns\\EncounterJournal\\Assets\\UI-EJ-BOSS-Default";
 		bossButton.creature:SetTexture(bossImage);
+		
+		if(bossButton.creature:GetTexture() ~= bossImage) then
+			bossButton.creature:SetTexture("Interface\\AddOns\\EncounterJournal\\Assets\\UI-EJ-BOSS-Default");
+		end
+		
 		bossButton:UnlockHighlight();
 		
 		--EncounterJournalBossButton_UpdateDifficultyOverlay(bossButton);
@@ -797,10 +802,14 @@ function EncounterJournal_DisplayEncounter(encounterID, noButton)
 		bossButton:SetText(name);
 		bossButton:Show();
 		bossButton.encounterID = bossID;
-		--Use the boss' first creature as the button icon
-		local _, _, _, _, bossImage = nil;--EJ_GetCreatureInfo(1, bossID);
+
+		local bossImage = EJ_GetCreatureInfo(bossID);
 		bossImage = bossImage or "Interface\\AddOns\\EncounterJournal\\Assets\\UI-EJ-BOSS-Default";
 		bossButton.creature:SetTexture(bossImage);
+		
+		if(bossButton.creature:GetTexture() ~= bossImage) then
+			bossButton.creature:SetTexture("Interface\\AddOns\\EncounterJournal\\Assets\\UI-EJ-BOSS-Default");
+		end
 
 		if (encounterID == bossID) then
 			bossButton:LockHighlight();

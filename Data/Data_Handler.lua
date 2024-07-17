@@ -148,6 +148,7 @@ local encounter = {
     SectionCount = 0;
 
     isEncounter = true;
+    FileData;
 };
 
 local section = {
@@ -206,6 +207,8 @@ function encounter:setAttributes(name, desc, instanceID, encounterID, orderIndex
     self.EncounterID = encounterID or self.EncounterID;
     self.OrderIndex = orderIndex or self.OrderIndex;
     self.DifficultyID = difficultyID or self.DifficultyID;
+
+    self.FileData = "Interface\\AddOns\\EncounterJournal\\Assets\\BossImages\\"..name:gsub("'", "");
 end
 
 

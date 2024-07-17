@@ -279,34 +279,9 @@ function EJ_GetContentTuningID()
 end
 
 --EJ_GetCreatureInfo(index [, encounterID]) - Returns encounter boss info.
---[[
-function EJ_GetCreatureInfo(index, encounterID)
-    local MAX_INDEX = 9;
-    index = math.min(MAX_INDEX, index or 1);
-    encounterID = encounterID or C_EncounterJournal.SELECTED_ENCOUNTER
-
-    local info = {0, "", "", 0, 0, 0, 0, 0};
-    local foundFirst, foundExact = false, false;
-    local firstFound = {};
-
-    for _, v in ipairs(EJ_CreatureDB) do
-        if v[e_creature.EncounterID] == encounterID then
-            foundFirst = true;
-            firstFound = v; 
-            if v[e_creature.OrderIndex] == index then
-                foundExact = true;
-                info = v;
-                break;
-            end
-        end
-    end
-
-    if not foundExact and foundFirst then
-        info = firstFound;
-    end
-
-    return info[e_creature.ID], info[e_creature.Name], info[e_creature.Description], info[e_creature.DisplayInfoID], EJ_FileData[info[e_creature.FileDataID]\], info[e_creature.UiModelSceneID]
-end]]
+function EJ_GetCreatureInfo(encounterID)
+    return EJ_Data.Encounters[encounterID].FileData;
+end
 
 
 --EJ_GetCurrentTier() - Returns the currently active encounter journal tier index.
