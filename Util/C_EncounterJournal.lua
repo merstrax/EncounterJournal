@@ -30,8 +30,8 @@ C_EncounterJournal.AL_Difficulty = {
     [DifficultyUtil.ID.DungeonMythic] = 4,
 	[DifficultyUtil.ID.RaidNormal] = 2,
 	[DifficultyUtil.ID.RaidHeroic] = 3,
-	[DifficultyUtil.ID.RaidMythic] = "MythicRaid",
-	[DifficultyUtil.ID.RaidAscended] = 4,
+	[DifficultyUtil.ID.RaidMythic] = 4,
+	[DifficultyUtil.ID.RaidAscended] = 5,
 }
 
 local COLOR = {
