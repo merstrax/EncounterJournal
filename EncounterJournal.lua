@@ -708,8 +708,6 @@ function EncounterJournal_DisplayInstance(instanceID, noButton)
 		}
 		EJ_NavBar_AddButton(EncounterJournal.navBar, buttonData);
 	end
-	--Set tab to overview so loot pane doesnt break for difficulty select
-	EncounterJournal.encounter.info.overviewTab:Click();
 end
 
 function EncounterJournal_DisplayEncounter(encounterID, noButton)
@@ -1685,7 +1683,7 @@ function EncounterJournal_LootCallback(itemID)
 	local itemButton = scrollFrame["ItemButton"..itemIndex];
 	while itemButton do
 		if itemButton.itemID == itemID and itemButton:IsShown() then
-			EncounterJournal_SetLootButton(item, item.index);
+			EncounterJournal_SetLootButton(itemButton);
 			break;
 		end
 		itemIndex = itemIndex + 1;
@@ -1846,12 +1844,6 @@ function EncounterJournal_SelectDifficulty(self, value)
 	EJ_SetDifficulty(value);
 	EncounterJournal_ResetHeaders();
 	EncounterJournal.encounter.info.difficulty:SetText(GetEJDifficultyString(value));
-	--Set Tab to overview so loot pane doesnt break
-	if EncounterJournal.encounterID then
-		EncounterJournal.encounter.info.overviewTab:Click();
-	elseif EncounterJournal.instanceID then
-		EncounterJournal.encounter.info.overviewTab:Click();
-	end
 end
 
 function EncounterJournal_DifficultyInit(self, level)

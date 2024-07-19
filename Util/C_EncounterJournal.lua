@@ -187,7 +187,8 @@ end
 function C_EncounterJournal.GetLootInfoByIndex(index, encounterIndex)
     encounterIndex = encounterIndex or C_EncounterJournal.SELECTED_ENCOUNTER;
     local info = C_EncounterJournal.LootInfo;
-
+    local itemID = 0;
+    wipe(info);
     if not index then return info end
 
     if encounterIndex then
@@ -202,7 +203,8 @@ function C_EncounterJournal.GetLootInfoByIndex(index, encounterIndex)
             local item = GetItemInfo(info.itemID);
             if not item then
                 item = Item:CreateFromID(info.itemID);
-                item:ContinueOnLoad(function() EncounterJournal_LootCallback(info.itemID) end);
+                itemID = info.itemID;
+                item:ContinueOnLoad(function() EncounterJournal_LootCallback(itemID) end);
             else
                 local itemName, itemLink, itemQuality, _, _, _, itemSubType, _, itemEquipLoc, itemIcon = GetItemInfo(info.itemID);
                 info.name = COLOR[itemQuality + 1]..itemName..COLOR.DEFAULT;
@@ -225,7 +227,8 @@ function C_EncounterJournal.GetLootInfoByIndex(index, encounterIndex)
             local item = GetItemInfo(info.itemID);
             if not item then
                 item = Item:CreateFromID(info.itemID);
-                item:ContinueOnLoad(function() EncounterJournal_LootCallback(info.itemID) end);
+                itemID = info.itemID;
+                item:ContinueOnLoad(function() EncounterJournal_LootCallback(itemID) end);
             else
                 local itemName, itemLink, itemQuality, _, _, _, itemSubType, _, itemEquipLoc, itemIcon = GetItemInfo(info.itemID);
                 info.name = COLOR[itemQuality + 1]..itemName..COLOR.DEFAULT;
