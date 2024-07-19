@@ -148,15 +148,8 @@ function C_EncounterJournal.GetSectionInfo(sectionID)
         _s.siblingSectionID = sectionID.NextSiblingSection;
         _s.firstChildSectionID = sectionID.FirstChildSection;
         _s.filteredByDifficulty = GetFilteredByDifficulty(sectionID.DifficultyMask);
-
-        if(sectionID.SpellID ~= 0) then
-            _s.link = GetSpellLink(sectionID.SpellID);
-            _, _, _s.abilityIcon = GetSpellInfo(sectionID.SpellID);
-            _s.description = _s.description.."\n\n"..GetSpellDescription(sectionID.SpellID);
-        else
-            _s.abilityIcon = nil;
-            _s.link = 0;
-        end
+        _s.link = sectionID.SpellLink;
+        _s.abilityIcon = sectionID.SpellIcon;
 
         _s.startsOpen = false;
 

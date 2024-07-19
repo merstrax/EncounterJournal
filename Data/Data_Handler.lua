@@ -166,6 +166,9 @@ local section = {
     Flags = 0; 
     IconFlags = 0; 
     DifficultyMask = 0;
+
+    SpellLink = 0;
+    SpellIcon = nil;
 }
 
 
@@ -224,6 +227,16 @@ function EJ_Data:CreateSection(title, desc, spellID, iconFlags, difficulty)
     _section.SpellID = spellID;
     _section.IconFlags = iconFlags;
     _section.DifficultyMask = difficulty;
+
+    if(spellID ~= 0) then
+        if(desc == "") then
+            _section.Desc = GetSpellDescription(_section.SpellID);
+        else
+            _section.Desc = desc.."\n\n"..GetSpellDescription(_section.SpellID);
+        end
+        _section.SpellLink = GetSpellLink(_section.SpellID);
+        _, _, _section.SpellIcon = GetSpellInfo(_section.SpellID);
+    end
 
     return _section;
 end
