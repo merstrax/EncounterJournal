@@ -492,7 +492,7 @@
 	<Button name="EncounterCreatureButtonTemplate" motionScriptsWhileDisabled="true" virtual="true" hidden="true">
 		<Size x="64" y="61"/>
 		<Layers>
-			<Layer level="BACKGROUND" textureSubLevel="6">
+			<Layer level="BACKGROUND">
 				<Texture name="$parentCreature" parentKey="creature">
 					<Size x="40" y="40"/>
 					<Anchors>
@@ -1390,7 +1390,7 @@
 					<Anchor point="BOTTOMRIGHT" relativeTo="$parentInset" x="-3" y="0"/>
 				</Anchors>
 				<Frames>
-					<Frame name="$parentInstanceFrame" parentKey="instance">
+					<Frame name="$parentInstanceFrame" parentKey="instance" useParentLevel="true">
 						<Size x="390" y="425"/>
 						<Anchors>
 							<Anchor point="BOTTOMRIGHT" x="-1" y="2"/>
@@ -1422,58 +1422,6 @@
 							</Layer>
 						</Layers>
 						<Frames>
-							<Button name="$parentMapButton" parentKey="mapButton">
-								<Size x="48" y="32"/>
-								<Anchors>
-									<Anchor point="BOTTOMLEFT" x="33" y="126"/>
-								</Anchors>
-								<Layers>
-									<Layer level="BACKGROUND">
-										<Texture name="$parentShadow" inherits="UI-EJ-ShowMapBG">
-											<Anchors>
-												<Anchor point="LEFT" x="-3" y="5"/>
-											</Anchors>
-										</Texture>
-									</Layer>
-									<Layer level="ARTWORK">
-										<FontString name="$parentText" font="GameFontNormal" justifyH="LEFT" text="ENCOUNTER_JOURNAL_SHOW_MAP">
-											<Size x="0" y="0"/>
-											<Anchors>
-												<Anchor point="LEFT" relativePoint="RIGHT" x="2" y="0"/>
-											</Anchors>
-										</FontString>
-										<Texture name="$parentTexture" file="Interface\QuestFrame\UI-QuestMap_Button" parentKey="texture">
-											<Size x="48" y="32"/>
-											<Anchors>
-												<Anchor point="RIGHT"/>
-											</Anchors>
-											<TexCoords left="0.125" right="0.875" top="0.0" bottom="0.5"/>
-										</Texture>
-									</Layer>
-									<Layer level="HIGHLIGHT">
-										<Texture name="$parentHighlight" file="Interface\BUTTONS\ButtonHilight-Square" alphaMode="ADD">
-											<Size x="36" y="25"/>
-											<Anchors>
-												<Anchor point="RIGHT" x="-7" y="0"/>
-											</Anchors>
-										</Texture>
-									</Layer>
-								</Layers>
-								<Scripts>
-									<OnClick>
-										local _, _, _, _, _, _, mapID = EJ_GetInstanceInfo();
-										if mapID and mapID > 0 then
-											OpenWorldMap(mapID);
-										end
-									</OnClick>
-									<OnMouseDown>
-										self.texture:SetTexCoord(0.125, 0.875, 0.5, 1.0);
-									</OnMouseDown>
-									<OnMouseUp>
-										self.texture:SetTexCoord(0.125, 0.875, 0.0, 0.5);
-									</OnMouseUp>
-								</Scripts>
-							</Button>
 							<ScrollFrame name="$parentLoreScrollFrame" parentKey="loreScroll" inherits="UIPanelScrollFrameTemplate">
 								<Size x="315" y="102"/>
 								<Anchors>
@@ -2011,7 +1959,7 @@
 									</OnShow>
 								</Scripts>
 							</ScrollFrame>
-							<Model name="$parentModelFrame" parentKey="model">
+							<PlayerModel name="$parentModelFrame" parentKey="model">
 								<Size x="390" y="423"/>
 								<Anchors>
 									<Anchor point="BOTTOMRIGHT" x="-3" y="1"/>
@@ -2027,7 +1975,7 @@
 										</Texture>
 									</Layer>
 									<Layer level="OVERLAY">
-										<Texture name="$parentShadow" file="Interface\AddOns\EncounterJournal\Assets\UI-EJ-BossModelPaperFrame">
+										<Texture name="$parentShadow" file="">
 											<Size x="393" y="424"/>
 											<Anchors>
 												<Anchor point="BOTTOMRIGHT" x="3" y="0"/>
@@ -2085,8 +2033,8 @@
 										self:GetParent().imageTitle = self.imageTitle;
 									</OnLoad>
 								</Scripts>
-							</Model>
-							<Button name="$parentCreatureButton1" inherits="EncounterCreatureButtonTemplate" parentArray="creatureButtons">
+							</PlayerModel>
+							<Button name="$parentCreatureButton1" inherits="EncounterCreatureButtonTemplate" parentKey="creatureButton">
 								<Anchors>
 									<Anchor point="TOPLEFT" relativeTo="$parentModelFrame" x="3" y="-35"/>
 								</Anchors>

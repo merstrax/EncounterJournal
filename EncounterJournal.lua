@@ -381,11 +381,11 @@ function EncounterJournal_GetCreatureButton(index)
 	local self = EncounterJournal.encounter.info;
 	local button = self.creatureButtons[index];
 	if (not button) then
-		--button = CreateFrame("BUTTON", nil, self, "EncounterCreatureButtonTemplate");
-		--button:SetPoint("TOPLEFT", self.creatureButtons[index-1], "BOTTOMLEFT", 0, 8);
-		--self.creatureButtons[index] = button;
+		button = CreateFrame("BUTTON", nil, self, "EncounterCreatureButtonTemplate");
+		button:SetPoint("TOPLEFT", self.creatureButtons[index-1], "BOTTOMLEFT", 0, 8);
+		self.creatureButtons[index] = button;
 	end
-	return nil;
+	return button;
 end
 
 function EncounterJournal_FindCreatureButtonForDisplayInfo(displayInfo)
@@ -433,7 +433,7 @@ function EncounterJournal_ListInstances()
 
 	local scrollFrame = instanceSelect.scroll.child;
 	local index = 1;
-	local instanceID, name, description, _, buttonImage, _, _, _, link = EJ_GetInstanceByIndex(index, showRaid);
+	local instanceID, name, description, _, _, buttonImage, link = EJ_GetInstanceByIndex(index, showRaid);
 
 	--No instances in this tab
 	if not instanceID and not infiniteLoopPolice then
@@ -471,7 +471,7 @@ function EncounterJournal_ListInstances()
 		instanceButton:Show();
 
 		index = index + 1;
-		instanceID, name, description, _, buttonImage, _, _, _, link = EJ_GetInstanceByIndex(index, showRaid);
+		instanceID, name, description, _, _, buttonImage, link = EJ_GetInstanceByIndex(index, showRaid);
 	end
 
 	EJ_HideInstances(index);
@@ -520,7 +520,7 @@ local function UpdateDifficultyAnchoring(difficultyFrame)
 end
 
 local function UpdateDifficultyVisibility()
-	local shouldDisplayDifficulty = select(10, EJ_GetInstanceInfo()) ~= 2;
+	local shouldDisplayDifficulty = select(8, EJ_GetInstanceInfo()) ~= 2;
 
 	-- As long as the current tab isn't the model tab, which always suppresses the difficulty, then update the shown state.
 	local info = EncounterJournal.encounter.info;
@@ -560,7 +560,7 @@ function EncounterJournal_DisplayInstance(instanceID, noButton)
 	EncounterJournal_LootUpdate();
 	EncounterJournal_ClearDetails();
 
-	local _, instanceName, description, bgImage, _, loreImage, buttonImage, dungeonAreaMapID = EJ_GetInstanceInfo();
+	local _, instanceName, description, bgImage, loreImage, buttonImage = EJ_GetInstanceInfo();
 	self.instance.title:SetFontObject("GameFontNormal");
 	self.instance.title:SetText(instanceName);
 	self.instance.titleBG:SetWidth(self.instance.title:GetStringWidth() + 80);
@@ -579,7 +579,7 @@ function EncounterJournal_DisplayInstance(instanceID, noButton)
 
 	self.info.instanceTitle:SetFontObject("GameFontNormal");
 	self.info.instanceTitle:SetText(instanceName);
-	self.instance.mapButton:SetShown(dungeonAreaMapID and dungeonAreaMapID > 0);
+	--self.instance.mapButton:SetShown(dungeonAreaMapID and dungeonAreaMapID > 0);
 
 	self.instance.loreScroll.child.lore:SetText(description);
 	local loreHeight = self.instance.loreScroll.child.lore:GetHeight();
@@ -636,7 +636,7 @@ function EncounterJournal_DisplayInstance(instanceID, noButton)
 		bossButton:Show();
 		bossButton.encounterID = bossID;
 		--Use the boss' first creature as the button icon
-		local bossImage = EJ_GetCreatureInfo(bossID);
+		local _, _, _, bossImage = EJ_GetCreatureInfo(bossIndex);
 		bossImage = bossImage or "Interface\\AddOns\\EncounterJournal\\Assets\\UI-EJ-BOSS-Default";
 		bossButton.creature:SetTexture(bossImage);
 		
@@ -803,7 +803,7 @@ function EncounterJournal_DisplayEncounter(encounterID, noButton)
 		bossButton:Show();
 		bossButton.encounterID = bossID;
 
-		local bossImage = EJ_GetCreatureInfo(bossID);
+		local _, _, _, bossImage = EJ_GetCreatureInfo(bossIndex);
 		bossImage = bossImage or "Interface\\AddOns\\EncounterJournal\\Assets\\UI-EJ-BOSS-Default";
 		bossButton.creature:SetTexture(bossImage);
 		
@@ -830,24 +830,8 @@ function EncounterJournal_DisplayEncounter(encounterID, noButton)
 		end
 	end
 
-	--[[ Setup Creatures
-	local id, name, displayInfo, iconImage;
-	for i=1,MAX_CREATURES_PER_ENCOUNTER do
-		id, name, description, displayInfo, iconImage, uiModelSceneID = EJ_GetCreatureInfo(i);
-
-		if id then
-			local button = EncounterJournal_GetCreatureButton(i);
-			SetPortraitTextureFromCreatureDisplayID(button.creature, displayInfo);
-			button.name = name;
-			button.id = id;
-			button.description = description;
-			button.displayInfo = displayInfo;
-			button.uiModelSceneID = uiModelSceneID;
-		end
-	end]]
-
 	--enable model and abilities tab
-	EncounterJournal_SetTabEnabled(EncounterJournal.encounter.info.modelTab, false);
+	EncounterJournal_SetTabEnabled(EncounterJournal.encounter.info.modelTab, true);
 	EncounterJournal_SetTabEnabled(EncounterJournal.encounter.info.bossTab, false);
 
 	if (overviewFound) then
@@ -882,40 +866,17 @@ function EncounterJournal_DisplayCreature(self, forceUpdate)
 
 	local modelScene = EncounterJournal.encounter.info.model;
 
-	if self.displayInfo and (EncounterJournal.creatureDisplayID ~= self.displayInfo or forceUpdate) then
-		modelScene:SetFromModelSceneID(self.uiModelSceneID, forceUpdate);
-
-		local creature = modelScene:GetActorByTag("creature");
-		if creature then
-			creature:SetModelByCreatureDisplayID(self.displayInfo, forceUpdate);
-		end
+	if self.displayInfo then
+		modelScene:Show();
+		modelScene:ClearModel();
+		modelScene:SetModel(self.displayInfo);
+		modelScene:SetCamera(1);
+		modelScene:SetModelScale(0.5);
 
 		EncounterJournal.creatureDisplayID = self.displayInfo;
 	end
 
 	modelScene.imageTitle:SetText(self.name);
-
-	local isGMClient = IsGMClient();
-	modelScene.modelName:SetShown(isGMClient);
-	modelScene.modelDisplayId:SetShown(isGMClient);
-	modelScene.modelNameLabel:SetShown(isGMClient);
-	modelScene.modelDisplayIdLabel:SetShown(isGMClient);
-
-	if (isGMClient) then
-		local numActors = modelScene:GetNumActors();
-		local actor = (numActors > 0) and modelScene:GetActorAtIndex(1);
-		local displayID = actor and actor:GetModelFileID() or "";
-		local name = actor and actor:GetModelPath() or "";
-
-		modelScene.modelName:SetText(name);
-		modelScene.modelDisplayId:SetText(displayID);
-
-		if (modelScene.modelName:IsTruncated()) then
-			local pos = string.find(name, "\\[^\\]*$");
-			name = name:sub(1, pos - 1) .. "\\\n" .. name:sub(pos + 1);
-			modelScene.modelName:SetText(name);
-		end
-	end
 
 	self:Disable();
 	EncounterJournal.encounter.info.shownCreatureButton = self;
@@ -929,24 +890,24 @@ function EncounterJournal_DisplayCreature(self, forceUpdate)
 end
 
 function EncounterJournal_ShowCreatures(forceUpdate)
-	for index, creatureButton in ipairs(EncounterJournal.encounter.info.creatureButtons) do
-		if (creatureButton.displayInfo) then
-			creatureButton:Show();
-			if index == 1 then
-				EncounterJournal_DisplayCreature(creatureButton, forceUpdate);
-			end
-		end
-	end
+	local id, name, description, iconImage, displayInfo, uiModelSceneID = EJ_GetCreatureInfo(0, C_EncounterJournal.SELECTED_ENCOUNTER);
+	local button = EncounterJournal.encounter.info.creatureButton;
+
+	button.name = name;
+	button.id = id;
+	button.description = description;
+	button.displayInfo = displayInfo;
+	button.uiModelSceneID = uiModelSceneID;
+
+	EncounterJournal_DisplayCreature(button, forceUpdate);
 end
 
 function EncounterJournal_HideCreatures(clearDisplayInfo)
-	for index, creatureButton in ipairs(EncounterJournal.encounter.info.creatureButtons) do
-		creatureButton:Hide();
+	EncounterJournal.encounter.info.creatureButton:Hide();
 
-		if clearDisplayInfo then
-			creatureButton.displayInfo = nil;
-			creatureButton.uiModelSceneID = nil;
-		end
+	if clearDisplayInfo then
+		EncounterJournal.encounter.info.creatureButton.displayInfo = nil;
+		EncounterJournal.encounter.info.creatureButton.uiModelSceneID = nil;
 	end
 end
 
@@ -1388,7 +1349,7 @@ function EncounterJournal_ToggleHeaders(self, doNotShift)
 						--SetPortraitTextureFromCreatureDisplayID(infoHeader.button.portrait.icon, sectionInfo.creatureDisplayID);
 						infoHeader.button.portrait.name = sectionInfo.title;
 						infoHeader.button.portrait.displayInfo = sectionInfo.creatureDisplayID;
-						infoHeader.button.portrait.uiModelSceneID = sectionInfo.uiModelSceneID;
+						infoHeader.button.portrait.uiModelSceneID = 9;
 						infoHeader.button.portrait:Show();
 						textLeftAnchor = infoHeader.button.portrait;
 						infoHeader.button.abilityIcon:Hide();

@@ -275,8 +275,15 @@ function EJ_GetContentTuningID()
 end
 
 --EJ_GetCreatureInfo(index [, encounterID]) - Returns encounter boss info.
-function EJ_GetCreatureInfo(encounterID)
-    return EJ_Data.Encounters[encounterID].FileData;
+function EJ_GetCreatureInfo(index, encounterID)
+    encounterID = encounterID or EJ_Data.Instances[C_EncounterJournal.SELECTED_INSTANCE].Encounters[index].EncounterID;
+    --return id, name, description, iconImage, displayInfo, uiModelSceneID
+    local name = EJ_Data.Encounters[encounterID].Name;
+    local description = EJ_Data.Encounters[encounterID].Description;
+    local iconImage = EJ_Data.Encounters[encounterID].FileData;
+    local displayInfo = EJ_Data.DisplayIDs[name];
+    
+    return encounterID, name, description, iconImage, displayInfo, 9;
 end
 
 
@@ -302,7 +309,7 @@ function EJ_GetEncounterInfo(encounterID)
         info = EJ_Data.Encounters[encounterID];
         return info.Name, info.Description, info.EncounterID, 
                     info.RootSectionID, EJ_BuildJournalLink(EJ_TYPES.Encounter, info.EncounterID, 2, info.Name), 
-                        info.InstanceID, info.EncounterID, select(10, EJ_GetInstanceInfo(info.InstanceID))
+                        info.InstanceID, info.EncounterID, select(8, EJ_GetInstanceInfo(info.InstanceID))
     end
 end
 
@@ -319,7 +326,7 @@ function EJ_GetInstanceInfo(journalInstanceID)
     if not journalInstanceID or journalInstanceID == 0 then return nil end;
 
     local info = EJ_Data.Instances[journalInstanceID];
-    return info.ID, info.Name, info.Description, info.BackgroundFile, info.ButtonFile, info.LoreFile, info.SmallButtonFile, 0, EJ_BuildJournalLink(EJ_TYPES.Instance, info.ID, 0, info.Name), info.DifficultyID, info.MapID;
+    return info.ID, info.Name, info.Description, info.BackgroundFile, info.LoreFile, info.ButtonFile, EJ_BuildJournalLink(EJ_TYPES.Instance, info.ID, 0, info.Name), info.DifficultyID, info.MapID;
 end
 
 --EJ_GetInstanceByIndex(index, isRaid) - Returns instance info for the Encounter Journal.
@@ -408,7 +415,7 @@ end
 function EJ_IsValidInstanceDifficulty(difficultyID)
     if not difficultyID then return false end
 
-    local info = select(10, EJ_GetInstanceInfo());
+    local info = select(8, EJ_GetInstanceInfo());
     if info == DifficultyUtil.ID.DungeonNormal and difficultyID == DifficultyUtil.ID.DungeonNormal then return true end;
     
     if(info == DifficultyUtil.ID.DungeonMythic and (difficultyID == DifficultyUtil.ID.DungeonNormal or difficultyID == DifficultyUtil.ID.DungeonHeroic or difficultyID == DifficultyUtil.ID.DungeonMythic)) then

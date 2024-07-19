@@ -76,14 +76,10 @@ local instance = {
     ID = nil;
     Name = nil;
     Description = nil;
-
     MapID = nil;
-
     BackgroundFile = nil;
     ButtonFile = nil;
-    SmallButtonFile = nil;
     LoreFile = nil;
-
     DifficultyID = nil;
 
     Encounters = {};
@@ -107,7 +103,6 @@ function instance:setAttributes(id, name, desc, mapID, bgFile, btnFile, loreFile
     self.MapID = mapID or self.MapID;
     self.BackgroundFile = bgFile or self.BackgroundFile;
     self.ButtonFile = btnFile or self.ButtonFile;
-    self.SmallButtonFile = smBtnFile or self.SmallButtonFile;
     self.LoreFile = loreFile or self.LoreFile;
     self.DifficultyID = difficultyID or self.DifficultyID;
 end
