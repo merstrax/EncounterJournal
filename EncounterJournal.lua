@@ -146,7 +146,7 @@ function EncounterJournal_OnLoad(self)
 	Mixin(self, "PortraitFrameMixin");
 	EncounterJournalTitleText:SetText("Dungeon Journal");
 	EncounterJournal:SetPortraitToAsset("Interface\\AddOns\\EncounterJournal\\Assets\\UI-EJ-PortraitIcon");
-	self:RegisterForDrag("LeftButton");
+	--self:RegisterForDrag("LeftButton");
 	EncounterJournal:RegisterEvent("VARIABLES_LOADED");
 
 	EncounterJournal.selectedTab = 1;
@@ -869,8 +869,8 @@ function EncounterJournal_DisplayCreature(self, forceUpdate)
 	if self.displayInfo then
 		modelScene:Show();
 		modelScene:ClearModel();
-		modelScene:SetModel(self.displayInfo);
-		modelScene:SetCamera(1);
+		modelScene:SetDisplayInfo(self.displayInfo);
+		modelScene:SetCamera(2);
 		modelScene:SetModelScale(0.5);
 
 		EncounterJournal.creatureDisplayID = self.displayInfo;
