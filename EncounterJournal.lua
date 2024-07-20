@@ -870,10 +870,11 @@ function EncounterJournal_DisplayCreature(self, forceUpdate)
 	if self.displayInfo then
 		modelScene:Show();
 		modelScene:ClearModel();
-		modelScene:SetModelScale(self.displayInfo[EJ_Data.Scale]);
 		modelScene:ApplyUICamera(0, true);
 		modelScene:RefreshUnit();
-		modelScene:SetPosition(self.displayInfo[EJ_Data.PosX], self.displayInfo[EJ_Data.PosY], self.displayInfo[EJ_Data.PosZ]);
+		local scale = modelScene:GetEffectiveScale();
+		modelScene:SetModelScale(self.displayInfo[EJ_Data.Scale] / scale);
+		modelScene:SetPosition(self.displayInfo[EJ_Data.PosX] / scale, self.displayInfo[EJ_Data.PosY] / scale, self.displayInfo[EJ_Data.PosZ] / scale);
 		modelScene:SetDisplayInfo(self.displayInfo[1]);
 		modelScene:SetFacing(0);
 
