@@ -1959,7 +1959,7 @@
 									</OnShow>
 								</Scripts>
 							</ScrollFrame>
-							<PlayerModel name="$parentModelFrame" parentKey="model">
+							<DressUpModel name="$parentModelFrame" parentKey="model">
 								<Size x="390" y="423"/>
 								<Anchors>
 									<Anchor point="BOTTOMRIGHT" x="-3" y="1"/>
@@ -2033,7 +2033,7 @@
 										self:GetParent().imageTitle = self.imageTitle;
 									</OnLoad>
 								</Scripts>
-							</PlayerModel>
+							</DressUpModel>
 							<Button name="$parentCreatureButton1" inherits="EncounterCreatureButtonTemplate" parentKey="creatureButton">
 								<Anchors>
 									<Anchor point="TOPLEFT" relativeTo="$parentModelFrame" x="3" y="-35"/>

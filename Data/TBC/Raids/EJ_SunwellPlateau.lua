@@ -18,12 +18,12 @@ instance:addEncounter(brutallus);
 local felmyst = EJ_Data:CreateEncounter();
 felmyst:setAttributes("Felmyst", "", 752, 726, 2, 8);
 felmyst:setLoot({}); 
-instance:addEncounter();
+instance:addEncounter(felmyst);
 
 local the_eredar_twins = EJ_Data:CreateEncounter();
 the_eredar_twins:setAttributes("The Eredar Twins", "",  752, 727, 3, 8);
 the_eredar_twins:setLoot({}); 
-instance:addEncounter(felmyst);
+instance:addEncounter(the_eredar_twins);
 
 local m_uru = EJ_Data:CreateEncounter();
 m_uru:setAttributes("M'uru", "", 752, 728, 4, 8);

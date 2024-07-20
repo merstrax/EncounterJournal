@@ -21,7 +21,7 @@ priestess_delrissa:setLoot({});
 instance:addEncounter(priestess_delrissa); 
 
 local kael_thas_sunstrider = EJ_Data:CreateEncounter();
-kael_thas_sunstrider:setAttributes("Kael'thas Sunstrider", "Once a true champion to the blood elf people, and a defender of the race's ancient heritage, Kael'thas Sunstrider has fallen prey to the dark influences of the demon Kil'jaeden while sojourning in Outland. At the bidding of his new master, the wayward prince returned to Azeroth and seized the Sunwell, hoping to use the fount as a means to open a doorway for the demon to this new and verdant world. Kael'thas is a brilliant tactician, a powerful warrior, and his veins burn with limitless fel magic.", 249, 1894, 4, 4);
+kael_thas_sunstrider:setAttributes("Kael'thas Sunstrider - Magister", "Once a true champion to the blood elf people, and a defender of the race's ancient heritage, Kael'thas Sunstrider has fallen prey to the dark influences of the demon Kil'jaeden while sojourning in Outland. At the bidding of his new master, the wayward prince returned to Azeroth and seized the Sunwell, hoping to use the fount as a means to open a doorway for the demon to this new and verdant world. Kael'thas is a brilliant tactician, a powerful warrior, and his veins burn with limitless fel magic.", 249, 1894, 4, 4);
 kael_thas_sunstrider:setLoot({}); 
 instance:addEncounter(kael_thas_sunstrider); 
 

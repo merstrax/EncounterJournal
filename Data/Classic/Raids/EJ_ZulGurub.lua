@@ -66,7 +66,7 @@ jin_do_the_hexxar:setLoot({19885,19891,19890,19884,19888,19886,19929,19889,19892
 instance:addEncounter(jin_do_the_hexxar);
 
 local hakkar = EJ_Data:CreateEncounter();
-hakkar:setAttributes("Hakkar", "", 76, 11792, 13, 8);
+hakkar:setAttributes("Hakkar the Soulflayer", "", 76, 11792, 13, 8);
 hakkar:setLoot({19857,20257,20264,19855,19876,19856,19859,19864,19865,19854,19852,19862,19853,19861});
 instance:addEncounter(hakkar); 
 
