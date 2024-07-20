@@ -11,4 +11,4 @@ magtheridon:setLoot({});
 instance:addEncounter(magtheridon) 
 
 instance:generateLootList();
-EJ_Data:addInstance(EJ_Data.TBC, instance, true);
+EJ_Data:addInstance(EJ_Data.TBC, instance, true, 2);

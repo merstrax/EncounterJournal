@@ -33,4 +33,4 @@ onyxia:addSection(EJ_Data:CreateSection("Onyxian Whelp", "These will occasionall
 instance:addEncounter(onyxia); 
 
 instance:generateLootList();
-EJ_Data:addInstance(EJ_Data.CLASSIC, instance, true);
+EJ_Data:addInstance(EJ_Data.CLASSIC, instance, true, 3);

@@ -49,6 +49,24 @@ EJ_Data.IconFlags = {
     Ascended = 16384
 }
 
+EJ_Data.IconTooltip = {
+    "Tank",
+    "DPS",
+    "Healer",
+    "Heroic",
+    "Fatal",
+    "Important",
+    "Interruptable",
+    "Magic",
+    "Curse",
+    "Poison",
+    "Disease",
+    "Adds",
+    "Mythic",
+    "Bleed",
+    "Ascended"
+}
+
 EJ_Data.AL_LOADED = false;
 
 function EJ_Data:LoadAddons()
@@ -57,16 +75,22 @@ function EJ_Data:LoadAddons()
 	end
 end
 
-function EJ_Data:addInstance(tier, instance_data, isRaid)
+function EJ_Data:addInstance(tier, instance_data, isRaid, orderIndex)
     local selectType = 0;
 
     if isRaid then
         selectType = 1;
     end
- 
+    if orderIndex then
+        instance_data.OrderIndex = orderIndex;
+    else
+        instance_data.OrderIndex = 0;
+    end
     tinsert(self.Tiers[tier][self.Dungeons + selectType], instance_data);
     self.Instances[instance_data.ID] = instance_data;
     self.InstanceToTier[instance_data.ID] = {tier, selectType};
+    table.sort(self.Tiers[tier][self.Dungeons + selectType], function(k1, k2) return k1.OrderIndex < k2.OrderIndex end);
+
 end
 
 ------------------------------
@@ -81,7 +105,7 @@ local instance = {
     ButtonFile = nil;
     LoreFile = nil;
     DifficultyID = nil;
-
+    OderIndex = 0;
     Encounters = {};
     Loot = {};
 };

@@ -51,4 +51,4 @@ c_thun:setLoot({21583,22731,21585,22730,21582,21586,21581,22732,21596,21579,2112
 instance:addEncounter(c_thun); 
 
 instance:generateLootList();
-EJ_Data:addInstance(EJ_Data.CLASSIC, instance, true);
+EJ_Data:addInstance(EJ_Data.CLASSIC, instance, true, 6);

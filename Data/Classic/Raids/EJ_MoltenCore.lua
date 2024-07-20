@@ -181,4 +181,4 @@ ragnaros:addSection(EJ_Data:CreateSection("Submerge", "When Ragnaros submerges h
 instance:addEncounter(ragnaros); 
 
 instance:generateLootList();
-EJ_Data:addInstance(EJ_Data.CLASSIC, instance, true);
+EJ_Data:addInstance(EJ_Data.CLASSIC, instance, true, 2);

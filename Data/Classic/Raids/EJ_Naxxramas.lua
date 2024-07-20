@@ -81,4 +81,4 @@ kel_thuzad:setLoot({22802,23054,23577,23056,22798,22799,22821,22812,22819,23057,
 instance:addEncounter(kel_thuzad); 
 
 instance:generateLootList();
-EJ_Data:addInstance(EJ_Data.CLASSIC, instance, true);
+EJ_Data:addInstance(EJ_Data.CLASSIC, instance, true, 7);

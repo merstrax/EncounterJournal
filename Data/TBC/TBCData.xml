@@ -27,4 +27,5 @@
     <Script file="Raids\EJ_SerpentshrineCavern.lua"/>
     <Script file="Raids\EJ_SunwellPlateau.lua"/>
     <Script file="Raids\EJ_TheEye.lua"/>
+    <Script file="Raids\EJ_ZulAman.lua"/>
 </Ui>

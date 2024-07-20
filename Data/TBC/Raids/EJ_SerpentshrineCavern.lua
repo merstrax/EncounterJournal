@@ -36,4 +36,4 @@ lady_vashj:setLoot({});
 instance:addEncounter(lady_vashj); 
 
 instance:generateLootList();
-EJ_Data:addInstance(EJ_Data.TBC, instance, true);
+EJ_Data:addInstance(EJ_Data.TBC, instance, true, 4);

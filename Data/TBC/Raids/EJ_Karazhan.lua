@@ -56,4 +56,4 @@ prince_malchezaar:setLoot({});
 instance:addEncounter(prince_malchezaar);
 
 instance:generateLootList();
-EJ_Data:addInstance(EJ_Data.TBC, instance, true);
+EJ_Data:addInstance(EJ_Data.TBC, instance, true, 1);

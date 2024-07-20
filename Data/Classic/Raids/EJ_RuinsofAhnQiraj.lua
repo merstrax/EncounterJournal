@@ -36,4 +36,4 @@ ossirian_the_unscarred:setLoot({21456,21464,21462,21461,21458,21454,21463,21460,
 instance:addEncounter(ossirian_the_unscarred); 
 
 instance:generateLootList();
-EJ_Data:addInstance(EJ_Data.CLASSIC, instance, true);
+EJ_Data:addInstance(EJ_Data.CLASSIC, instance, true, 5);

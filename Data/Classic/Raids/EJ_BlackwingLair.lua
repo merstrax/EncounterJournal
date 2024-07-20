@@ -123,4 +123,4 @@ nefarian:setLoot({19378,19375,19381,19380,19377,19376,19382,19379,19364,19363,19
 instance:addEncounter(nefarian);
 
 instance:generateLootList();
-EJ_Data:addInstance(EJ_Data.CLASSIC, instance, true);
+EJ_Data:addInstance(EJ_Data.CLASSIC, instance, true, 4);

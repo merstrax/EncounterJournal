@@ -664,10 +664,9 @@
 		</Layers>
 		<Scripts>
 			<OnEnter>
-				if self.tooltipTitle then
+				if self.tooltip then
 					GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
-					GameTooltip:SetText(self.tooltipTitle,1,1,1);
-					GameTooltip:AddLine(self.tooltipText, nil, nil, nil, true);
+					GameTooltip:SetText(self.tooltip,1,1,1);
 					GameTooltip:Show();
 				end
 			</OnEnter>

@@ -16,4 +16,4 @@ gruul_the_dragonkiller:setLoot({});
 instance:addEncounter(gruul_the_dragonkiller);
 
 instance:generateLootList();
-EJ_Data:addInstance(EJ_Data.TBC, instance, true);
+EJ_Data:addInstance(EJ_Data.TBC, instance, true, 3);

@@ -498,6 +498,7 @@ local function EncounterJournal_SetupIconFlags(sectionID, infoHeaderButton)
 	
 	for i = 1, #iconFlag do
 		infoHeaderButton["icon"..tostring(i)]:Show();
+		infoHeaderButton["icon"..tostring(i)].tooltip = EJ_Data.IconTooltip[iconFlag[i] + 1];
 		EncounterJournal_SetFlagIcon(infoHeaderButton["icon"..tostring(i)].icon, iconFlag[i]);
 	end
 
