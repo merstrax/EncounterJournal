@@ -192,8 +192,12 @@ function C_EncounterJournal.GetLootInfoByIndex(index, encounterIndex)
     if not index then return info end
 
     if encounterIndex then
-        if index <= #EJ_Data.Encounters[encounterIndex].Loot then
-            info.itemID = EJ_Data.Encounters[encounterIndex].Loot[index];
+        local lootList = EJ_Data.Encounters[encounterIndex].Loot;
+        if(C_EncounterJournal.SELECTED_DIFFICULTY > DifficultyUtil.ID.DungeonNormal and C_EncounterJournal.SELECTED_DIFFICULTY < DifficultyUtil.ID.RaidNormal and C_EncounterJournal.SELECTED_TIER == EJ_Data.TBC) then
+            lootList = EJ_Data.Encounters[encounterIndex].LootHeroic
+        end
+        if index <= #lootList then
+            info.itemID = lootList[index];
             if(EJ_Data.AL_LOADED) then
                 local AL_DIFF = C_EncounterJournal.AL_Difficulty[C_EncounterJournal.SELECTED_DIFFICULTY];
                 if(ItemIDsDatabase[info.itemID]) then
@@ -216,8 +220,12 @@ function C_EncounterJournal.GetLootInfoByIndex(index, encounterIndex)
             end
         end
     else
-        if index <= #EJ_Data.Instances[C_EncounterJournal.SELECTED_INSTANCE].Loot then
-            info.itemID = EJ_Data.Instances[C_EncounterJournal.SELECTED_INSTANCE].Loot[index];
+        local lootList = EJ_Data.Instances[C_EncounterJournal.SELECTED_INSTANCE].Loot;
+        if(C_EncounterJournal.SELECTED_DIFFICULTY > DifficultyUtil.ID.DungeonNormal and C_EncounterJournal.SELECTED_DIFFICULTY < DifficultyUtil.ID.RaidNormal and C_EncounterJournal.SELECTED_TIER == EJ_Data.TBC) then
+            lootList = EJ_Data.Instances[C_EncounterJournal.SELECTED_INSTANCE].LootHeroic
+        end
+        if index <= #lootList then
+            info.itemID = lootList[index];
             if(EJ_Data.AL_LOADED) then
                 local AL_DIFF = C_EncounterJournal.AL_Difficulty[C_EncounterJournal.SELECTED_DIFFICULTY];
                 if(ItemIDsDatabase[info.itemID]) then
@@ -487,11 +495,17 @@ end
 function EJ_GetNumLoot()
     if C_EncounterJournal.SELECTED_ENCOUNTER then
         if(EJ_Data.Encounters[C_EncounterJournal.SELECTED_ENCOUNTER]) then
+            if(C_EncounterJournal.SELECTED_DIFFICULTY > DifficultyUtil.ID.DungeonNormal and C_EncounterJournal.SELECTED_DIFFICULTY < DifficultyUtil.ID.RaidNormal and C_EncounterJournal.SELECTED_TIER == EJ_Data.TBC) then
+                return #EJ_Data.Encounters[C_EncounterJournal.SELECTED_ENCOUNTER].LootHeroic
+            end
             return #EJ_Data.Encounters[C_EncounterJournal.SELECTED_ENCOUNTER].Loot;
         end
     end
 
     if C_EncounterJournal.SELECTED_INSTANCE then
+        if(C_EncounterJournal.SELECTED_DIFFICULTY > DifficultyUtil.ID.DungeonNormal and C_EncounterJournal.SELECTED_DIFFICULTY < DifficultyUtil.ID.RaidNormal and C_EncounterJournal.SELECTED_TIER == EJ_Data.TBC) then
+            return #EJ_Data.Instances[C_EncounterJournal.SELECTED_INSTANCE].LootHeroic
+        end
         return #EJ_Data.Instances[C_EncounterJournal.SELECTED_INSTANCE].Loot;
     end
 end

@@ -108,7 +108,7 @@ local instance = {
     Encounters = {};
     Loot = {};
     LootHeroic = {};
-    hasHeroicLoot = false;
+    hasLootHeroic = false;
 };
 
 --Returns Index where Encounter was added or nil
@@ -140,11 +140,13 @@ function instance:generateLootList()
             end
         end
     end
-    if self.hasHeroicLoot then
+    if self.hasLootHeroic then
         for _, v in ipairs(self.Encounters) do
-            for _, i in ipairs(v.HeroicLoot) do
-                if(not tContains(self.HeroicLoot, i)) then
-                    tinsert(self.HeroicLoot, i);
+            if(v.LootHeroic) then
+                for _, i in ipairs(v.LootHeroic) do
+                    if(not tContains(self.LootHeroic, i)) then
+                        tinsert(self.LootHeroic, i);
+                    end
                 end
             end
         end
@@ -205,10 +207,10 @@ local section = {
 function encounter:setLoot(lootTable, isHeroic)
     if isHeroic then
         if #self.Loot > 0 then
-            self.LootHeroic = tCopy(self.Loot);
+            self.LootHeroic = tcopy(self.Loot);
         end
         for _, v in ipairs(lootTable) do
-            tInsert(self.LootHeroic, v);
+            tinsert(self.LootHeroic, v);
         end
         return;
     end

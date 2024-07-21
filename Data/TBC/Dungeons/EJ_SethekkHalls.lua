@@ -4,24 +4,24 @@ local btnFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Buttons\\UI-EJ-DUN
 local loreFile = "Interface\\AddOns\\EncounterJournal\\Assets\\Lore\\UI-EJ-LOREBG-Auchindoun.blp";
 
 instance:setAttributes(252, "Sethekk Halls", EJ_Descriptions.Instances["SETHEKKHALLS"], 564, bgFile, btnFile, loreFile, DifficultyUtil.ID.DungeonMythic);
-instance.hsHeroicLoot = true;
+instance.hasLootHeroic = true;
 
 local darkweaver_syth = EJ_Data:CreateEncounter();
 darkweaver_syth:setAttributes("Darkweaver Syth", "Darkweaver Syth is charged by the Talon King Ikiss to defend the Sethekk Halls while the renegade arakkoa search for their enigmatic god. A master of shadowy magic, this wizened trickster has learned how to bend the very elements to his sway.", 252, 1903, 1, 4);
-darkweaver_syth:setLoot({});
+darkweaver_syth:setLoot({27919,27914,27915,27918,27917,27916});
 darkweaver_syth:setLoot({}, true);
 instance:addEncounter(darkweaver_syth);
 
 local anzu = EJ_Data:CreateEncounter();
 anzu:setAttributes("Anzu", "A mysterious avian deity worshipped by some of the more savage arakkoa, Anzu is a being whose origins and powers are unlike any other member of Outland's fallen pantheon. The Naaru are silent regarding this malevolent creature, for Anzu's ways are hidden from even them.", 252, 1904, 2, 2);
 anzu:setLoot({});
-anzu:setLoot({}, true);
+anzu:setLoot({32769,32778,32779,32781,32780}, true);
 instance:addEncounter(anzu);
 
 local talon_king_ikiss = EJ_Data:CreateEncounter();
 talon_king_ikiss:setAttributes("Talon King Ikiss", "Talon King Ikiss was the charismatic spiritual leader of the daring group of arakkoa which left their home in the Terokkar forest in search of a \"promised god.\" He had received dreams of this god as he slept, and knew that revelation lay within the crumbling halls of Auchindoun. Ikiss was driven insane by the visions, and now declares himself to be Terokk reborn, a divine hero from arakkoa myth.", 252, 1902, 3, 4);
-talon_king_ikiss:setLoot({});
-talon_king_ikiss:setLoot({}, true);
+talon_king_ikiss:setLoot({27948,27838,27875,27776,27936,27946,27981,27985,27925,27980,27986});
+talon_king_ikiss:setLoot({29249,29259,32073,29355}, true);
 instance:addEncounter(talon_king_ikiss);
 
 instance:generateLootList();
