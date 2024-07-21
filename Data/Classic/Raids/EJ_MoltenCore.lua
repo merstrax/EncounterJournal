@@ -25,7 +25,7 @@ lucifron:addSection(lucifron_flamewaker, nil);
 lucifron:addSection(EJ_Data:CreateSection("Cleave", "", 20605, 0, -1), lucifron_flamewaker);
 lucifron:addSection(EJ_Data:CreateSection("Dominate Mind", "", 20604, iconFlags.Magic, -1), lucifron_flamewaker);
 
-instance:addEncounter(lucifron); 
+instance:addEncounter(lucifron);
 
 ----------------------
 -------Magmadar-------
@@ -40,14 +40,14 @@ magmadar:addSection(EJ_Data:CreateSection("Magma Spit", "", 19450, 0, -1), nil);
 magmadar:addSection(EJ_Data:CreateSection("Panic", "", 19408, 0, -1), nil);
 magmadar:addSection(EJ_Data:CreateSection("Lava Bomb", "", 19411, 0, -1), nil);
 
-instance:addEncounter(magmadar); 
+instance:addEncounter(magmadar);
 
 ----------------------
 -------Gehennas-------
 ----------------------
 local gehennas = EJ_Data:CreateEncounter();
 gehennas:setAttributes("Gehennas", "[TODO] Implement Ascension specific mechanics", 741, 665, 3, 8);
-gehennas:setLoot({19145,18872,19146,18875,18870,18861,18879,19147,18878,17077,2522364}); 
+gehennas:setLoot({19145,18872,19146,18875,18870,18861,18879,19147,18878,17077,2522364});
 
 gehennas:addSection(EJ_Data:CreateSection("Rain of Fire", "", 19717, 0, -1), nil);
 gehennas:addSection(EJ_Data:CreateSection("Gehennas's Curse", "", 19716, iconFlags.Curse, -1), nil);
@@ -57,7 +57,7 @@ local gehennas_flamewaker = EJ_Data:CreateSection("Flamewaker", "", 0, iconFlags
 gehennas:addSection(gehennas_flamewaker, nil);
 gehennas:addSection(EJ_Data:CreateSection("Fist of Ragnaros", "", 20277, iconFlags.Important, -1), gehennas_flamewaker);
 
-instance:addEncounter(gehennas); 
+instance:addEncounter(gehennas);
 
 ----------------------
 -------  Garr  -------
@@ -75,7 +75,7 @@ garr:addSection(EJ_Data:CreateSection("Seperation Anxiety", "Garr's adds will de
 garr:addSection(EJ_Data:CreateSection("Immolate", "", 20294, iconFlags.Magic, -1), garr_firesworn);
 garr:addSection(EJ_Data:CreateSection("Eruption", "On death, Firesworns will explode, dealing massive Fire damage and knocking players back.", 19497, 0, -1), garr_firesworn);
 
-instance:addEncounter(garr); 
+instance:addEncounter(garr);
 
 ----------------------
 -------Shazzrah-------
@@ -90,7 +90,7 @@ shazzrah:addSection(EJ_Data:CreateSection("Blink", "", 28391, 0, -1), nil);
 shazzrah:addSection(EJ_Data:CreateSection("Counterspell", "", 19715, iconFlags.Important, -1), nil);
 shazzrah:addSection(EJ_Data:CreateSection("Deaden Magic", "", 19714, iconFlags.Interruptable + iconFlags.Magic, -1), nil);
 
-instance:addEncounter(shazzrah); 
+instance:addEncounter(shazzrah);
 
 ----------------------
 -----Baron Geddon-----
@@ -104,7 +104,7 @@ baron_geddon:addSection(EJ_Data:CreateSection("Inferno", "", 19695, 0, -1), nil)
 baron_geddon:addSection(EJ_Data:CreateSection("Living Bomb", "", 20475, 0, -1), nil);
 baron_geddon:addSection(EJ_Data:CreateSection("Armageddon", "When near death, Geddon creates an armageddon, exploding after 8 seconds and dealing lethal Fire damage to the entire raid.", 20478, iconFlags.Fatal, -1), nil);
 
-instance:addEncounter(baron_geddon); 
+instance:addEncounter(baron_geddon);
 
 ----------------------
 --Sulfuron Harbinger--
@@ -123,7 +123,7 @@ sulfuron_harbinger:addSection(EJ_Data:CreateSection("Dark Strike", "", 19777, 0,
 sulfuron_harbinger:addSection(EJ_Data:CreateSection("Immolate", "", 20294, iconFlags.Magic, -1), sulfuron_harbinger_flamewaker);
 sulfuron_harbinger:addSection(EJ_Data:CreateSection("Shadow Word: Pain", "", 19776, iconFlags.Magic, -1), sulfuron_harbinger_flamewaker);
 
-instance:addEncounter(sulfuron_harbinger); 
+instance:addEncounter(sulfuron_harbinger);
 
 ----------------------
 -------Golemagg-------
@@ -141,14 +141,14 @@ golemagg_the_incinerator:addSection(golemagg_core_rager, nil);
 golemagg_the_incinerator:addSection(EJ_Data:CreateSection("Golemagg's Trust", "Golemagg's Core Ragers will deal increased damage and have 50% increased attack speed if tanked too close to Golemagg.", 20553, iconFlags.Important + iconFlags.Tank, -1), golemagg_core_rager);
 golemagg_the_incinerator:addSection(EJ_Data:CreateSection("Mangle", "", 19820, 0, -1), golemagg_core_rager);
 
-instance:addEncounter(golemagg_the_incinerator); 
+instance:addEncounter(golemagg_the_incinerator);
 
 ----------------------
 --Majordomo Executus--
 ----------------------
 local majordomo_executus = EJ_Data:CreateEncounter();
 majordomo_executus:setAttributes("Majordomo Executus", "", 741, 671, 9, 8);
-majordomo_executus:setLoot({18811,18808,18809,19139,18810,18812,18806,19140,18805,18803,18715,18713,18608,18609}); --Add T2 Wrist to Table
+majordomo_executus:setLoot({18811,18808,18809,19139,18810,18812,18806,19140,18805,18803,18715,18713,18608,18609});--Add T2 Wrist to Table
 
 majordomo_executus:addSection(EJ_Data:CreateSection("Aegis of Ragnaros", "", 20620, 0, -1), nil);
 majordomo_executus:addSection(EJ_Data:CreateSection("Damage Shield", "", 21075, 0, -1), nil);
@@ -165,7 +165,7 @@ majordomo_executus:addSection(majordomo_healer, nil);
 majordomo_executus:addSection(EJ_Data:CreateSection("Shadow Bolt", "", 21077, 0, -1), majordomo_healer);
 majordomo_executus:addSection(EJ_Data:CreateSection("Shadow Shock", "", 20603, 0, -1), majordomo_healer);
 
-instance:addEncounter(majordomo_executus); 
+instance:addEncounter(majordomo_executus);
 
 ----------------------
 -------Ragnaros-------
@@ -178,7 +178,7 @@ ragnaros:addSection(EJ_Data:CreateSection("Wrath of Ragnaros", "", 20566, 0, -1)
 ragnaros:addSection(EJ_Data:CreateSection("Lava Burst", "", 21158, 0, -1), nil);
 ragnaros:addSection(EJ_Data:CreateSection("Submerge", "When Ragnaros submerges he will summon Sons of Flame. (TODO: Ascension mechanic description)", 0, iconFlags.Adds, -1), nil);
 
-instance:addEncounter(ragnaros); 
+instance:addEncounter(ragnaros);
 
 instance:generateLootList();
-EJ_Data:addInstance(EJ_Data.CLASSIC, instance, true, 2);
+EJ_Data:addInstance(EJ_Data.CLASSIC, instance, EJ_Data.Raids, 2);

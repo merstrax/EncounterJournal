@@ -75,22 +75,21 @@ function EJ_Data:LoadAddons()
 	end
 end
 
-function EJ_Data:addInstance(tier, instance_data, isRaid, orderIndex)
-    local selectType = 0;
+function EJ_Data:addInstance(tier, instance_data, selectType, orderIndex)
+    if not orderIndex then orderIndex = 0; end
 
-    if isRaid then
-        selectType = 1;
-    end
-    if orderIndex then
-        instance_data.OrderIndex = orderIndex;
-    else
-        instance_data.OrderIndex = 0;
-    end
-    tinsert(self.Tiers[tier][self.Dungeons + selectType], instance_data);
+    instance_data.OrderIndex = orderIndex;
+
+    tinsert(self.Tiers[tier][selectType], instance_data);
     self.Instances[instance_data.ID] = instance_data;
     self.InstanceToTier[instance_data.ID] = {tier, selectType};
-    table.sort(self.Tiers[tier][self.Dungeons + selectType], function(k1, k2) return k1.OrderIndex < k2.OrderIndex end);
-
+    
+    if(tier == EJ_Data.CLASSIC and selectType == self.Dungeons) then
+        --Reverse ordering of Classic dungeons for convenience
+        table.sort(self.Tiers[tier][selectType], function(k1, k2) return k1.OrderIndex > k2.OrderIndex end);
+    else
+        table.sort(self.Tiers[tier][selectType], function(k1, k2) return k1.OrderIndex < k2.OrderIndex end);
+    end
 end
 
 ------------------------------
@@ -108,6 +107,8 @@ local instance = {
     OderIndex = 0;
     Encounters = {};
     Loot = {};
+    LootHeroic = {};
+    hasHeroicLoot = false;
 };
 
 --Returns Index where Encounter was added or nil
@@ -139,6 +140,15 @@ function instance:generateLootList()
             end
         end
     end
+    if self.hasHeroicLoot then
+        for _, v in ipairs(self.Encounters) do
+            for _, i in ipairs(v.HeroicLoot) do
+                if(not tContains(self.HeroicLoot, i)) then
+                    tinsert(self.HeroicLoot, i);
+                end
+            end
+        end
+    end
 end
 
 function EJ_Data:CreateInstance()
@@ -164,6 +174,7 @@ local encounter = {
     DifficultyID = nil;
 
     Loot = {};
+    LootHeroic = {};
     SectionCount = 0;
 
     isEncounter = true;
@@ -171,19 +182,19 @@ local encounter = {
 };
 
 local section = {
-    Title = ""; 
-    Desc = ""; 
-    Index = 1; 
-    ParentSection = nil; 
+    Title = "";
+    Desc = "";
+    Index = 1;
+    ParentSection = nil;
     FirstChildSection = nil;
-    NextSiblingSection = nil; 
-    Type = 0; 
-    --IconCreatureDisplayInfoID = 0; 
-    --UiModelSceneID = 0; 
-    SpellID = 0; 
-    IconFileDataID = 0; 
-    Flags = 0; 
-    IconFlags = 0; 
+    NextSiblingSection = nil;
+    Type = 0;
+    --IconCreatureDisplayInfoID = 0;
+    --UiModelSceneID = 0;
+    SpellID = 0;
+    IconFileDataID = 0;
+    Flags = 0;
+    IconFlags = 0;
     DifficultyMask = 0;
 
     SpellLink = 0;
@@ -191,7 +202,16 @@ local section = {
 }
 
 
-function encounter:setLoot(lootTable)
+function encounter:setLoot(lootTable, isHeroic)
+    if isHeroic then
+        if #self.Loot > 0 then
+            self.LootHeroic = tCopy(self.Loot);
+        end
+        for _, v in ipairs(lootTable) do
+            tInsert(self.LootHeroic, v);
+        end
+        return;
+    end
     self.Loot = lootTable;
 end
 

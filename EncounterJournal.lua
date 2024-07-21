@@ -146,7 +146,7 @@ function EncounterJournal_OnLoad(self)
 	Mixin(self, "PortraitFrameMixin");
 	EncounterJournalTitleText:SetText("Dungeon Journal");
 	EncounterJournal:SetPortraitToAsset("Interface\\AddOns\\EncounterJournal\\Assets\\UI-EJ-PortraitIcon");
-	--self:RegisterForDrag("LeftButton");
+	self:RegisterForDrag("LeftButton");
 	EncounterJournal:RegisterEvent("VARIABLES_LOADED");
 
 	EncounterJournal.selectedTab = 1;
@@ -195,7 +195,7 @@ function EncounterJournal_OnLoad(self)
 		instanceSelect.raidssTab
 	};
 
-	
+	EncounterJournal_SetupModelController();
 end
 
 function EncounterJournal_EnableTierDropDown()
@@ -832,7 +832,12 @@ function EncounterJournal_DisplayEncounter(encounterID, noButton)
 	end
 
 	--enable model and abilities tab
-	EncounterJournal_SetTabEnabled(EncounterJournal.encounter.info.modelTab, true);
+	local displayInfo = select(5, EJ_GetCreatureInfo(0, encounterID));
+	if displayInfo then
+		EncounterJournal_SetTabEnabled(EncounterJournal.encounter.info.modelTab, true);
+	else
+		EncounterJournal_SetTabEnabled(EncounterJournal.encounter.info.modelTab, false);
+	end
 	EncounterJournal_SetTabEnabled(EncounterJournal.encounter.info.bossTab, false);
 
 	if (overviewFound) then
@@ -858,6 +863,52 @@ function EncounterJournal_DisplayEncounter(encounterID, noButton)
 		}
 		EJ_NavBar_AddButton(EncounterJournal.navBar, buttonData);
 	end
+end
+
+function EncounterJournal_SetupModelController()
+	--Thank you Ascension Developers for this :D
+	EncounterJournal.encounter.info.model.ClickHandler = CreateFrame("Frame", nil, EncounterJournal.encounter.info.model)
+	EncounterJournal.encounter.info.model.ClickHandler:SetAllPoints()
+	EncounterJournal.encounter.info.model.ClickHandler:EnableMouse(true)
+	EncounterJournal.encounter.info.model.ClickHandler:EnableMouseWheel(true)
+	EncounterJournal.encounter.info.model.MaxSize = 3;
+	EncounterJournal.encounter.info.model.MinSize = 0.3;
+
+
+	EncounterJournal.encounter.info.model.ClickHandler:SetScript("OnUpdate", function(self)
+		if self.StartX then
+			local x = GetCursorPosition()
+			local diff = (x - self.StartX) * 0.01
+			self.StartX = x
+			self:GetParent():SetFacing(self:GetParent():GetFacing() + diff)
+		end
+	end)
+
+	EncounterJournal.encounter.info.model.ClickHandler:SetScript("OnMouseDown", function(self, button)
+		if button == "LeftButton" then
+			self.StartX = GetCursorPosition()
+		end
+	end)
+
+	EncounterJournal.encounter.info.model.ClickHandler:SetScript("OnMouseUp", function(self, button)
+		if button == "LeftButton" then
+			self.StartX = nil
+		end
+	end)
+
+	EncounterJournal.encounter.info.model.ClickHandler:SetScript("OnMouseWheel", function(self, delta)
+		local preview = self:GetParent()
+		local scale = preview:GetModelScale()
+		if scale >= preview.MaxSize and delta > 0 then
+			return
+		end
+
+		if scale <= preview.MinSize and delta < 0 then
+			return
+		end
+
+		preview:SetModelScale(scale + (delta * 0.05))
+	end)
 end
 
 function EncounterJournal_DisplayCreature(self, forceUpdate)

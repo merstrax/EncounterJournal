@@ -7,13 +7,13 @@ instance:setAttributes(746, "Gruul's Lair", EJ_Descriptions.Instances["GRUULSLAI
 
 local high_king_maulgar = EJ_Data:CreateEncounter();
 high_king_maulgar:setAttributes("High King Maulgar", "", 746, 649, 1, 8);
-high_king_maulgar:setLoot({}); 
+high_king_maulgar:setLoot({});
 instance:addEncounter(high_king_maulgar);
 
 local gruul_the_dragonkiller = EJ_Data:CreateEncounter();
 gruul_the_dragonkiller:setAttributes("Gruul the Dragonkiller", "", 746, 650, 2, 8);
-gruul_the_dragonkiller:setLoot({}); 
+gruul_the_dragonkiller:setLoot({});
 instance:addEncounter(gruul_the_dragonkiller);
 
 instance:generateLootList();
-EJ_Data:addInstance(EJ_Data.TBC, instance, true, 3);
+EJ_Data:addInstance(EJ_Data.TBC, instance, EJ_Data.Raids, 3);

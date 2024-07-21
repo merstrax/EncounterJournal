@@ -16,7 +16,7 @@
     <Script file="Dungeons\EJ_ShadowfangKeep.lua"/>
     <Script file="Dungeons\EJ_Stratholme.lua"/>
     <Script file="Dungeons\EJ_SunkenTemple.lua"/>
-    <Script file="Dungeons\EJ_TheStockade.lua"/>
+    <!--Script file="Dungeons\EJ_TheStockade.lua"/-->
     <Script file="Dungeons\EJ_Uldaman.lua"/>
     <Script file="Dungeons\EJ_UpperBlackrockSpire.lua"/>
     <Script file="Dungeons\EJ_WailingCaverns.lua"/>

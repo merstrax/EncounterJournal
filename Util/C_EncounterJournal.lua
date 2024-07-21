@@ -357,12 +357,12 @@ end
 
 --EJ_GetNumEncountersForLootByIndex(index) - Returns the amount of encounters that drop the same loot item.
 function EJ_GetNumEncountersForLootByIndex(index)
-    return 0; 
+    return 0;
 end  
 
 --EJ_GetNumSearchResults() - Returns the number of search results for the Encounter Journal.
 function EJ_GetNumSearchResults()
-    return 0; 
+    return 0;
 end
 
 --EJ_GetNumTiers() - Returns the number of valid encounter journal tier indices.
@@ -377,17 +377,17 @@ end
 
 --EJ_GetSearchResult(index) - Returns search results for the Encounter Journal.
 function EJ_GetSearchResult(index)
-    return nil; 
+    return nil;
 end
 
 --EJ_GetSearchSize() - Returns the amount of Encounter Journal objects to search through.
 function EJ_GetSearchSize()
-    return 0; 
+    return 0;
 end
 
 --EJ_GetSectionPath(sectionID) - Returns the parent Section ID if available.
 function EJ_GetSectionPath(sectionID)
-    return 0; 
+    return 0;
 end
 
 --EJ_GetTierInfo(index) - Get some information about the encounter journal tier for index.
@@ -408,7 +408,7 @@ end
 
 --EJ_IsSearchFinished() - Returns whether the current search has finished.
 function EJ_IsSearchFinished()
-    return EJ_GetSearchProgress() == 1.0; 
+    return EJ_GetSearchProgress() == 1.0;
 end
 
 --EJ_IsValidInstanceDifficulty(difficultyID) - Returns whether the difficultyID is valid for use in the journal.

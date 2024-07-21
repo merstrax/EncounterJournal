@@ -30,7 +30,7 @@ onyxia:addSection(onyxia_phase_3, nil);
 onyxia:addSection(EJ_Data:CreateSection("Bellowing Roar", "Onyxia will let out a Bellowing Roar fearing everyone in the raid.", 0, 0, -1), onyxia_phase_3);
 onyxia:addSection(EJ_Data:CreateSection("Onyxian Whelp", "These will occasionally spawn and attack the raid.", 0, iconFlags.Adds, -1), onyxia_phase_3);
 
-instance:addEncounter(onyxia); 
+instance:addEncounter(onyxia);
 
 instance:generateLootList();
-EJ_Data:addInstance(EJ_Data.CLASSIC, instance, true, 3);
+EJ_Data:addInstance(EJ_Data.CLASSIC, instance, EJ_Data.Raids, 3);

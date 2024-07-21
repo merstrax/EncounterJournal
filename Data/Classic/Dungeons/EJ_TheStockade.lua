@@ -7,8 +7,8 @@ instance:setAttributes(238, "The Stockade", EJ_Descriptions.Instances["THESTOCKA
 
 local bruegal_ironknuckle = EJ_Data:CreateEncounter();
 bruegal_ironknuckle:setAttributes("Bruegal Ironknuckle", "", 238, 1146, 1, 2);
-bruegal_ironknuckle:setLoot({}); 
-instance:addEncounter(bruegal_ironknuckle); 
+bruegal_ironknuckle:setLoot({});
+instance:addEncounter(bruegal_ironknuckle);
 
 instance:generateLootList();
-EJ_Data:addInstance(EJ_Data.CLASSIC, instance, false);
+EJ_Data:addInstance(EJ_Data.CLASSIC, instance, EJ_Data.Dungeons);
