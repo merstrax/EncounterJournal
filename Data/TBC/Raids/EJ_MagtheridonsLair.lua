@@ -7,7 +7,7 @@ instance:setAttributes(747, "Magtheridon's Lair", EJ_Descriptions.Instances["MAG
 
 local magtheridon = EJ_Data:CreateEncounter();
 magtheridon:setAttributes("Magtheridon", "", 747, 651, 1, 8);
-magtheridon:setLoot({});
+magtheridon:setLoot({28777,28780,28776,28778,28775,28779,28789,28781,28774,28782,29458,28783});
 instance:addEncounter(magtheridon) 
 
 instance:generateLootList();
