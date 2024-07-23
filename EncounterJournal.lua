@@ -1677,7 +1677,7 @@ function EncounterJournal_SetLootButton(item)
 		item.slot:SetText(itemInfo.slot);
 		item.armorType:SetText(itemInfo.armorType);
 		item.boss:SetText(EJ_GetEncounterInfo(itemInfo.encounterID));
-		local itemName, _, quality = GetItemInfo(itemInfo.link);
+		local itemName, _, quality = C_EncounterJournal.GetItemInfo(itemInfo.link);
 	else
 		item.name:SetText("RETRIEVING_ITEM_INFO");
 		item.icon:SetTexture("Interface\\Icons\\INV_Misc_QuestionMark");
