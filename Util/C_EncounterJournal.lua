@@ -209,15 +209,14 @@ function C_EncounterJournal.GetLootInfoByIndex(index, encounterIndex)
                 item = Item:CreateFromID(info.itemID);
                 itemID = info.itemID;
                 item:ContinueOnLoad(function() EncounterJournal_LootCallback(itemID) end);
-            else
-                local itemName, itemLink, itemQuality, _, _, _, itemSubType, _, itemEquipLoc, itemIcon = GetItemInfo(info.itemID);
+            end
+                local itemName, itemLink, itemQuality, _, _, _, itemSubType, _, itemEquipLoc, itemIcon = C_EncounterJournal.GetItemInfo(info.itemID);
                 info.name = COLOR[itemQuality + 1]..itemName..COLOR.DEFAULT;
                 info.itemQuality = itemQuality;
                 info.icon = itemIcon;
                 info.slot = SLOT_STRINGS[itemEquipLoc];
                 info.armorType = itemSubType
                 info.link = itemLink;
-            end
         end
     else
         local lootList = EJ_Data.Instances[C_EncounterJournal.SELECTED_INSTANCE].Loot;
@@ -237,15 +236,14 @@ function C_EncounterJournal.GetLootInfoByIndex(index, encounterIndex)
                 item = Item:CreateFromID(info.itemID);
                 itemID = info.itemID;
                 item:ContinueOnLoad(function() EncounterJournal_LootCallback(itemID) end);
-            else
-                local itemName, itemLink, itemQuality, _, _, _, itemSubType, _, itemEquipLoc, itemIcon = GetItemInfo(info.itemID);
+            end
+                local itemName, itemLink, itemQuality, _, _, _, itemSubType, _, itemEquipLoc, itemIcon = C_EncounterJournal.GetItemInfo(info.itemID);
                 info.name = COLOR[itemQuality + 1]..itemName..COLOR.DEFAULT;
                 info.itemQuality = itemQuality;
                 info.icon = itemIcon;
                 info.slot = SLOT_STRINGS[itemEquipLoc];
                 info.armorType = itemSubType
                 info.link = itemLink;
-            end
         end
     end
 
@@ -521,4 +519,50 @@ end
 
 --EJ_SetLootFilter(classID, specID) - Sets the loot filter for a specialization.
 function EJ_SetLootFilter(classID, spedID)
+end
+
+-- converts item number to string
+local itemEquipLocConversion = {
+	"INVTYPE_HEAD",
+	"INVTYPE_NECK",
+	"INVTYPE_SHOULDER",
+	"INVTYPE_BODY",
+	"INVTYPE_CHEST",
+	"INVTYPE_WAIST",
+	"INVTYPE_LEGS",
+	"INVTYPE_FEET",
+	"INVTYPE_WRIST",
+	"INVTYPE_HAND",
+	"INVTYPE_FINGER",
+	"INVTYPE_TRINKET",
+	"INVTYPE_WEAPON",
+	"INVTYPE_SHIELD",
+	"INVTYPE_RANGED",
+	"INVTYPE_CLOAK",
+	"INVTYPE_2HWEAPON",
+	"INVTYPE_BAG",
+	"INVTYPE_TABARD",
+	"INVTYPE_ROBE",
+	"INVTYPE_WEAPONMAINHAND",
+	"INVTYPE_WEAPONOFFHAND",
+	"INVTYPE_HOLDABLE",
+	"INVTYPE_AMMO",
+	"INVTYPE_THROWN",
+	"INVTYPE_RANGEDRIGHT",
+	"INVTYPE_QUIVER",
+	"INVTYPE_RELIC",
+}
+
+-- returns instant instant item info if the item isnt in the cache
+function C_EncounterJournal.GetItemInfo(itemID)
+	local itemName, itemLink, itemQuality, itemLevel, itemMinLevel, itemType, itemSubType, itemStackCount, itemEquipLoc, itemTexture, itemSellPrice = GetItemInfo(itemID)
+	if not itemName then
+		local item = GetItemInfoInstant(itemID)
+		if item then
+			itemName, itemSubType, itemEquipLoc, itemTexture, itemQuality = item.name, _G["ITEM_SUBCLASS_"..item.classID.."_"..item.subclassID], itemEquipLocConversion[item.inventoryType], item.icon, item.quality
+			local color = ITEM_QUALITY_COLORS[itemQuality] or ITEM_QUALITY_COLORS[1]
+			itemLink = color:WrapText("|Hitem:"..itemID.."|h["..itemName.."]|h|r")
+		end
+	end
+	return itemName, itemLink, itemQuality, itemLevel, itemMinLevel, itemType, itemSubType, itemStackCount, itemEquipLoc, itemTexture, itemSellPrice
 end
