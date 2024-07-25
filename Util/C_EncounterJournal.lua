@@ -204,12 +204,6 @@ function C_EncounterJournal.GetLootInfoByIndex(index, encounterIndex)
                     info.itemID = ItemIDsDatabase[info.itemID][AL_DIFF] or info.itemID;
                 end
             end
-            local item = GetItemInfo(info.itemID);
-            if not item then
-                item = Item:CreateFromID(info.itemID);
-                itemID = info.itemID;
-                item:ContinueOnLoad(function() EncounterJournal_LootCallback(itemID) end);
-            end
                 local itemName, itemLink, itemQuality, _, _, _, itemSubType, _, itemEquipLoc, itemIcon = C_EncounterJournal.GetItemInfo(info.itemID);
                 info.name = COLOR[itemQuality + 1]..itemName..COLOR.DEFAULT;
                 info.itemQuality = itemQuality;
@@ -230,12 +224,6 @@ function C_EncounterJournal.GetLootInfoByIndex(index, encounterIndex)
                 if(ItemIDsDatabase[info.itemID]) then
                     info.itemID = ItemIDsDatabase[info.itemID][AL_DIFF] or info.itemID;
                 end
-            end
-            local item = GetItemInfo(info.itemID);
-            if not item then
-                item = Item:CreateFromID(info.itemID);
-                itemID = info.itemID;
-                item:ContinueOnLoad(function() EncounterJournal_LootCallback(itemID) end);
             end
                 local itemName, itemLink, itemQuality, _, _, _, itemSubType, _, itemEquipLoc, itemIcon = C_EncounterJournal.GetItemInfo(info.itemID);
                 info.name = COLOR[itemQuality + 1]..itemName..COLOR.DEFAULT;
@@ -554,14 +542,16 @@ local itemEquipLocConversion = {
 }
 
 -- returns instant instant item info if the item isnt in the cache
-function C_EncounterJournal.GetItemInfo(itemID)
-	local itemName, itemLink, itemQuality, itemLevel, itemMinLevel, itemType, itemSubType, itemStackCount, itemEquipLoc, itemTexture, itemSellPrice = GetItemInfo(itemID)
-	if not itemName then
-		local item = GetItemInfoInstant(itemID)
-		if item then
-			itemName, itemSubType, itemEquipLoc, itemTexture, itemQuality = item.name, _G["ITEM_SUBCLASS_"..item.classID.."_"..item.subclassID], itemEquipLocConversion[item.inventoryType], item.icon, item.quality
+function C_EncounterJournal.GetItemInfo(item)
+	item = tonumber(item) and Item:CreateFromID(item) or Item:CreateFromLink(item)
+    local itemName, itemLink, itemQuality, itemLevel, itemMinLevel, itemType, itemSubType, itemStackCount, itemEquipLoc, itemTexture, itemSellPrice = GetItemInfo(item.itemID)
+	if not item:GetInfo() then
+        item:ContinueOnLoad(function() end)
+		local itemInstant = GetItemInfoInstant(item.itemID)
+		if itemInstant then
+			itemName, itemSubType, itemEquipLoc, itemTexture, itemQuality = itemInstant.name, _G["ITEM_SUBCLASS_"..itemInstant.classID.."_"..itemInstant.subclassID], itemEquipLocConversion[itemInstant.inventoryType], itemInstant.icon, itemInstant.quality
 			local color = ITEM_QUALITY_COLORS[itemQuality] or ITEM_QUALITY_COLORS[1]
-			itemLink = color:WrapText("|Hitem:"..itemID.."|h["..itemName.."]|h|r")
+			itemLink = color:WrapText("|Hitem:"..item.itemID.."|h["..itemName.."]|h|r")
 		end
 	end
 	return itemName, itemLink, itemQuality, itemLevel, itemMinLevel, itemType, itemSubType, itemStackCount, itemEquipLoc, itemTexture, itemSellPrice
