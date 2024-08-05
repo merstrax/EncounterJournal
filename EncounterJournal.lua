@@ -2057,10 +2057,8 @@ end
 
 function EncounterJournalBossButton_OnClick(self)
 	local _, desc, _, rootSectionID = EJ_GetEncounterInfo(self.encounterID);
-	if ( not rootSectionID and desc == "") then
+	if ( not rootSectionID) then
 		EncounterJournal_SetTab(EncounterJournal.encounter.info.lootTab:GetID());
-	else
-		EncounterJournal_SetTab(EncounterJournal.encounter.info.overviewTab:GetID());
 	end
 	EncounterJournal_DisplayEncounter(self.encounterID);
 end
